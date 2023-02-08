@@ -4,14 +4,18 @@ main:
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Posts"
     url: /year-archive/
-  - title: "Categories"
+  - title: "Categorias"
     url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Pages"
-    url: /page-archive/
-  - title: "Collections"
-    url: /collection-archive/
+  # - title: "Tags"
+  #  url: /tags/
+  # - title: "Pages"
+  #  url: /page-archive/
+  # - title: "Collections"
+  #  url: /collection-archive/
+  - title: "Contos"
+    url: /contos/
+  - title: "Jogos"
+    url: /games/
   - title: "Links"
     url: https://linktr.ee/victorcorrea
   # - title: "About"
