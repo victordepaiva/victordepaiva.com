@@ -1,6 +1,10 @@
 ---
-layout: single
-title: Ernesto
+layout: post
+title: 'ernesto'
+future: true
+published: true
+date: '2022-02-03 12:00:00 -0300'
+categories: conto
 ---
 
 Ernesto
