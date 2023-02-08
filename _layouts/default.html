@@ -12,6 +12,15 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    
+    {% if page.style %}
+      <style type="text/css">
+        {{ page.style }}
+      </style>
+    {% endif %}
+    
+    <!-- The if block above only adds the styles to a post when it has a 'style' variable in its front-matter.  -->
+    
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
