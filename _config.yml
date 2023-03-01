@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "kastro.netlify.app"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Victor de Kastro"
+name                     : "Victor de Paiva"
 description              : "Escritos pessoais | Personal writings."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -104,9 +104,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Victor de Kastro"
+  name             : "Victor de Paiva"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Writer and game designer."
+  bio              : "Writer, game producer and designer"
   location         : "Rio de Janeiro"
   email            :
   links:
