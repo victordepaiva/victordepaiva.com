@@ -2,10 +2,10 @@
 main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Archive"
+  - title: "Todos os posts"
     url: /archive/
-  - title: "Categories"
-    url: /categories/
+  - title: "Design de Narrativa"
+    url: /narrativedesign/
   # - title: "Tags"
   #  url: /tags/
   # - title: "Pages"
@@ -17,7 +17,7 @@ main:
   - title: "Jogos"
     url: https://otakumaromba.itch.io
   - title: "Links"
-    url: https://linktr.ee/victorcorrea
+    url: https://linktr.ee/victordepaiva
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
