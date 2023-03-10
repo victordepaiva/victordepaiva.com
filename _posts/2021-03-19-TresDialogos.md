@@ -6,7 +6,7 @@ date: '2021-03-19 12:00:00 -0300'
 categories: dialogo
 ---
 
-{: .text-justify}
+<div>
 
 <p>⠀</p>
 
@@ -77,3 +77,6 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 <p><b>MÃE</b>: Para com isso e explica direito pra menina.</p>
 
 <p style="text-align:center">. . .</p>
+
+</div>
+{: .text-justify}
