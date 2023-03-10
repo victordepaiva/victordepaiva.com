@@ -30,7 +30,11 @@ categories: dialogo
 <p><i>O homem sai da sala, deixando seu superior sozinho. O comandante segura com uma mão um porta retrato antigo, no qual se viam dois rapazes, um no colo do outro, se beijando apaixonadamente: LEMBRANÇA DE OSASCO, 1983.
 Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamente enxugando suas lágrimas.</i><p>
 
+</div> {: .text-justify}
+
 <p style="text-align:center">. . .</p>
+
+<div>
 
 <p><i>Três sujeitos bebem em um cais. A maresia e o aroma perfumadamente fétido de vida em decomposição, característico da região — e impulsionados pelo calor da tarde — se encontravam em perfeita harmonia com o gosto punitivo da malvada. Como se, parando para prestar atenção, o rasgo incendiário que fazia no seu trajeto pela garganta proporcionasse toda a adstringência de um Camembert, ou um Gruyére, nesse queijos e vinhos impromptu em que o vinho selecionado da vez seria as reclamações de Jurandir.</i></p>
 
@@ -50,6 +54,9 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>JURANDIR</b>: Eu tô mijando em cima do Estado Brasileiro!</p>
 
+</div> {: .text-justify}
+
+<div>
 <p style="text-align:center">. . .</p>
 
 <p><b>MENINA</b>: Pai, o que é impulsão?</p>
@@ -76,7 +83,6 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>MÃE</b>: Para com isso e explica direito pra menina.</p>
 
-<p style="text-align:center">. . .</p>
+</div> {: .text-justify}
 
-</div>
-{: .text-justify}
+<div><p style="text-align:center">. . .</p></div>
