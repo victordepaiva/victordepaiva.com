@@ -7,7 +7,6 @@ categories: dialogo
 ---
 
 <div>
-
 <p>⠀</p>
 
 <p><b>COMANDANTE</b>: O homem está lá em cima! Vai, vai, vai!</p>
@@ -30,7 +29,8 @@ categories: dialogo
 <p><i>O homem sai da sala, deixando seu superior sozinho. O comandante segura com uma mão um porta retrato antigo, no qual se viam dois rapazes, um no colo do outro, se beijando apaixonadamente: LEMBRANÇA DE OSASCO, 1983.
 Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamente enxugando suas lágrimas.</i><p>
 
-</div> {: .text-justify}
+</div>
+{: .text-justify}
 
 <p style="text-align:center">. . .</p>
 
@@ -54,7 +54,8 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>JURANDIR</b>: Eu tô mijando em cima do Estado Brasileiro!</p>
 
-</div> {: .text-justify}
+</div>
+{: .text-justify}
 
 <div>
 <p style="text-align:center">. . .</p>
@@ -83,6 +84,7 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>MÃE</b>: Para com isso e explica direito pra menina.</p>
 
-</div> {: .text-justify}
+</div>
+{: .text-justify}
 
 <div><p style="text-align:center">. . .</p></div>
