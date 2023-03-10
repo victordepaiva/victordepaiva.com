@@ -6,14 +6,6 @@ layout: archive
 
 {{ content }}
 
-{% capture words %}
-{{ content | number_of_words }}
-{% endcapture %}
-        
-<span class="readingTime">
-<i class="fas fa-bookmark"></i> 
-Reading Time: {{ words | divided_by: 180 | append: ' minute read' }}
-</span>
 
 <!--
 <ul class="taxonomy__index">
