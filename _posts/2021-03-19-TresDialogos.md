@@ -58,7 +58,7 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>MENINA</b>: [<i>hesitante</i>] Hummm… não.</p>
 
-<p><b>PAI</b>: Bem, imagina que você — <i>o pai junta os pés e fala olhando para baixo</> — salta daqui, e vai assim pra frente. Você vai chegar daqui até ali, numa certa distância, certo?</p>
+<p><b>PAI</b>: Bem, imagina que você — <i>o pai junta os pés e fala olhando para baixo</i> — salta daqui, e vai assim pra frente. Você vai chegar daqui até ali, numa certa distância, certo?</p>
 
 <p><b>MENINA</b>: Uhum.</p>
 
