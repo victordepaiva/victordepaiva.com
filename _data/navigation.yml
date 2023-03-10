@@ -12,8 +12,8 @@ main:
   #  url: /page-archive/
   # - title: "Collections"
   #  url: /collection-archive/
-  - title: "Contos"
-    url: /contos/
+  - title: "Textos"
+    url: /textos/
   - title: "Jogos"
     url: https://otakumaromba.itch.io
   - title: "Links"
