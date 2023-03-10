@@ -6,18 +6,21 @@ date: '2021-03-19 12:00:00 -0300'
 categories: dialogo
 ---
 
+<div>
+<p></p>
+
 <p><b>COMANDANTE</b>: O homem está lá em cima! Vai, vai, vai!</p>
 
 <p><i>Barulhos de passos pesados, coturnos em compensados de madeira, seguidos de portas sendo derrubadas. Como acompanhamento visual, lanternas montadas em rifles, rodando rapidamente como pequenos holofotes em uma festa em que ninguém foi convidado.</i></p>
 
-<p><b>COMANDANTE</b>: Enfim, depois de dezessete anos, finalmente vou poder colocar minhas mãos no temível Bananinha! Ele me enganou por muito tempo, tempo demais, mas ele sabia que esse jogo não iria durar para sempre. Pois a justiça, ah, a justiça — clama aos céus — a Justiça sempre recai sobre aqueles que menos a esperam!</p>
+<p><b>COMANDANTE</b>: Enfim, depois de dezessete anos, finalmente vou poder colocar minhas mãos no temível Bananinha! Ele me enganou por muito tempo, tempo demais, mas ele sabia que esse jogo não iria durar para sempre. Pois a justiça, ah, a justiça — <i>clama aos céus</i> — a Justiça sempre recai sobre aqueles que menos a esperam!</p>
 
 <p><b>SOLDADO</b>: Comandante, com quem o senhor tá falando?</p>
 
 <p><b>COMANDANTE</b>: Porra 37, tá fazendo o quê ainda aqui embaixo? Corre lá pra cima, cerca o perímetro, faz alguma coisa útil, porra!</p>
 <p><i>Interrompendo o diálogo, um homem de menos de um metro de altura corre entre as pernas dos homens fardados e pesadamente armados, trajando pantufas de jacaré, segurando uma Bíblia Sagrada na mão esquerda e uma furadeira Black & Decker na direita, e nada mais.</i></p>
 
-<p><b>COMANDANTE</b>: Abelardo, isso foi LONGE DEMAIS! Você não tem m- Ah, deixa, faço eu mesmo essa porra — e munido de seu S&W 686, descarregou todo o tambor na pequena figura.</p>
+<p><b>COMANDANTE</b>: Abelardo, isso foi LONGE DEMAIS! Você não tem m– Quer saber, deixa, faço eu mesmo essa porra — <i>munido de seu S&W 686, descarregou todo o tambor na pequena figura</i>.</p>
 
 <p><b>SOLDADO</b>: Comandante, pessoal da imprensa tá ai fora. O que a gente fala pra eles?</p>
 
@@ -54,17 +57,17 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 
 <p><b>MENINA</b>: [<i>hesitante</i>] Hummm… não.</p>
 
-<p><b>PAI</b>: Bem, imagina que você — o pai junta os pés e fala olhando para baixo — salta daqui, e vai assim pra frente. Você vai chegar daqui até ali, numa certa distância, certo?</p>
+<p><b>PAI</b>: Bem, imagina que você — <i>o pai junta os pés e fala olhando para baixo</> — salta daqui, e vai assim pra frente. Você vai chegar daqui até ali, numa certa distância, certo?</p>
 
 <p><b>MENINA</b>: Uhum.</p>
 
-<p><b>PAI</b>: Então, isso e o impulso. Mas se você — o pai gesticula, sacudindo os braços com energia — vem correndo e aí uou, pula desse mesmo ponto, você vai chegar mais longe, né?</p>
+<p><b>PAI</b>: Então, isso e o impulso. Mas se você — <i>o pai gesticula, sacudindo os braços com energia</i> — vem correndo e aí uou, pula desse mesmo ponto, você vai chegar mais longe, né?</p>
 
 <p><i>A garota concorda de boca fechada, com fronte séria.</i></p>
 
 <p><b>PAI</b>: Então, um impulsão é quando você corre muuuuuito, e daí consegue pular muuuito alto, e aí chega mais longe. Um impulsão.</p>
 
-<p><b>MENINA: Ahhhhh — <i>a garota move lentamente a cabeça, como constatando uma coisa tão trivial que, em situações futuras — e em uma idade mais orgulhosa – relutaria em admitir ignorância, dizendo algo como “Ah, eu sabia, tinha me esquecido”.</i></p>
+  <p><b>MENINA</b>: Ahhhhh — <i>a garota move lentamente a cabeça, como constatando uma coisa tão trivial que, em situações futuras – e em uma idade mais orgulhosa – relutaria em admitir ignorância, dizendo algo como “Ah, eu sabia, tinha me esquecido”.</i></p>
 
 <p><b>MÃE</b>: Ricardo.</p>
 
@@ -73,3 +76,8 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 <p><b>MÃE</b>: Para com isso e explica direito pra menina.</p>
 
 <p style="text-align:center">. . .</p>
+
+</div>
+{: .text-justify}
+
+
