@@ -6,7 +6,7 @@ date: '2021-03-19 12:00:00 -0300'
 categories: dialogo
 ---
 
-<div>
+<div style="text-align: justify">
 <p>⠀</p>
 
 <p><b>COMANDANTE</b>: O homem está lá em cima! Vai, vai, vai!</p>
@@ -27,15 +27,13 @@ categories: dialogo
 <p><b>COMANDANTE</b>: Manda todo mundo embora, 37. Essa gente precisa aprender a ter um mínimo de respeito de vez em quando.</p>
 
 <p><i>O homem sai da sala, deixando seu superior sozinho. O comandante segura com uma mão um porta retrato antigo, no qual se viam dois rapazes, um no colo do outro, se beijando apaixonadamente: LEMBRANÇA DE OSASCO, 1983.
-Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamente enxugando suas lágrimas.</i><p>
+Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamente enxugando suas lágrimas.</i></p>
 
 </div>
-{: .text-justify}
 
 <p style="text-align:center">. . .</p>
 
-<div>
-
+<div style="text-align: justify">
 <p><i>Três sujeitos bebem em um cais. A maresia e o aroma perfumadamente fétido de vida em decomposição, característico da região — e impulsionados pelo calor da tarde — se encontravam em perfeita harmonia com o gosto punitivo da malvada. Como se, parando para prestar atenção, o rasgo incendiário que fazia no seu trajeto pela garganta proporcionasse toda a adstringência de um Camembert, ou um Gruyére, nesse queijos e vinhos impromptu em que o vinho selecionado da vez seria as reclamações de Jurandir.</i></p>
 
 <p><b>JURANDIR</b>: Aí quando fui abrir o, o pacote lá, tinham quantos? Três, sim, não cinco, como o filho da puta falou. Aí eu já como, peguei o telefone e na mes–</p>
@@ -55,11 +53,10 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 <p><b>JURANDIR</b>: Eu tô mijando em cima do Estado Brasileiro!</p>
 
 </div>
-{: .text-justify}
 
-<div>
 <p style="text-align:center">. . .</p>
 
+<div style="text-align: justify">
 <p><b>MENINA</b>: Pai, o que é impulsão?</p>
 
 <p><b>PAI</b>: Impulsão? Hm, pra explicar isso você precisa saber o que é impulso. Você sabe o que é impulso?</p>
@@ -85,6 +82,5 @@ Com a outra mão, pressiona uma pantufa manchada contra o rosto, involuntariamen
 <p><b>MÃE</b>: Para com isso e explica direito pra menina.</p>
 
 </div>
-{: .text-justify}
 
 <div><p style="text-align:center">. . .</p></div>
