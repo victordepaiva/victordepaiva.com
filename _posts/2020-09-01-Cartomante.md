@@ -9,42 +9,8 @@ categories: narrativedesign
 
 <div style="text-align:justify">
 <p>⠀</p>
-<p><i>– Mrewhm.</i></p>
-<p>– Já vai, já vai… Segura que tá difícil de – hrmf – abrir… </p>
-<p>Com um nível de concentração que teria feito minhas veias da testa saltarem, finalmente consegui terminar de desenroscar o pote de ração. O cheiro de soja processada e uma dúzia de aditivos químicos subiu pelo ar, para agravar a aflição de Ernesto.</p>
-<p><i>– MWEHHOWMMM.</i></p>
-<p>– Calma, filho! Agora que é a parte difícil…</p>
-<p>O pote estava, como de costume, em uma prateleira na área de serviço; A uns dez segundos da tigelinha de Ernesto, posicionada no chão da cozinha em uma posição estratégica que o permitisse olhar para a varanda pela porta de vidro - sua televisão, desde a instalação do bebedouro dos beija-flores - e que também me permitisse vê-lo comendo enquanto deitado na cama no meu quarto. Ernesto tinha um histórico de muita dificuldade de ganhar peso, devido aos problemas que desenvolveu na rua, e me dava tranquilidade saber quando ele estava comendo.</p>
-<p>Por isso, Ernesto devia estar tendo dificuldade em entender o porquê de ter sua tigela arrastada até a área de serviço. Ao longo da última meia hora, também pensei se não seria mais fácil trazer o pote até a cozinha como de costume, mas desisti depois de múltiplas tentativas em vão de levantar o potinho vazio do chão.</p>
-<p>– Devagar… devagar… </p>
-<p><i>– Mwehm?</i></p>
-<p>– Miau, filho. Deixa o papai fazer uma pausa rapidinho.</p>
-<p>Parei e “respirei” fundo. Minhas mãos e braços não doíam do esforço, mas me sentia como se tivesse corrido uma meia maratona.</p>
-<p>– Terminar logo com isso pra você papar e o papai poder voltar a descansar, tudo bem? Imagino que a tia Leda já já deve estar dando as caras, né?</p>
-<p><i>– Mew.</i></p>
-<p>– Não faz essa cara que tia Leda te ama. Quem você acha que te deu aquela fonte de água cara e chique que você usou só duas vezes, hein?</p>
-<p><i>– Rrr.</i></p>
-<p>– Pois ela não vai ficar três dias sem receber foto sua não. Chama até polícia, vai vendo.</p>
-<p>Recuperando o fôlego, me ergui novamente, determinado a fazer bom uso do tempo restante. Levantar o pote? Completamente impossível. Mas empurrando um pouquinho ele devia cair no chão da área. Devia ter pensado nisso logo antes de ter trazido a tigela. Depois Leda arruma.</p>
-<p><i>– MnerhweAHWM!</i></p>
-<p>– Vou gritar junto também pra ver se ajuda - MIAU, MIAU! Eita, parece que não adianta, né? Parece que gritar pro céu não resolve nossos problemas, né filho?</p>
-<p>Ernesto me fitou com olhos de reprovação como que entendesse Português.</p>
-<p>– … Senti sua falta, filho.</p>
-<p>O pote de ração, cambaleando na beira da prateleira, tombou ao chão, espalhando centenas de grãozinhos marrons pelo azulejo branco sujo da área de serviço. Ernesto, imediatamente, se apressou a devorar os que caíram mais perto de si, em mordidas crocantes e barulhinhos de mastigação.</p>
-<p>– Come com calma, cara. Vai vomitar.</p>
-<p>Olhei-o com ternura. Suas manchinhas pelo torso, sua cauda listrada. O pé esquerdo de trás, que não tinha um dedinho. Ernesto podia não ser modelo de propaganda de pet shop, mas aos meus olhos era o ajuntado de pelo sem neurônios mais lindo que existia.</p>
-<p><i>— O contrato foi atendido.</i></p>
-<p>Olhei para trás, e me lembrei da presença do meu acompanhante, que colocava seus braços finos, compridos e escuros ao redor do meu torso, se enveredando como uma <i>boa constritora</i>.</p>
-<p>– Não acha que eu devia ficar de olho mais um tempo? No caso dele, sei lá, esquecer que a comida tá aqui e ir procurar lá na cozinha?</p>
-<p>Mirei sua cabeça, entortada e encostada no teto, no fundo dos seus olhos ocos e arregalados. Sua boca, seca e sem lábios, moveu-se lentamente, e no fundo de minha cabeça ouvi sua resposta:</p>
-<p><i>– O contrato foi atendido.</i></p>
-<p>– Bleh. Chatão.</p>
-<p><i>– Retorne.</i></p>
-<p>– Tô ligado, tô ligado. Beijo, Ernesto, se comporta.</p>
-<p>Por memória muscular, fui fazer um carinho em seu lombo, apenas para ver minha mão o atravessando.</p>
-<p>Me levantei, dei um novo suspiro, e voltei para meu quarto, acompanhado de meu observador. Me pus ao pé da cama, e internalizei, com bastante sobriedade, o que via na minha frente.</p>
-<p>Um homem, ou o que restava dele, debaixo do lençol. Sua pele esticada e amarelo-esverdeada, a boca escancarada e os olhos entreabertos. Centenas de pequenas larvinhas, devorando seus tecidos moles, entrando e saindo de seu nariz. Ao centro da cama, uma mancha escura com odor de fezes e amônia. O ventilador de teto, ainda girando, espalhava o cheiro azedo pelo quarto.</p>
-<p>Meu corpo. Pelo menos Ernesto ainda tinha ração.</p>
-</div>
-<p>⠀</p>
+<p> <b>Cartomante – Fortune Teller</b> é uma <i>Visual Novel</i> de comédia e realismo fantástico sobre adivinhação para clientes excêntricos com cartas de Tarô.</p>
+<p> <b> <a href= "https://store.steampowered.com/app/1361760/Cartomante/"> Link da Steam </a> </b> </p>
+<p> <b> <a href= "https://garoa.itch.io/cartomante> Link do itch.io </a> </b> </p>
+<p> <b> <a href= "https://www.nuuvem.com/br-pt/item/cartomante"> Link da Nuuvem </a> </b> </p>
 <p style="text-align:center"> ╦ </p>
