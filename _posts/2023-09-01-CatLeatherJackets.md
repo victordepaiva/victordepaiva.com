@@ -2,7 +2,7 @@
 layout: posts
 title: 'Cat Leather Jackets'
 published: true
-date: '2023-27-08 12:00:00 -0300'
+date: '2023-08-27 12:00:00 -0300'
 categories: narrativedesign
 ---
 
