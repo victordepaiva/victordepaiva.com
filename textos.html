@@ -8,7 +8,7 @@ url: /textos/
 <ul>
   {% for post in site.categories.conto %}
     {% if post.url %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url }}">{{ post.title }} ({{ post.year.name }})|| {{post.read_time}} </a></li>
     {% endif %}
   {% endfor %}
 </ul>
