@@ -1,8 +1,9 @@
 ---
 layout: posts
-title: 'Cartomante – Fortune Teller (2020)'
+title: 'Cartomante – Fortune Teller'
 published: true
 date: '2020-09-01 12:00:00 -0300'
+published_year: '2020'
 categories: jogos
 ---
 

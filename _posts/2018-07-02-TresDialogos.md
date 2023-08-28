@@ -4,6 +4,7 @@ title: 'Três diálogos'
 published: true
 date: '2018-07-02 12:00:00 -0300'
 categories: dialogo
+published_year: '2018'
 ---
 
 <div style="text-align: justify">

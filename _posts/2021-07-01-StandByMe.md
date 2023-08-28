@@ -1,9 +1,9 @@
 ---
 layout: posts
-title: 'Stand by Me (2021)'
+title: 'Stand by Me'
 published: true
 date: '2021-07-01 12:00:00 -0300'
-published_year: '2023'
+published_year: '2021'
 categories: jogos
 ---
 
