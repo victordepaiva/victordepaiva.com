@@ -11,7 +11,8 @@ url: /textos/
 	<li>
 		<a href="{{ post.url }}">{{ post.title }}</a> ({{ post.published_year}}) ||
 			{% assign words = post.content | strip_html | number_of_words %}
-			<span class="page__meta-readtime">
+			<p style="font-size:8px"> <i>
+				<span class="page__meta-readtime">
 				{% if words < site.words_per_minute %}
 					{{ site.data.ui-text[site.locale].less_than | default: "less than" }} 1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
 				{% elsif words == site.words_per_minute %}
@@ -19,7 +20,8 @@ url: /textos/
 				{% else %}
 					{{ words | divided_by: site.words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
 				{% endif %}
-			</span>
+				</span>
+			</i> </p>
 	</li>
     {% endif %}
   {% endfor %}
