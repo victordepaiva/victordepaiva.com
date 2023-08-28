@@ -3,7 +3,7 @@ layout: posts
 title: 'Cartomante – Fortune Teller'
 published: true
 date: '2020-09-01 12:00:00 -0300'
-categories: narrativedesign
+categories: jogos
 ---
 
 

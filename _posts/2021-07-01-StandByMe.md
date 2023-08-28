@@ -3,7 +3,7 @@ layout: posts
 title: 'Stand by Me'
 published: true
 date: '2021-07-01 12:00:00 -0300'
-categories: narrativedesign
+categories: jogos
 ---
 
 
