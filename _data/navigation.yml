@@ -2,22 +2,22 @@
 main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Arquivo"
-    url: /archive/
-  - title: "Design de Narrativa"
-    url: /narrativedesign/
+  - title: "Jogos"
+    url: /jogos/
+  - title: "Textos"
+    url: /textos/  
   # - title: "Tags"
   #  url: /tags/
   # - title: "Pages"
   #  url: /page-archive/
   # - title: "Collections"
   #  url: /collection-archive/
-  - title: "Textos"
-    url: /textos/
-  - title: "Jogos"
+  - title: "itch.io"
     url: https://otakumaromba.itch.io
   - title: "Links"
     url: https://linktr.ee/victordepaiva
+  - title: "Arquivo"
+    url: /archive/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
