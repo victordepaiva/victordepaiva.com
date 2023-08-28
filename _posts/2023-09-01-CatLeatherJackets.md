@@ -9,6 +9,8 @@ categories: narrativedesign
 
 <div style="text-align:justify">
 <p>⠀</p>
+<p> <img src="/assets/posts-images/clj-images/catleatherjackets_characters_banner.png" alt="Ilustração de Dave com um trompete, Ian na bateria e Priya com uma guitarra."> </p>
+<p> </p>
 <p> <b>Cat Leather Jackets</b> é uma <i>Visual Novel</i> musical sobre uma banda de punk rock adolescente.</p>
 <p> <b> <a href= "https://store.steampowered.com/app/1673830/Cat_Leather_Jackets/"> Link da Steam </a> </b> </p>
 <p> <b> <a href= "https://diogoh3x.itch.io/clj"> Link do itch.io </a> </b> </p>
