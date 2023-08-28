@@ -8,16 +8,19 @@ url: /textos/
 <ul>
   {% for post in site.categories.conto %}
     {% if post.url %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.published_year}})</li>
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a> ({{ post.published_year}}) || {{post.read_time}} 
+	</li>
     {% endif %}
   {% endfor %}
 </ul>
-
 <p><h2>Diálogos</h2></p>
 <ul>
   {% for post in site.categories.dialogo %}
     {% if post.url %}
-	<li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.published_year}})</li>
+	<li><a href="{{ post.url
+		}}">{{ post.title }}</a> ({{ post.published_year}})
+	</li>
     {% endif %}
   {% endfor %}
 </ul>
