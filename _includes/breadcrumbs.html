@@ -16,12 +16,34 @@
     </li>
     <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
     
+   <!-- Forçar o breadcrumb da coleção -->
     {% if post_type != "" %}
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="{{ post_path | relative_url }}" itemprop="item"><span itemprop="name">{{ post_type }}</span></a>
+        <a href="{{ post_path | relative_url }}" itemprop="item">
+          <span itemprop="name">{{ post_type }}</span>
+        </a>
         <meta itemprop="position" content="2" />
       </li>
       <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+    {% else %}
+      <!-- Fallback for other collections or default case -->
+      {% if page.url contains '/textos/' %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/textos' | relative_url }}" itemprop="item">
+            <span itemprop="name">Textos</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% elsif page.url contains '/jogos/' %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/jogos' | relative_url }}" itemprop="item">
+            <span itemprop="name">Jogos</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% endif %}
     {% endif %}
 
     <li class="current">{{ page.title }}</li>
