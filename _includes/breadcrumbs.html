@@ -1,17 +1,3 @@
-{% case site.category_archive.type %}
-  {% when "liquid" %}
-    {% assign path_type = "#" %}
-  {% when "jekyll-archives" %}
-    {% assign path_type = nil %}
-{% endcase %}
-
-{% if page.collection != 'posts' %}
-  {% assign path_type = nil %}
-  {% assign crumb_path = '/' %}
-{% else %}
-  {% assign crumb_path = site.category_archive.path %}
-{% endif %}
-
 {% assign post_type = "" %}
 {% assign post_path = "" %}
 {% if page.collection == "textos" %}
