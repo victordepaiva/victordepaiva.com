@@ -42,3 +42,15 @@ body {
     font-size: 18px;
   }
 }
+
+/* Fonte Padrão */
+body.global-font-family {
+  font-family: var(--global-font-family);
+}
+
+/* Fonte Open Dyslexic */
+@import url('https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap');
+
+body.open-dyslexic {
+  font-family: 'Open Dyslexic', sans-serif;
+}
