@@ -12,3 +12,7 @@
 #site-header.fixed {
   top: 0;
 }
+
+.initial-content {
+  padding-top: 60px; /* Ajuste este valor conforme a altura do seu header */
+}
