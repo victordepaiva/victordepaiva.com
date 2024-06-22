@@ -4,7 +4,11 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #050814 !important
+  background-color: #050814 !important;
   transition: top 0.3s;
   z-index: 1000; /* Certifique-se de que o header esteja acima de outros elementos */
+}
+
+#site-header.fixed {
+  top: 0;
 }
