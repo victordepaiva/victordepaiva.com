@@ -20,6 +20,8 @@
     {% endif %}
     
     <!-- The if block above only adds the styles to a post when it has a 'style' variable in its front-matter.  -->
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     
   </head>
 
@@ -46,5 +48,8 @@
 
     {% include scripts.html %}
 
+    <!-- Include custom JavaScript -->
+    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+    
   </body>
 </html>
