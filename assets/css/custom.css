@@ -49,7 +49,10 @@ body.global-font-family {
 }
 
 /* Fonte Open Dyslexic */
-@import url('https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap');
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url('/assets/fonts/OpenDyslexic-Regular.otf') format('truetype');
+}
 
 body.open-dyslexic {
   font-family: 'Open Dyslexic', sans-serif;
