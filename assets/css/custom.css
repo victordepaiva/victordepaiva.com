@@ -1,0 +1,10 @@
+/* assets/css/custom.css */
+#site-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white; /* Ajuste conforme necessário */
+  transition: top 0.3s;
+  z-index: 1000; /* Certifique-se de que o header esteja acima de outros elementos */
+}
