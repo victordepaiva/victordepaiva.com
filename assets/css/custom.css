@@ -26,6 +26,19 @@ body {
   color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
-  font-size: 14px;
   z-index: 1001; /* Certifique-se de que o indicador esteja acima de outros elementos */
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+  #scroll-percentage {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para dispositivos maiores, como PCs */
+@media (min-width: 768px) {
+  #scroll-percentage {
+    font-size: 18px;
+  }
 }
