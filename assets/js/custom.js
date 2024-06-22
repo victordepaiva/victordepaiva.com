@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let scrollPercent = (scrollTop / docHeight) * 100;
     scrollPercentage.textContent = Math.round(scrollPercent) + '%';
     
-    
     if (scrollTop > lastScrollTop) {
       // Rolando para baixo
       header.classList.remove('fixed');
@@ -26,5 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
       header.style.top = '0';
     }
     lastScrollTop = scrollTop;
+  });
+
+  // Adicionar event listeners para trocar a fonte do site
+  document.getElementById('font1').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.body.classList.remove('open-dyslexic');
+    document.body.classList.add('global-font-family');
+
+  });
+
+  document.getElementById('font2').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.body.classList.remove('global-font-family');
+    document.body.classList.add('open-dyslexic');
   });
 });
