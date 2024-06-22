@@ -1,10 +1,12 @@
 ---
 layout: posts
 title: 'Cartomante – Fortune Teller'
-published: true
-date: '2020-09-01 12:00:00 -0300'
-published_year: '2020'
+collection: jogos
 categories: jogos
+published: true
+published_year: '2020'
+date: '2020-09-01 12:00:00 -0300'
+permalink: /jogos/cartomante/
 ---
 
 
