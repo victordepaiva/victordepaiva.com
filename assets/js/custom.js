@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scrollTop > lastScrollTop) {
       // Rolando para baixo
       header.classList.remove('fixed');
-      
+      header.style.top = '-100px'; // Ajuste conforme a altura do seu header
     } else {
       // Rolando para cima
       header.classList.add('fixed');
