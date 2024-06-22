@@ -13,6 +13,6 @@
   top: 0;
 }
 
-.initial-content {
+body {
   padding-top: 60px; /* Ajuste este valor conforme a altura do seu header */
 }
