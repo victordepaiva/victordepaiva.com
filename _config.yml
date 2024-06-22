@@ -212,6 +212,14 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+collections:
+  textos:
+    output: true
+    permalink: /textos/:title/
+  jogos:
+    output: true
+    permalink: /jogos/:title/
+
 
 # Sass/SCSS
 sass:
@@ -220,7 +228,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:collections/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # GMT-03
@@ -255,7 +263,7 @@ whitelist:
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
-  path: /categories/
+  path: /collections/
 tag_archive:
   type: liquid
   path: /tags/
