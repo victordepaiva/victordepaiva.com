@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: 'Cat Leather Jackets'
+title: '🎸 Cat Leather Jackets'
 collection: jogos
 categories: jogos
 published: true
