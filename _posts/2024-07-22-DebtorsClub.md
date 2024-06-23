@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Debtor's Club"
+title: "💰 Debtor's Club"
 collection: jogos
 categories: jogos
 published: true
