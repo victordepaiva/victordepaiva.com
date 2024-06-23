@@ -1,22 +1,39 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include header.html %}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts }}</h3> 
+  <main id="main" class="site-main" role="main">
+    <section class="home-section">
+      <div class="container">
+        <!-- Minibio -->
+        <div class="minibio">
+          <p>Designer de narrativa, roteirista, produtor e game designer, fundador da Garoa Studios. 💼➕ GDP UFRJ, ACJogos-RJ, Caramelo Games, Meca Games.</p>
+        </div>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+        <!-- Links de Navegação -->
+          <p> <a href="{{ '/jogos/' | relative_url }}">Jogos</a> | <a href="{{ '/textos/' | relative_url }}">Textos</a></p>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-</div>
+        <!-- Contato e Links Pessoais -->
+        <div class="contact">
+          <p>Email: <a href="mailto:victordepaiva.rio@gmail.com">victordepaiva.rio@gmail.com</a> | Telegram: <a href="https://t.me/victordepaiva">victordepaiva.rio@gmail.com</a> </p>
+          <p>
+            <a href="https://twitter.com/otakumaromba" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/in/victordepaiva/" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-{% include paginator.html %}
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+</html>
