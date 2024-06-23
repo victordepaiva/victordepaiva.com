@@ -1,12 +1,12 @@
 ---
 layout: posts
-title: 'Debtor's Club'
+title: "Debtor's Club"
 collection: jogos
 categories: jogos
 published: true
 published_year: '2024'
-date: '2024-06-21 12:00:00 -0300'
-permalink: /jogos/debtorsclub/
+date: '2024-05-01 12:00:00 -0300'
+permalink: /jogos/astropig/
 ---
 
 
