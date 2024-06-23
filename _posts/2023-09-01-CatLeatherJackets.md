@@ -18,7 +18,7 @@ permalink: /jogos/catleatherjackets/
 <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1673830/Cat_Leather_Jackets/"> Página da Steam </a> </b> || <b> <a href= "https://diogoh3x.itch.io/clj"> Página do itch.io </a> </b> || <b> <a href= "https://www.nuuvem.com/br-en/item/cat-leather-jackets"> Página da Nuuvem </a> </b> </p>
 <ul>
   <li><strong>Lançamento:</strong> 1º de Dezembro de 2023</li>
-  <li><strong>Word count:</strong> ~22.000 Inglês + Brasileiro</li>
+  <li><strong>Word count:</strong> ~22.000 (Inglês + Brasileiro)</li>
 </ul>
 <p> </p>
 <p> Jogo feito por <a href= "https://twitter.com/diogoh3x">@diogoh3x</a> (conceito original, músicas e programação) em parceria com a <a href= "http://garoastudios.com">Garoa Studios</a> (produção, publicação, narrativa, QA e marketing) e <a href= "https://kuating.artstation.com">Kuating</a> (arte).</p>
