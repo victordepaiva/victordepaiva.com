@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: 'Stand by Me'
+title: '✨ Stand by Me'
 collection: jogos
 categories: jogos
 published: true
