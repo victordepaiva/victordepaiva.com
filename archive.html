@@ -2,10 +2,11 @@
 layout: archive
 title: '📂 Arquivo'
 url: /arquivo/
+permalink: /arquivo/
 ---
 
-{{ content }}
-
+<div>
+  
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts }}</h3> 
 
 {% if paginator %}
@@ -23,8 +24,7 @@ url: /arquivo/
 
 {% include paginator.html %}
 
-
-
+</div>
 
 
 <ul class="taxonomy__index">
