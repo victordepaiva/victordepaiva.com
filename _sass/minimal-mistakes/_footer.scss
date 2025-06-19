@@ -83,3 +83,28 @@
     }
   }
 }
+
+.page__footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-left {
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
+.footer-right {
+  flex: 1 1 auto;
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-copyright {
+  font-size: 95%;
+  color: darken($muted-text-color, 10%);
+}

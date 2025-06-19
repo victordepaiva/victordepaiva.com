@@ -48,6 +48,24 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+
+        <div style="color:red; font-size:0.9em; text-align:center;">DEBUG: page.categories = {{ page.categories | inspect }}</div>
+        <div class="post-end-links" style="text-align:center; margin-top: 2em;">
+          <a href="#page-title" class="back-to-top" style="display:block; margin-bottom: 1em;">Voltar para o topo &uarr;</a>
+          {% assign cat = page.categories[0] %}
+          {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' and 'p.published != false' | sort: 'date' %}
+          {% assign prev_post = nil %}
+          {% for p in posts_in_cat %}
+            {% if p.url == page.url %}
+              {% break %}
+            {% endif %}
+            {% assign prev_post = p %}
+          {% endfor %}
+          {% if prev_post == nil %}
+            {% assign prev_post = posts_in_cat | last %}
+          {% endif %}
+          <a href="{{ prev_post.url | relative_url }}" style="display:block;">Leia também: {{ prev_post.title }}</a>
+        </div>
       </section>
 
       <footer class="page__meta">

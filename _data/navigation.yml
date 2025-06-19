@@ -16,8 +16,8 @@ main:
     url: https://otakumaromba.itch.io
   - title: "🔗 Links"
     url: https://linktr.ee/victordepaiva
-  - title: "📂 Arquivo"
-    url: /arquivo/
+  # - title: "📂 Arquivo"
+  #   url: /arquivo/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

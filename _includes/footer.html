@@ -1,21 +1,42 @@
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-
-    {% if site.footer.links %}
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+<div class="page__footer-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div class="footer-left">
+    <img src="/assets/drill_white_horizontal_transparent.png" alt="Pierce the Heavens" width="40" height="40">
+    <div class="font-switcher" style="display: inline-block; margin-left: 10px;">
+      Fonte do texto corrido:
+      <a href="#" id="font1">Padrão</a> |
+      <a href="#" id="font2">OpenDyslexic</a>
+    </div>
+  </div>
+  <div class="footer-right">
+    <div class="page__footer-follow">
+      <ul class="social-icons">
+        {% if site.data.ui-text[site.locale].follow_label %}
+          <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
         {% endif %}
-      {% endfor %}
-    {% endif %}
 
-    {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endunless %}
-  </ul>
+        {% if site.footer.links %}
+          {% for link in site.footer.links %}
+            {% if link.label and link.url %}
+              <li>
+                <a href="{{ link.url }}" rel="nofollow noopener noreferrer" target="_blank">
+                  {% if link.icon contains '.svg' %}
+                    <img src="{{ link.icon }}" alt="{{ link.label }} icon" style="width:1.25em; height:1.25em; vertical-align:middle; margin-right:0.3em;" />
+                  {% else %}
+                    <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>
+                  {% endif %}
+                  {{ link.label }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% unless site.atom_feed.hide %}
+          <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+        {% endunless %}
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright custom-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>

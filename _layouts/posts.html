@@ -6,6 +6,24 @@ layout: archive
 
 {{ content }}
 
+<div class="post-end-links" style="margin-top: 2em;">
+  <hr style="max-width: 300px; margin: 2em auto 1.5em auto; border: none; border-top: 1.5px solid #ccc;" />
+  <div><a href="#page-title" class="back-to-top">Voltar para o topo &uarr;</a></div>
+  {% assign cat = page.categories[0] %}
+  {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | sort: 'date' %}
+  {% assign prev_post = nil %}
+  {% for p in posts_in_cat %}
+    {% if p.url == page.url %}
+      {% break %}
+    {% endif %}
+    {% assign prev_post = p %}
+  {% endfor %}
+  {% if prev_post == nil %}
+    {% assign prev_post = posts_in_cat | last %}
+  {% endif %}
+  <div><a href="{{ prev_post.url | relative_url }}" class="back-to-top">Leia também: {{ prev_post.title }}</a></div>
+</div>
+
 
 <!--
 <ul class="taxonomy__index">

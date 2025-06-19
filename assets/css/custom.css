@@ -45,6 +45,7 @@ body {
 
 /* Fonte Padrão */
 body.global-font-family {
+  --global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-family: var(--global-font-family);
 }
 
@@ -54,6 +55,106 @@ body.global-font-family {
   src: url('/assets/fonts/OpenDyslexic-Regular.otf') format('truetype');
 }
 
+body.open-dyslexic, 
+body.open-dyslexic *:not(.fa):not(.fab):not(.fas):not(.far):not(.fal):not(.svg-inline--fa):not(.emoji) {
+  font-family: 'Open Dyslexic', sans-serif !important;
+}
+
+body.open-dyslexic p,
+body.open-dyslexic li,
+body.open-dyslexic span,
+body.open-dyslexic a,
+body.open-dyslexic h1,
+body.open-dyslexic h2,
+body.open-dyslexic h3,
+body.open-dyslexic h4,
+body.open-dyslexic h5,
+body.open-dyslexic h6,
+body.open-dyslexic blockquote,
+body.open-dyslexic dt,
+body.open-dyslexic dd,
+body.open-dyslexic figcaption,
+body.open-dyslexic label,
+body.open-dyslexic pre,
+body.open-dyslexic code {
+  transform: scale(0.95);
+  transform-origin: left top;
+}
+
 body.open-dyslexic {
-  font-family: 'Open Dyslexic', sans-serif;
+  font-size: 95%;
+}
+
+/* Underline animation for all links on hover, like nav bar */
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px; /* More breathing room below text */
+  height: 4px;
+  background: #00adb5; /* Cyan nav bar color */
+  width: 100%;
+  transform: scaleX(0) translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+a:hover:before, a:focus:before {
+  transform: scaleX(1);
+}
+
+/* Center .back-to-top links in post-end-links */
+.post-end-links .back-to-top {
+  text-align: center;
+  display: inline-block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-end-links {
+  text-align: center;
+}
+
+/* Remove default white underline from footer links on hover, keep only cyan underline */
+.page__footer a:hover, .page__footer a:focus {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.page__footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.footer-left {
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+.footer-right {
+  flex: 1 1 auto;
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 600px) {
+  .page__footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-right {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+.custom-copyright {
+  font-size: 70%;
+  color: #b0b0b0;
 }
