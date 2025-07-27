@@ -6,7 +6,7 @@ categories: jogos
 published: true
 published_year: '2020'
 date: '2020-09-01 12:00:00 -0300'
-permalink: /jogos/cartomante/
+permalink: /games/cartomante/
 ---
 
 

@@ -1,0 +1,27 @@
+---
+layout: category
+title: '📝 Non-fiction'
+url: /nonfiction/
+---
+
+<p><h2>Columns</h2></p>
+<ul>
+  {% for post in site.categories.nonfiction %}
+    {% if post.url %}
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a> ({{ post.published_year}}) 
+			{% assign words = post.content | strip_html | number_of_words %}
+			<span style="font-size:9px" class="page__meta-readtime">
+				<i class="far fa-clock" aria-hidden="true"></i>
+				{% if words < site.words_per_minute %}
+					{{ site.data.ui-text[site.locale].less_than | default: "less than" }} 1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+				{% elsif words == site.words_per_minute %}
+					1	{{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+				{% else %}
+					{{ words | divided_by: site.words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+				{% endif %}
+			</span>
+	</li>
+    {% endif %}
+  {% endfor %}
+</ul> 

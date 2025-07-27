@@ -6,7 +6,7 @@ categories: jogos
 published: true
 published_year: '2023'
 date: '2023-08-27 12:00:00 -0300'
-permalink: /jogos/catleatherjackets/
+permalink: /games/catleatherjackets/
 ---
 
 

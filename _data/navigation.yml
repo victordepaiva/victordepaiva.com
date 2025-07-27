@@ -2,10 +2,12 @@
 main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "🎲 Jogos"
-    url: /jogos/
-  - title: "📝 Textos"
-    url: /textos/  
+  - title: "🎲 Games"
+    url: /games/
+  - title: "📖 Fiction"
+    url: /fiction/
+  - title: "📝 Non-fiction"
+    url: /nonfiction/  
   # - title: "Tags"
   #  url: /tags/
   # - title: "Pages"
@@ -16,6 +18,12 @@ main:
     url: https://otakumaromba.itch.io
   - title: "🔗 Links"
     url: https://linktr.ee/victordepaiva
+  - title: "|"
+    url: "#"
+  - title: "About"
+    url: /about/
+  - title: "Now"
+    url: /now/
   # - title: "📂 Arquivo"
   #   url: /arquivo/
   # - title: "About"

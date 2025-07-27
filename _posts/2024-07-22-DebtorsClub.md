@@ -6,7 +6,7 @@ categories: jogos
 published: true
 published_year: '2024'
 date: '2024-05-01 12:00:00 -0300'
-permalink: /jogos/debtorsclub/
+permalink: /games/debtorsclub/
 ---
 
 

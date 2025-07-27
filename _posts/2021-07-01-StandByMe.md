@@ -6,7 +6,7 @@ categories: jogos
 published: true
 published_year: '2021'
 date: '2021-07-01 12:00:00 -0300'
-permalink: /jogos/standbyme/
+permalink: /games/standbyme/
 ---
 
 <div style="text-align:justify">

@@ -88,7 +88,7 @@ body.open-dyslexic {
 /* Underline animation for all links on hover, like nav bar */
 a {
   position: relative;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:before {
@@ -106,6 +106,16 @@ a:before {
 
 a:hover:before, a:focus:before {
   transform: scaleX(1);
+}
+
+/* Override theme's underline on hover */
+a:hover {
+  text-decoration: none !important;
+}
+
+/* Specifically override page content links */
+.page__content a:hover {
+  text-decoration: none !important;
 }
 
 /* Center .back-to-top links in post-end-links */

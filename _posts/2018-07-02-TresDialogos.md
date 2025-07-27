@@ -6,7 +6,7 @@ categories: dialogo
 published: true
 published_year: '2018'
 date: '2018-07-02 12:00:00 -0300'
-permalink: /textos/tresdialogos/
+permalink: /fiction/tresdialogos/
 ---
 
 <div style="text-align: justify">
