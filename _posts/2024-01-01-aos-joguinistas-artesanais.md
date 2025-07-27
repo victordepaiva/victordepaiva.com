@@ -3,6 +3,7 @@ layout: posts
 title: 'Aos Joguinistas Artesanais'
 collection: textos
 categories: nonfiction
+tags: columns
 published: true
 published_year: '2025'
 date: '2025-07-22 12:00:00 -0300'

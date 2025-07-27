@@ -3,6 +3,7 @@ layout: posts
 title: 'De Jogos Artesanais'
 collection: textos
 categories: nonfiction
+tags: columns
 published: true
 published_year: '2025'
 date: '2025-02-13 12:00:00 -0300'
@@ -14,7 +15,7 @@ permalink: /nonfiction/de-jogos-artesanais/
 
 <h2>Ou <i>O Hobby, a Profissão, e a Engenharia Naval</i></h2>
 
-<p><i>Artigo originalmente publicado em 13 de Fevereiro de 2025 no <a href="https://www.controlesvoadores.com.br/post/sobre-jogos-artesanais">Controles Voadores</a>.</i></p>
+<p><i>Artigo originalmente publicado em 3 de Fevereiro de 2025 no <a href="https://www.controlesvoadores.com.br/post/sobre-jogos-artesanais">Controles Voadores</a>.</i></p>
 
 <p></p>
 <p></p>

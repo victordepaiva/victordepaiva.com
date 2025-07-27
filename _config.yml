@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Victor de Paiva"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Victor de Paiva"
@@ -106,8 +106,8 @@ analytics:
 author:
   name             : "Victor de Paiva"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Escritor, produtor e designer de jogos"
-  location         : "Rio de Janeiro"
+  bio              : ""
+  location         : ""
   email            :
   links:
     - label: "Email"
