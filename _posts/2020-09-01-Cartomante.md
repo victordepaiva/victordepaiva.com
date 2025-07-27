@@ -2,7 +2,7 @@
 layout: posts
 title: '🔮 Cartomante – Fortune Teller'
 collection: jogos
-categories: jogos
+categories: released-titles
 published: true
 published_year: '2020'
 date: '2020-09-01 12:00:00 -0300'

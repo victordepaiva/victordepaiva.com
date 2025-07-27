@@ -2,7 +2,7 @@
 layout: posts
 title: '🎸 Cat Leather Jackets'
 collection: jogos
-categories: jogos
+categories: released-titles
 published: true
 published_year: '2023'
 date: '2023-08-27 12:00:00 -0300'

@@ -2,7 +2,7 @@
 layout: posts
 title: '🥁 RhythMania'
 collection: jogos
-categories: jogos
+categories: current-projects
 published: true
 published_year: '2024'
 date: '2024-01-01 12:00:00 -0300'

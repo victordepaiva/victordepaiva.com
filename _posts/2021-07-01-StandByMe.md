@@ -2,7 +2,7 @@
 layout: posts
 title: '✨ Stand by Me'
 collection: jogos
-categories: jogos
+categories: released-titles
 published: true
 published_year: '2021'
 date: '2021-07-01 12:00:00 -0300'

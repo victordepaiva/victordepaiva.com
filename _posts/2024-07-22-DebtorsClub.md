@@ -2,7 +2,7 @@
 layout: posts
 title: "💰 Debtor's Club"
 collection: jogos
-categories: jogos
+categories: released-titles
 published: true
 published_year: '2024'
 date: '2024-05-01 12:00:00 -0300'
