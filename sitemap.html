@@ -1,0 +1,183 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Site Map - Victor de Paiva</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .stats {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+            min-width: 120px;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        .url {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .url:hover {
+            text-decoration: underline;
+        }
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .stat {
+                min-width: auto;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Site Map - Victor de Paiva</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">{{ site.posts.size | plus: site.pages.size }}</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">{{ site.posts.size }}</div>
+                <div class="stat-label">Posts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">{{ site.pages.size }}</div>
+                <div class="stat-label">Pages</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Last Modified</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in site.posts %}
+                    {% unless post.draft %}
+                        <tr>
+                            <td>
+                                <a href="{{ site.url }}{{ post.url }}" class="url">
+                                    {{ site.url }}{{ post.url }}
+                                </a>
+                            </td>
+                            <td class="date">
+                                {{ post.date | date_to_xmlschema }}
+                            </td>
+                            <td>Post</td>
+                        </tr>
+                    {% endunless %}
+                {% endfor %}
+                
+                {% for page in site.pages %}
+                    {% unless page.url contains '/404' or page.url contains '/feed' or page.url contains '/sitemap' %}
+                        <tr>
+                            <td>
+                                <a href="{{ site.url }}{{ page.url }}" class="url">
+                                    {{ site.url }}{{ page.url }}
+                                </a>
+                            </td>
+                            <td class="date">
+                                {% if page.last_modified_at %}
+                                    {{ page.last_modified_at | date_to_xmlschema }}
+                                {% else %}
+                                    No date
+                                {% endif %}
+                            </td>
+                            <td>Page</td>
+                        </tr>
+                    {% endunless %}
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <div class="footer">
+            <p>Generated by Jekyll | Custom sitemap excludes drafts</p>
+            <p>Last updated: {{ site.time | date_to_xmlschema }}</p>
+        </div>
+    </div>
+</body>
+</html> 

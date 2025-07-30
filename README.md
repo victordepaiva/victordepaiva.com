@@ -7,6 +7,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 ### Core Jekyll Files
 - `_config.yml` - Site configuration and settings
 - `_posts/` - Blog posts in Markdown format (YYYY-MM-DD-title.md)
+- `_drafts/` - Draft posts (not published, preview with --drafts flag)
 - `_pages/` - Content pages in HTML format
 - `_layouts/` - HTML templates for different page types
 - `_includes/` - Reusable HTML components and snippets
@@ -65,9 +66,11 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - Liquid templates in `_layouts/` and `_includes/` are processed
 - Static assets are copied to `_site/` directory
 - Site is generated in `_site/` directory
+- Custom sitemap.xml is generated (excludes drafts)
 
 ### File Organization
 - **Posts**: Stored in `_posts/` with YYYY-MM-DD-title.md naming
+- **Drafts**: Work-in-progress posts in `_drafts/` (no date required)
 - **Pages**: HTML files in `_pages/` directory (except homepage in root)
 - **Images**: Organized by type in `assets/images/` (posts, icons, branding)
 - **Styles**: Custom CSS in `assets/css/custom.css`
@@ -79,6 +82,12 @@ This site is deployed via Netlify. The build process:
 1. Installs Ruby dependencies via Bundler
 2. Runs `bundle exec jekyll build`
 3. Serves the generated `_site/` directory
+
+### Sitemap
+- Custom sitemap.xml is generated at `/sitemap.xml`
+- Includes all published posts and pages
+- Excludes draft posts and system pages
+- Available at `https://victordepaiva.com/sitemap.xml`
 
 ## Theme Customization
 
@@ -96,6 +105,13 @@ Based on the Minimal Mistakes Jekyll theme with customizations:
 2. Use YYYY-MM-DD-title.md naming convention
 3. Include front matter with title, date, categories, tags
 4. Write content in Markdown format
+
+### Working with Drafts
+1. Create draft files in `_drafts/` directory (no date required)
+2. Add `draft: true` to front matter to exclude from sitemap
+3. Preview drafts with `bundle exec jekyll serve --drafts`
+4. When ready to publish, move file to `_posts/` with proper date
+5. Drafts appear on site only when using `--drafts` flag
 
 ### Adding Pages
 1. Create HTML file in `_pages/` directory
