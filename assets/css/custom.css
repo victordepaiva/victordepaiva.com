@@ -108,6 +108,30 @@ a:hover:before, a:focus:before {
   transform: scaleX(1);
 }
 
+/* Style separators */
+.separator {
+  color: #666;
+  margin: 0 8px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Make navigation separator non-clickable */
+.masthead__menu-item a[href=""] {
+  pointer-events: none;
+  cursor: default;
+  color: #666 !important;
+}
+
+.masthead__menu-item a[href=""]:hover {
+  text-decoration: none !important;
+  background: none !important;
+}
+
+.masthead__menu-item a[href=""]:before {
+  display: none !important;
+}
+
 /* Override theme's underline on hover */
 a:hover {
   text-decoration: none !important;
