@@ -128,12 +128,14 @@ layout: null
         </div>
         
         <table>
-            <thead>
-                <tr>
-                    <th>URL</th>
-                    <th>Last Modified</th>
-                    <th>Type</th>
-                </tr>
+                        <thead>
+              <tr>
+                <th>URL</th>
+                <th>Last Modified</th>
+                <th>Type</th>
+                <th>Change Frequency</th>
+                <th>Priority</th>
+              </tr>
             </thead>
             <tbody>
                 {% for post in site.posts %}
@@ -148,6 +150,8 @@ layout: null
                                 {{ post.date | date_to_xmlschema }}
                             </td>
                             <td>Post</td>
+                            <td>Monthly</td>
+                            <td>0.8</td>
                         </tr>
                     {% endunless %}
                 {% endfor %}
@@ -168,6 +172,8 @@ layout: null
                                 {% endif %}
                             </td>
                             <td>Page</td>
+                            <td>Weekly</td>
+                            <td>{% if page.url == '/' %}1.0{% else %}0.6{% endif %}</td>
                         </tr>
                     {% endunless %}
                 {% endfor %}

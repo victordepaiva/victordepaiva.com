@@ -2,13 +2,14 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
     {% unless post.draft %}
       <url>
         <loc>{{ site.url }}{{ post.url }}</loc>
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
       </url>
     {% endunless %}
   {% endfor %}
@@ -19,6 +20,12 @@ layout: null
         <loc>{{ site.url }}{{ page.url }}</loc>
         {% if page.last_modified_at %}
           <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        <changefreq>weekly</changefreq>
+        {% if page.url == '/' %}
+          <priority>1.0</priority>
+        {% else %}
+          <priority>0.6</priority>
         {% endif %}
       </url>
     {% endunless %}
