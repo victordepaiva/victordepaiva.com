@@ -91,7 +91,7 @@ This site is deployed via Netlify. The build process:
 
 ## Theme Customization
 
-Based on the Minimal Mistakes Jekyll theme with customizations:
+This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme with customizations:
 - Dark skin theme
 - Custom footer with social links
 - OpenDyslexic font accessibility option
