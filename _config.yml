@@ -133,7 +133,7 @@ author:
 footer:
   links:
     - label: "Bluesky"
-      icon: "/assets/bluesky.svg"
+      icon: "/assets/images/icons/bluesky.svg"
       url: "https://bsky.app/profile/victordepaiva.com"
     # - label: "Facebook"
       # icon: "fab fa-fw fa-facebook-square"

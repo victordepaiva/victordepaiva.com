@@ -12,7 +12,7 @@ permalink: /games/catleatherjackets/
 
 <div style="text-align:justify">
 <p>⠀</p>
-<p> <img src="/assets/posts-images/clj-images/catleatherjackets_characters_banner.png" alt="Ilustração de Dave com um trompete, Ian na bateria e Priya com uma guitarra."> </p>
+<p> <img src="/assets/images/posts/clj-images/catleatherjackets_characters_banner.png" alt="Ilustração de Dave com um trompete, Ian na bateria e Priya com uma guitarra."> </p>
 <p> </p>
 <p> <b>Cat Leather Jackets</b> é uma <i>Visual Novel</i> musical sobre uma banda de punk rock adolescente.</p>
 <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1673830/Cat_Leather_Jackets/"> Página da Steam </a> </b> || <b> <a href= "https://diogoh3x.itch.io/clj"> Página do itch.io </a> </b> || <b> <a href= "https://www.nuuvem.com/br-en/item/cat-leather-jackets"> Página da Nuuvem </a> </b> </p>
@@ -23,7 +23,7 @@ permalink: /games/catleatherjackets/
 <p> </p>
 <p> Jogo feito por <a href= "https://twitter.com/diogoh3x">@diogoh3x</a> (conceito original, músicas e programação) em parceria com a <a href= "http://garoastudios.com">Garoa Studios</a> (produção, publicação, narrativa, QA e marketing) e <a href= "https://kuating.artstation.com">Kuating</a> (arte).</p>
 <p> </p>
-<p> <img src="/assets/posts-images/clj-images/priya_bus.gif" alt="Imagem animada de Priya em um ônibus, segurando o celular. No lado esquerdo da imagem, balões de mensagem vão aparecendo, mostrando uma troca de mensagens entre Priya e Ian."> </p>
+<p> <img src="/assets/images/posts/clj-images/priya_bus.gif" alt="Imagem animada de Priya em um ônibus, segurando o celular. No lado esquerdo da imagem, balões de mensagem vão aparecendo, mostrando uma troca de mensagens entre Priya e Ian."> </p>
 <p style="text-align:center"> <b> O Projeto </b> </p>
 <p> Cat Leather Jackets foi originalmente criado e desenvolvido individualmente por diogoh3x até o estabelecimento de parceria com a Garoa. Em cima do <i>briefing</i> dos personagens preexistentes foram estabelecidos novos temas, conceitos, e criou-se uma narrativa original com a aprovação do criador.</p>
 <p> <b>Game Design e Design de Narrativa: </b> </p>

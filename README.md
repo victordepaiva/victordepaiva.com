@@ -27,9 +27,9 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `assets/css/` - Compiled CSS and custom stylesheets
 - `assets/js/` - JavaScript files and libraries
 - `assets/fonts/` - Custom fonts (OpenDyslexic)
-- `assets/posts-images/` - Images used in blog posts
-- `assets/bluesky.svg` - Social media icon
-- `assets/drill_*.png` - Footer branding images
+- `assets/images/posts/` - Images used in blog posts
+- `assets/images/icons/` - Social media and UI icons
+- `assets/images/branding/` - Footer and header branding images
 
 ### Build Configuration
 - `Gemfile` - Ruby dependencies for Jekyll
@@ -69,7 +69,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 ### File Organization
 - **Posts**: Stored in `_posts/` with YYYY-MM-DD-title.md naming
 - **Pages**: HTML files in `_pages/` directory (except homepage in root)
-- **Images**: Organized by post in `assets/posts-images/`
+- **Images**: Organized by type in `assets/images/` (posts, icons, branding)
 - **Styles**: Custom CSS in `assets/css/custom.css`
 - **Scripts**: Custom JavaScript in `assets/js/custom.js`
 
@@ -104,7 +104,10 @@ Based on the Minimal Mistakes Jekyll theme with customizations:
 4. Homepage (`index.html`) must remain in root directory
 
 ### Adding Images
-1. Place images in `assets/posts-images/`
+1. Place images in appropriate `assets/images/` subdirectory:
+   - `posts/` for blog post images
+   - `icons/` for social media and UI icons
+   - `branding/` for header/footer images
 2. Reference using relative paths in posts
 3. Use descriptive alt text for accessibility
 
