@@ -7,20 +7,21 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 ### Core Jekyll Files
 - `_config.yml` - Site configuration and settings
 - `_posts/` - Blog posts in Markdown format (YYYY-MM-DD-title.md)
+- `_pages/` - Content pages in HTML format
 - `_layouts/` - HTML templates for different page types
 - `_includes/` - Reusable HTML components and snippets
 - `_sass/` - SCSS stylesheets and theme customization
 - `_data/` - YAML data files for site content
 
 ### Content Pages
-- `index.html` - Homepage
-- `about.html` - About page
-- `fiction.html` - Fiction writing section
-- `nonfiction.html` - Non-fiction writing section
-- `games.html` - Games section
-- `now.html` - Current status page
-- `archive.html` - Post archive
-- `categories.html` - Category listing
+- `index.html` - Homepage (root directory)
+- `_pages/about.html` - About page
+- `_pages/fiction.html` - Fiction writing section
+- `_pages/nonfiction.html` - Non-fiction writing section
+- `_pages/games.html` - Games section
+- `_pages/now.html` - Current status page
+- `_pages/archive.html` - Post archive
+- `_pages/categories.html` - Category listing
 
 ### Assets
 - `assets/css/` - Compiled CSS and custom stylesheets
@@ -67,7 +68,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 
 ### File Organization
 - **Posts**: Stored in `_posts/` with YYYY-MM-DD-title.md naming
-- **Pages**: HTML files in root directory for main site pages
+- **Pages**: HTML files in `_pages/` directory (except homepage in root)
 - **Images**: Organized by post in `assets/posts-images/`
 - **Styles**: Custom CSS in `assets/css/custom.css`
 - **Scripts**: Custom JavaScript in `assets/js/custom.js`
@@ -97,9 +98,10 @@ Based on the Minimal Mistakes Jekyll theme with customizations:
 4. Write content in Markdown format
 
 ### Adding Pages
-1. Create HTML file in root directory
-2. Include front matter with layout specification
+1. Create HTML file in `_pages/` directory
+2. Include front matter with layout and permalink specification
 3. Use existing layouts or create custom ones
+4. Homepage (`index.html`) must remain in root directory
 
 ### Adding Images
 1. Place images in `assets/posts-images/`
