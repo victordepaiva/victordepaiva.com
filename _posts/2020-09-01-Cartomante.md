@@ -15,7 +15,7 @@ permalink: /games/cartomante/
 <p> <img src="/assets/images/posts/cartomante-images/cartomante_characters_banner.png"> </p>
 <p> <em>Cartomante</em> is a comedy and magical realism visual novel in which you read tarot for eccentric clients.</p>
 
-<p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1361760/Cartomante/"> Steam</a></b> || <b><a href= "https://garoa.itch.io/cartomante">itch.io</a></b> || <b><a href= "https://www.nuuvem.com/br-pt/item/cartomante">Nuuvem</a></b></p>
+<p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1361760/Cartomante/"> Steam</a></b> || <b><a href= "https://garoa.itch.io/cartomante">itch.io</a></b> || <b><a href= "https://www.nuuvem.com/-/item/cartomante-fortune-teller">Nuuvem</a></b></p>
 
 <ul>
   <li><strong>Released:</strong> September 1st 2024</li>
