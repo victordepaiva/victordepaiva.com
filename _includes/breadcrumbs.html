@@ -11,6 +11,9 @@
 {% elsif page.collection == "jogos" %}
   {% assign post_type = "Games" %}
   {% assign post_path = "/games" %}
+{% elsif page.collection == "projects" %}
+  {% assign post_type = "Projects" %}
+  {% assign post_path = "/projects" %}
 {% endif %}
 
 <nav class="breadcrumbs">
@@ -52,6 +55,14 @@
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/games' | relative_url }}" itemprop="item">
             <span itemprop="name">Games</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% elsif page.url contains '/projects/' %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/projects' | relative_url }}" itemprop="item">
+            <span itemprop="name">Projects</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>

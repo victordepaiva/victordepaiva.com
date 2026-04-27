@@ -7,7 +7,9 @@ main:
   - title: "📖 Fiction"
     url: /fiction/
   - title: "📝 Non-fiction"
-    url: /nonfiction/  
+    url: /nonfiction/
+  - title: "🗂️ Projects"
+    url: /projects/
   # - title: "Tags"
   #  url: /tags/
   # - title: "Pages"
