@@ -4,7 +4,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #050814 !important;
+  background-color: #04060e !important;
   transition: top 0.3s;
   z-index: 1000; /* Certifique-se de que o header esteja acima de outros elementos */
 }
@@ -40,6 +40,166 @@ body {
 @media (min-width: 768px) {
   #scroll-percentage {
     font-size: 18px;
+  }
+}
+
+/* Desktop masthead: use a fixed left sidebar instead of the top navigation bar. */
+@media (min-width: 768px) {
+  body {
+    padding-top: 0;
+    padding-left: 15rem;
+  }
+
+  #site-header {
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    right: auto;
+    top: 0 !important;
+    width: 15rem;
+  }
+
+  .masthead {
+    border-bottom: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .masthead__inner-wrap {
+    display: block;
+    height: 100%;
+    max-width: none;
+    padding: 2rem 1.5rem;
+  }
+
+  .masthead__menu,
+  .greedy-nav {
+    height: 100%;
+  }
+
+  .greedy-nav {
+    align-items: stretch;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .greedy-nav .site-title {
+    align-items: center;
+    align-self: flex-start;
+    display: inline-flex;
+    gap: 0.45rem;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .desktop-sidebar-home-icon {
+    display: inline-block !important;
+    height: 1.35rem;
+    width: auto;
+  }
+
+  .greedy-nav .visible-links,
+  .greedy-nav > .greedy-nav__toggle,
+  .greedy-nav > .hidden-links,
+  .mobile-nav-links {
+    display: none !important;
+  }
+
+  .desktop-sidebar-links {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-top: 1.25rem;
+  }
+
+  .desktop-sidebar-links a {
+    align-self: flex-start;
+    color: inherit;
+    display: block;
+    margin: 0;
+    padding: 0.35rem 0;
+  }
+
+  .desktop-sidebar-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .desktop-sidebar-bottom {
+    display: block !important;
+    margin-top: auto;
+  }
+
+  .desktop-sidebar-font-switcher {
+    color: #b0b0b0;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .desktop-sidebar-font-switcher a {
+    color: inherit;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-sidebar-social {
+    align-items: center;
+    display: flex;
+    gap: 0.55rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .desktop-sidebar-social a {
+    align-items: center;
+    color: inherit;
+    display: inline-flex;
+    height: 1.5rem;
+    justify-content: center;
+    margin: 0;
+    width: 1.5rem;
+  }
+
+  .desktop-sidebar-social a:before {
+    display: none;
+  }
+
+  .desktop-sidebar-social img {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .desktop-sidebar-social-separator {
+    color: #666;
+    user-select: none;
+  }
+
+  .desktop-sidebar-copyright {
+    color: #b0b0b0;
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .desktop-sidebar-copyright a {
+    color: inherit;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page__footer-follow,
+  .page__footer-copyright,
+  .footer-left {
+    display: none;
+  }
+
+  .page__footer {
+    background-color: transparent !important;
   }
 }
 
@@ -136,6 +296,18 @@ a:hover:before, a:focus:before {
   display: none;
 }
 
+.desktop-sidebar-links {
+  display: none;
+}
+
+.desktop-sidebar-bottom {
+  display: none;
+}
+
+.desktop-sidebar-home-icon {
+  display: none;
+}
+
 /* Override theme's underline on hover */
 a:hover {
   text-decoration: none !important;
@@ -192,6 +364,48 @@ a:hover {
     margin-top: 10px;
   }
 }
+
+@media (max-width: 767px) {
+  .page__footer footer {
+    text-align: center;
+  }
+
+  .page__footer-row {
+    align-items: center !important;
+    flex-direction: column;
+    justify-content: center !important;
+  }
+
+  .footer-left,
+  .footer-right {
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .footer-right {
+    margin-top: 0.85rem;
+  }
+
+  .font-switcher {
+    margin-left: 0 !important;
+  }
+
+  .page__footer-follow ul.social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .page__footer-copyright {
+    text-align: center;
+  }
+}
+
 .custom-copyright {
   font-size: 70%;
   color: #b0b0b0;
@@ -302,8 +516,16 @@ a:hover {
 
   .greedy-nav .site-title {
     flex: 0 1 auto;
+    align-items: center;
+    gap: 0.35rem;
     margin-right: auto;
     white-space: nowrap;
+  }
+
+  .desktop-sidebar-home-icon {
+    display: inline-block !important;
+    height: 1.2rem;
+    width: auto;
   }
 
   .greedy-nav .visible-links,
@@ -390,7 +612,7 @@ a:hover {
   }
 
   .mobile-work-menu ul {
-    background: #050814;
+    background: #04060e;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);

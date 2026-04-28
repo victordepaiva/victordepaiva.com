@@ -8,9 +8,44 @@
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
+          <img class="desktop-sidebar-home-icon" src="{{ '/assets/images/branding/drill_white_horizontal_transparent.png' | relative_url }}" alt="" aria-hidden="true">
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
+        <div class="desktop-sidebar-links" role="navigation" aria-label="desktop navigation">
+          <hr class="desktop-sidebar-divider">
+          <a href="{{ '/about/' | relative_url }}">about</a>
+          <a href="{{ '/now/' | relative_url }}">now</a>
+          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">links</a>
+          <hr class="desktop-sidebar-divider">
+          <a href="{{ '/games/' | relative_url }}">🎲 games</a>
+          <a href="{{ '/fiction/' | relative_url }}">📖 fiction</a>
+          <a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a>
+          <a href="{{ '/projects/' | relative_url }}">🗂️ projects</a>
+          <a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">🎮 itch.io</a>
+        </div>
+        <div class="desktop-sidebar-bottom">
+          <div class="desktop-sidebar-font-switcher">
+            <a href="#" data-font-choice="global-font-family">default</a>
+            <span aria-hidden="true">|</span>
+            <a href="#" data-font-choice="open-dyslexic">opendyslexic</a>
+          </div>
+          <hr class="desktop-sidebar-divider">
+          <div class="desktop-sidebar-social">
+            <a href="https://bsky.app/profile/victordepaiva.com" rel="nofollow noopener noreferrer" target="_blank" aria-label="Bluesky">
+              <img src="{{ '/assets/images/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true">
+            </a>
+            <span class="desktop-sidebar-social-separator" aria-hidden="true">|</span>
+            <a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank" aria-label="Feed">
+              <i class="fas fa-fw fa-rss-square" aria-hidden="true"></i>
+            </a>
+          </div>
+          <hr class="desktop-sidebar-divider">
+          <div class="desktop-sidebar-copyright">
+            <div>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</div>
+            <div>powered by Jekyll &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a></div>
+          </div>
+        </div>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">

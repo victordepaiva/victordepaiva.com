@@ -12,9 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
   let lastScrollTop = 0;
   const header = document.getElementById('site-header');
   const scrollPercentage = document.getElementById('scroll-percentage');
+  const mobileMastheadQuery = window.matchMedia('(max-width: 767px)');
 
   // Adicione a classe 'fixed' ao header inicialmente
   header.classList.add('fixed');
+
+  function resetDesktopSidebarPosition() {
+    if (!mobileMastheadQuery.matches) {
+      header.classList.add('fixed');
+      header.style.top = '';
+    }
+  }
 
   window.addEventListener('scroll', function () {
     
@@ -23,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrollPercent = (scrollTop / docHeight) * 100;
     scrollPercentage.textContent = Math.round(scrollPercent) + '%';
+
+    if (!mobileMastheadQuery.matches) {
+      resetDesktopSidebarPosition();
+      lastScrollTop = scrollTop;
+      return;
+    }
     
     if (scrollTop > lastScrollTop) {
       // Rolando para baixo
@@ -36,17 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
     lastScrollTop = scrollTop;
   });
 
+  mobileMastheadQuery.addEventListener('change', resetDesktopSidebarPosition);
+
   // Função para atualizar o negrito na font-switcher
   function updateFontSwitcherBold() {
-    var font1 = document.getElementById('font1');
-    var font2 = document.getElementById('font2');
-    if (document.body.classList.contains('open-dyslexic')) {
-      font1.style.fontWeight = 'normal';
-      font2.style.fontWeight = 'bold';
-    } else {
-      font1.style.fontWeight = 'bold';
-      font2.style.fontWeight = 'normal';
-    }
+    document.querySelectorAll('[data-font-choice]').forEach(function(control) {
+      control.style.fontWeight = document.body.classList.contains(control.dataset.fontChoice) ? 'bold' : 'normal';
+    });
   }
 
   // Chama ao carregar
@@ -54,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Função para remover hover forçado após clique
   function removeFontSwitcherHover() {
-    var font1 = document.getElementById('font1');
-    var font2 = document.getElementById('font2');
-    font1.blur();
-    font2.blur();
+    document.querySelectorAll('[data-font-choice]').forEach(function(control) {
+      control.blur();
+    });
   }
 
   function scrollToBottomIfUserWasNearBottom() {
@@ -107,13 +116,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  document.getElementById('font1').addEventListener('click', function(e) {
-    e.preventDefault();
-    fontSwitcherClick('global-font-family');
-  });
-
-  document.getElementById('font2').addEventListener('click', function(e) {
-    e.preventDefault();
-    fontSwitcherClick('open-dyslexic');
+  document.querySelectorAll('[data-font-choice]').forEach(function(control) {
+    control.addEventListener('click', function(e) {
+      e.preventDefault();
+      fontSwitcherClick(control.dataset.fontChoice);
+    });
   });
 });

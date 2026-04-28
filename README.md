@@ -20,6 +20,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_pages/fiction.html` - Fiction writing section
 - `_pages/nonfiction.html` - Non-fiction writing section
 - `_pages/games.html` - Games section
+- `_pages/projects.html` - Projects section
 - `_pages/now.html` - Current status page
 - `_pages/archive.html` - Post archive
 - `_pages/categories.html` - Category listing
@@ -94,7 +95,10 @@ This site is deployed via Netlify. The build process:
 
 This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme with customizations:
 - Dark skin theme
-- Custom footer with social links
+- Desktop left sidebar navigation with social links, feed link, copyright, and font picker
+- Mobile top navigation with always-visible about/now/links and a work dropdown
+- Responsive games capsule grid on `/games/`
+- Projects section backed by the same `_posts/` workflow as games and writing
 - OpenDyslexic font accessibility option
 - Custom CSS for additional styling
 - Custom JavaScript for enhanced functionality
@@ -107,11 +111,30 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 3. Include front matter with title, date, categories, tags
 4. Write content in Markdown format
 
+### Adding Project Posts
+1. Create a new Markdown file in `_posts/`
+2. Use `layout: posts`
+3. Set `collection: projects`
+4. Set `categories: projects`
+5. Set a permalink under `/projects/`, for example `permalink: /projects/example-project/`
+6. Add `published: true`, `published_year`, and `date` as with other posts
+
+Project posts automatically appear on `_pages/projects.html`.
+
 ### Adding Game Capsules
 1. Place the vertical capsule image in `assets/images/games/`
 2. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
 3. Use `categories: current-projects` or `categories: released-titles` so the post appears in the right `/games/` section
 4. Keep `published_year` updated; released titles show the year, current projects show `WIP`
+
+The entire capsule card links to the game post. If `games_capsule_image` is missing, the grid renders an image placeholder.
+
+### Navigation and Footer
+- Desktop uses a fixed left sidebar from `_includes/masthead.html`, styled in `assets/css/custom.css`
+- Mobile keeps a top bar with about, now, links, and a work dropdown
+- The desktop sidebar includes the font picker, Bluesky icon, feed icon, and copyright
+- The mobile footer keeps the font picker, social/feed links, and centered copyright
+- Font switching is handled in `assets/js/custom.js` through `data-font-choice` controls
 
 ### Working with Drafts
 1. Create draft files in `_drafts/` directory (no date required)
