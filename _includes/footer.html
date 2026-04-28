@@ -25,6 +25,13 @@
           {% endfor %}
         {% endif %}
 
+        <li>
+          <a href="https://otakumaromba.itch.io" rel="nofollow noopener noreferrer" target="_blank">
+            <img src="{{ '/assets/images/icons/itchio-textless-white.svg' | relative_url }}" alt="itch.io icon" style="width:1.25em; height:1.25em; vertical-align:middle; margin-right:0.3em;" />
+            itch.io
+          </a>
+        </li>
+
         {% unless site.atom_feed.hide %}
           <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
         {% endunless %}

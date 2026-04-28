@@ -22,7 +22,6 @@
           <a href="{{ '/fiction/' | relative_url }}">📖 fiction</a>
           <a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a>
           <a href="{{ '/projects/' | relative_url }}">🗂️ projects</a>
-          <a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">🎮 itch.io</a>
         </div>
         <div class="desktop-sidebar-bottom">
           <div class="desktop-sidebar-font-switcher">
@@ -34,6 +33,10 @@
           <div class="desktop-sidebar-social">
             <a href="https://bsky.app/profile/victordepaiva.com" rel="nofollow noopener noreferrer" target="_blank" aria-label="Bluesky">
               <img src="{{ '/assets/images/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true">
+            </a>
+            <span class="desktop-sidebar-social-separator" aria-hidden="true">|</span>
+            <a href="https://otakumaromba.itch.io" rel="nofollow noopener noreferrer" target="_blank" aria-label="itch.io">
+              <img src="{{ '/assets/images/icons/itchio-textless-white.svg' | relative_url }}" alt="" aria-hidden="true">
             </a>
             <span class="desktop-sidebar-social-separator" aria-hidden="true">|</span>
             <a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank" aria-label="Feed">
@@ -73,7 +76,6 @@
               <li><a href="{{ '/fiction/' | relative_url }}">📖 fiction</a></li>
               <li><a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a></li>
               <li><a href="{{ '/projects/' | relative_url }}">🗂️ projects</a></li>
-              <li><a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">🎮 itch.io</a></li>
             </ul>
           </details>
         </div>
