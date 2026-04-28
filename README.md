@@ -29,6 +29,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `assets/js/` - JavaScript files and libraries
 - `assets/fonts/` - Custom fonts (OpenDyslexic)
 - `assets/images/posts/` - Images used in blog posts
+- `assets/images/games/` - Vertical capsule art for the Games page grid
 - `assets/images/icons/` - Social media and UI icons
 - `assets/images/branding/` - Footer and header branding images
 
@@ -106,6 +107,12 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 3. Include front matter with title, date, categories, tags
 4. Write content in Markdown format
 
+### Adding Game Capsules
+1. Place the vertical capsule image in `assets/images/games/`
+2. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
+3. Use `categories: current-projects` or `categories: released-titles` so the post appears in the right `/games/` section
+4. Keep `published_year` updated; released titles show the year, current projects show `WIP`
+
 ### Working with Drafts
 1. Create draft files in `_drafts/` directory (no date required)
 2. Add `draft: true` to front matter to exclude from sitemap
@@ -122,6 +129,7 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 ### Adding Images
 1. Place images in appropriate `assets/images/` subdirectory:
    - `posts/` for blog post images
+   - `games/` for Games page capsule art
    - `icons/` for social media and UI icons
    - `branding/` for header/footer images
 2. Reference using relative paths in posts

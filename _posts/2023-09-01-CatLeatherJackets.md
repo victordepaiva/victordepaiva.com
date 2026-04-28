@@ -5,6 +5,7 @@ collection: jogos
 categories: released-titles
 published: true
 published_year: '2023'
+games_capsule_image: /assets/images/games/cat-leather-jackets-library-capsule.png
 date: '2023-08-27 12:00:00 -0300'
 permalink: /games/catleatherjackets/
 ---

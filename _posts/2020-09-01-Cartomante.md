@@ -5,6 +5,7 @@ collection: jogos
 categories: released-titles
 published: true
 published_year: '2020'
+games_capsule_image: /assets/images/games/cartomante-library-capsule.png
 date: '2020-09-01 12:00:00 -0300'
 permalink: /games/cartomante/
 ---

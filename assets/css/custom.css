@@ -192,3 +192,99 @@ a:hover {
   font-size: 70%;
   color: #b0b0b0;
 }
+
+/* Games capsule grid */
+.games-capsule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0 2.5rem;
+}
+
+.games-capsule-card {
+  display: block;
+  color: inherit;
+  font-family: inherit;
+  text-align: center;
+}
+
+.games-capsule-card:before {
+  display: none;
+}
+
+.games-capsule-card figure {
+  margin: 0;
+}
+
+.games-capsule-card img,
+.games-capsule-placeholder {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  border-radius: 0.35rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.3);
+  display: block;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.games-capsule-placeholder {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #b0b0b0;
+  display: flex;
+  font-size: 0.85rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.games-capsule-card:hover img,
+.games-capsule-card:focus img,
+.games-capsule-card:hover .games-capsule-placeholder,
+.games-capsule-card:focus .games-capsule-placeholder {
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.4);
+  transform: translateY(-0.25rem);
+}
+
+.games-capsule-card:focus-visible {
+  border-radius: 0.5rem;
+  outline: 2px solid #00adb5;
+  outline-offset: 0.4rem;
+}
+
+.games-capsule-card figcaption {
+  font-family: inherit;
+  font-style: normal;
+  margin-top: 0.65rem;
+}
+
+.games-capsule-title,
+.games-capsule-meta {
+  display: block;
+  font-family: inherit;
+  font-style: normal;
+}
+
+.games-capsule-title {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.games-capsule-meta {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+@media (min-width: 900px) {
+  .games-capsule-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .games-capsule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}

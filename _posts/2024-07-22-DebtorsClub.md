@@ -5,6 +5,7 @@ collection: jogos
 categories: released-titles
 published: true
 published_year: '2024'
+games_capsule_image: /assets/images/games/debtors-club-library-capsule.png
 date: '2024-05-01 12:00:00 -0300'
 permalink: /games/debtorsclub/
 ---
