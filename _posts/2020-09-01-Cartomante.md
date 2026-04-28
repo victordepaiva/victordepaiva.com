@@ -1,8 +1,8 @@
 ---
 layout: posts
-title: '🔮 Cartomante – Fortune Teller'
+title: 'Cartomante – Fortune Teller'
 collection: jogos
-categories: released-titles
+categories: past-projects
 published: true
 published_year: '2020'
 games_capsule_image: /assets/images/games/cartomante-library-capsule.png

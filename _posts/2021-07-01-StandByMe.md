@@ -1,8 +1,8 @@
 ---
 layout: posts
-title: '✨ Stand by Me'
+title: 'Stand by Me'
 collection: jogos
-categories: released-titles
+categories: past-projects
 published: true
 published_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png

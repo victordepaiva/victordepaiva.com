@@ -485,6 +485,7 @@ a:hover {
   display: block;
   font-family: inherit;
   font-style: normal;
+  text-align: left;
 }
 
 .games-capsule-title {

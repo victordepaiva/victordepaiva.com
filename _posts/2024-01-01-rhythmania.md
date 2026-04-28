@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: '🥁 RhythMania'
+title: 'RhythMania'
 collection: jogos
 categories: current-projects
 published: true

@@ -124,8 +124,9 @@ Project posts automatically appear on `_pages/projects.html`.
 ### Adding Game Capsules
 1. Place the vertical capsule image in `assets/images/games/`
 2. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
-3. Use `categories: current-projects` or `categories: released-titles` so the post appears in the right `/games/` section
-4. Keep `published_year` updated; released titles show the year, current projects show `WIP`
+3. Use `categories: current-projects` or `categories: past-projects` so the post appears in the right `/games/` section
+4. Keep `published_year` updated; past projects show the year, current projects show `WIP`
+5. Add `games_status` to override the displayed year when a past project should show another status, such as `WIP`
 
 The entire capsule card links to the game post. If `games_capsule_image` is missing, the grid renders an image placeholder.
 

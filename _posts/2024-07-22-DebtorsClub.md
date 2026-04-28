@@ -1,8 +1,8 @@
 ---
 layout: posts
-title: "💰 Debtor's Club"
+title: "Debtor's Club"
 collection: jogos
-categories: released-titles
+categories: past-projects
 published: true
 published_year: '2024'
 games_capsule_image: /assets/images/games/debtors-club-library-capsule.png

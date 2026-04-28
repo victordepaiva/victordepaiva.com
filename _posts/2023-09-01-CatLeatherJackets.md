@@ -1,8 +1,8 @@
 ---
 layout: posts
-title: '🎸 Cat Leather Jackets'
+title: 'Cat Leather Jackets'
 collection: jogos
-categories: released-titles
+categories: past-projects
 published: true
 published_year: '2023'
 games_capsule_image: /assets/images/games/cat-leather-jackets-library-capsule.png

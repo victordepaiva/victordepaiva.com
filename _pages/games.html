@@ -25,9 +25,9 @@ permalink: /games/
   {% endfor %}
 </div>
 
-<p><h2>released titles</h2></p>
+<p><h2>past projects</h2></p>
 <div class="games-capsule-grid" role="list">
-  {% for post in site.categories.released-titles %}
+  {% for post in site.categories.past-projects %}
     {% if post.url and post.published != false %}
 	<a class="games-capsule-card" href="{{ post.url | relative_url }}" role="listitem">
 		<figure>
@@ -38,7 +38,7 @@ permalink: /games/
 			{% endif %}
 			<figcaption>
 				<span class="games-capsule-title">{{ post.title }}</span>
-				<span class="games-capsule-meta">{{ post.published_year }}</span>
+				<span class="games-capsule-meta">{{ post.games_status | default: post.published_year }}</span>
 			</figcaption>
 		</figure>
 	</a>
