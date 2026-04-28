@@ -29,11 +29,11 @@ permalink: /games/catleatherjackets/
   <li><strong>Word count:</strong> ~22.000 (Inglês + Brasileiro)</li>
 </ul>
 <p> </p>
-<p> Jogo feito por <a href= "https://bsky.app/profile/h3xi.bsky.social">Di Amorim</a> (conceito original, músicas e programação) em parceria com a <a href= "http://garoastudios.com">Garoa Studios</a> (produção, publicação, narrativa, QA e marketing) e <a href= "https://kuating.artstation.com">Kuating</a> (arte).</p>
+<p> Jogo feito por <a href= "https://bsky.app/profile/h3xi.bsky.social">Diana Amorim</a> (conceito original, músicas e programação) em parceria com a <a href= "http://garoastudios.com">Garoa Studios</a> (produção, publicação, narrativa, QA e marketing) e <a href= "https://kuating.artstation.com">Kuating</a> (arte).</p>
 <p> </p>
 <p> <img src="/assets/images/posts/clj-images/priya_bus.gif" alt="Imagem animada de Priya em um ônibus, segurando o celular. No lado esquerdo da imagem, balões de mensagem vão aparecendo, mostrando uma troca de mensagens entre Priya e Ian."> </p>
 <p style="text-align:center"> <b> O Projeto </b> </p>
-<p> Cat Leather Jackets foi originalmente criado e desenvolvido individualmente por Di Amorim até o estabelecimento de parceria com a Garoa. Em cima do <i>briefing</i> dos personagens preexistentes foram estabelecidos novos temas, conceitos, e criou-se uma narrativa original com a aprovação do criador.</p>
+<p> Cat Leather Jackets foi originalmente criado e desenvolvido individualmente por Diana Amorim até o estabelecimento de parceria com a Garoa. Em cima do <i>briefing</i> dos personagens preexistentes foram estabelecidos novos temas, conceitos, e criou-se uma narrativa original com a aprovação do criador.</p>
 <p> <b>Game Design e Design de Narrativa: </b> </p>
 <p> Também um jogo de música/ ritmo, os inputs dos <i>beatmaps</i> foram simplificados. Os mapas foram re-feitos para adequação de dificuldade a partir de <i>playtests</i> e coleta de <i>feedback</i>. Foi criado o <b>Modo Prática</b> e trabalhado junto com o criador o sistema de pontuação/combos. Para a narrativa, optou-se por uma história linear, sem escolhas (<i>kinectic novel</i>), para foco nos temas e enredo canonicamente apresentados. Os diálogos antigos foram reescritos e os novos foram escritos seguindo a fidelidade do "tom" original do criador, presente na primeira versão – tanto em Inglês quanto em Brasileiro.</p>
 <p> <b>Produção e Gestão de Projeto:</b> </p>
