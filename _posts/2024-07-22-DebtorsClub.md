@@ -15,6 +15,9 @@ permalink: /games/debtorsclub/
 <p>⠀</p>
 <p> </p>
 <p> <b>Debtor's Club</b> é um jogo narrativo de gerenciamento de recursos em que você é um cobrador de dívidas em uma prefeitura corrupta.</p>
-<p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/2411560/Debtors_Club/"> Página da Steam </a> </b> || <b> <a href= "https://store.epicgames.com/en-US/p/debtors-club-af8a2a"> Página da Epic </a> </b> </p> 
-<p> </p>
+
+<p><iframe src="https://store.steampowered.com/widget/2411560/" frameborder="0" width="646" height="190"></iframe></p>
+
+<!-- <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/2411560/Debtors_Club/"> Página da Steam </a> </b> || <b> <a href= "https://store.epicgames.com/en-US/p/debtors-club-af8a2a"> Página da Epic </a> </b> </p> 
+<p> </p> -->
 <p style="text-align:center"> ╦ </p>

@@ -16,6 +16,12 @@ permalink: /games/cartomante/
 <p> <img src="/assets/images/posts/cartomante-images/cartomante_characters_banner.png"> </p>
 <p> <em>Cartomante</em> is a comedy and magical realism visual novel in which you read tarot for eccentric clients.</p>
 
+<p><iframe src="https://store.steampowered.com/widget/1361760/" frameborder="0" width="646" height="190"></iframe></p>
+<div style="text-align:center">
+  <iframe src="https://itch.io/embed/672126" frameborder="0" width="552" height="167">
+    <a href="https://garoa.itch.io/cartomante">Cartomante - Fortune Teller by Garoa</a>
+  </iframe>
+</div>
 <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1361760/Cartomante/"> Steam</a></b> || <b><a href= "https://garoa.itch.io/cartomante">itch.io</a></b> || <b><a href= "https://www.nuuvem.com/-/item/cartomante-fortune-teller">Nuuvem</a></b></p>
 
 <ul>

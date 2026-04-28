@@ -14,7 +14,14 @@ permalink: /games/standbyme/
 <p>⠀</p>
 <p> </p>
 <p> <b>Stand By Me</b> é um jogo de <i>puzzle</i> colorido e <i>groovy</i> parcialmente baseado em física sobre cuidar dos seus amigos.</p>
-<p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1484600/Stand_By_Me/">Página da Steam</a> </b> ||  <b> <a href= "https://garoa.itch.io/standbyme">Página do itch.io</a> </b> </p>
+
+<p><iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe></p>
+
+<div style="text-align:center">
+  <iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>
+</div>
+
+<!-- <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1484600/Stand_By_Me/">Página da Steam</a> </b> ||  <b> <a href= "https://garoa.itch.io/standbyme">Página do itch.io</a> </b> </p> -->
 <ul>
   <li><strong>Lançamento:</strong> 1º de Julho de 2021</li>
   <li><strong>Word count:</strong> ~3.000 (Inglês + Brasileiro)</li>
