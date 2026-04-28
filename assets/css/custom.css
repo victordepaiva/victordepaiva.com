@@ -50,6 +50,10 @@ body {
     padding-left: 15rem;
   }
 
+  .initial-content {
+    padding-top: 3.25rem;
+  }
+
   #site-header {
     bottom: 0;
     height: 100vh;
