@@ -23,6 +23,25 @@
             </li>
           {%- endfor -%}
         </ul>
+        <div class="mobile-nav-links" aria-label="mobile navigation">
+          <a href="{{ '/about/' | relative_url }}">about</a>
+          <a href="{{ '/now/' | relative_url }}">now</a>
+          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">links</a>
+          <span class="mobile-nav-separator" aria-hidden="true">|</span>
+          <details class="mobile-work-menu">
+            <summary>
+              <span class="mobile-work-label">work</span>
+              <span class="navicon" aria-hidden="true"></span>
+            </summary>
+            <ul>
+              <li><a href="{{ '/games/' | relative_url }}">🎲 games</a></li>
+              <li><a href="{{ '/fiction/' | relative_url }}">📖 fiction</a></li>
+              <li><a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a></li>
+              <li><a href="{{ '/projects/' | relative_url }}">🗂️ projects</a></li>
+              <li><a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">🎮 itch.io</a></li>
+            </ul>
+          </details>
+        </div>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>

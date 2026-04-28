@@ -132,6 +132,10 @@ a:hover:before, a:focus:before {
   display: none !important;
 }
 
+.mobile-nav-links {
+  display: none;
+}
+
 /* Override theme's underline on hover */
 a:hover {
   text-decoration: none !important;
@@ -286,5 +290,148 @@ a:hover {
   .games-capsule-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+  }
+}
+
+/* Mobile masthead: keep about/now/links visible and move work tabs into a dropdown. */
+@media (max-width: 767px) {
+  .masthead__inner-wrap {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .greedy-nav .site-title {
+    flex: 0 1 auto;
+    margin-right: auto;
+    white-space: nowrap;
+  }
+
+  .greedy-nav .visible-links,
+  .greedy-nav > .greedy-nav__toggle,
+  .greedy-nav > .hidden-links {
+    display: none !important;
+  }
+
+  .mobile-nav-links {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.55rem;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .mobile-nav-links a,
+  .mobile-work-menu summary {
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0.35rem 0;
+  }
+
+  .mobile-nav-separator {
+    color: #666;
+    font-family: inherit;
+    font-size: 0.78rem;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .mobile-nav-links a:before,
+  .mobile-work-menu summary:before {
+    display: none;
+  }
+
+  .mobile-work-menu {
+    position: relative;
+  }
+
+  .mobile-work-menu summary {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .mobile-work-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-work-menu .navicon,
+  .mobile-work-menu .navicon:before,
+  .mobile-work-menu .navicon:after {
+    width: 1rem;
+  }
+
+  .mobile-work-menu .navicon {
+    display: inline-block;
+    flex: 0 0 1rem;
+  }
+
+  .mobile-work-menu[open] .navicon {
+    background: transparent;
+  }
+
+  .mobile-work-menu[open] .navicon:before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-work-menu[open] .navicon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-work-menu ul {
+    background: #050814;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0.25rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: max-content;
+    z-index: 1002;
+  }
+
+  .mobile-work-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    display: block;
+  }
+
+  .mobile-work-menu li:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-work-menu li a {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding: 0.65rem 0.9rem;
+    white-space: nowrap;
+  }
+
+  .mobile-work-menu li a:hover,
+  .mobile-work-menu li a:focus {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-nav-links {
+    gap: 0.4rem;
+  }
+
+  .mobile-nav-links a,
+  .mobile-work-menu summary,
+  .mobile-nav-separator {
+    font-size: 0.7rem;
   }
 }
