@@ -2,24 +2,24 @@
 {% assign post_path = "" %}
 {% if page.collection == "textos" %}
   {% if page.categories contains "nonfiction" %}
-    {% assign post_type = "Non-fiction" %}
+    {% assign post_type = "non-fiction" %}
     {% assign post_path = "/nonfiction" %}
   {% else %}
-    {% assign post_type = "Fiction" %}
+    {% assign post_type = "fiction" %}
     {% assign post_path = "/fiction" %}
   {% endif %}
 {% elsif page.collection == "jogos" %}
-  {% assign post_type = "Games" %}
+  {% assign post_type = "games" %}
   {% assign post_path = "/games" %}
 {% elsif page.collection == "projects" %}
-  {% assign post_type = "Projects" %}
+  {% assign post_type = "projects" %}
   {% assign post_path = "/projects" %}
 {% endif %}
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span></a>
+      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "home" }}</span></a>
       <meta itemprop="position" content="1" />
     </li>
     <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
@@ -38,7 +38,7 @@
       {% if page.url contains '/nonfiction/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/nonfiction' | relative_url }}" itemprop="item">
-            <span itemprop="name">Non-fiction</span>
+            <span itemprop="name">non-fiction</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
@@ -46,7 +46,7 @@
       {% elsif page.url contains '/fiction/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/fiction' | relative_url }}" itemprop="item">
-            <span itemprop="name">Fiction</span>
+            <span itemprop="name">fiction</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
@@ -54,7 +54,7 @@
       {% elsif page.url contains '/games/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/games' | relative_url }}" itemprop="item">
-            <span itemprop="name">Games</span>
+            <span itemprop="name">games</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
@@ -62,7 +62,7 @@
       {% elsif page.url contains '/projects/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <a href="{{ '/projects' | relative_url }}" itemprop="item">
-            <span itemprop="name">Projects</span>
+            <span itemprop="name">projects</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>

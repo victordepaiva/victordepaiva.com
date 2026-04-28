@@ -15,7 +15,8 @@
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
               {% assign open_new_tab = false %}
-              {% if link.title contains 'itch.io' or link.title contains 'Links' %}
+              {% assign link_title = link.title | downcase %}
+              {% if link_title contains 'itch.io' or link_title contains 'links' %}
                 {% assign open_new_tab = true %}
               {% endif %}
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}{% if open_new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
