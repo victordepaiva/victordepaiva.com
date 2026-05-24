@@ -1,0 +1,185 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+<style>
+  .game-specs {
+    margin: 1rem 0 1.5rem;
+  }
+
+  .game-specs__rule {
+    border: 0;
+    border-top: 0.5px solid var(--color-border, rgba(255, 255, 255, 0.2));
+    margin: 0;
+  }
+
+  .game-specs__body {
+    padding: 0.6rem 0;
+  }
+
+  .game-specs__meta {
+    color: var(--color-text-tertiary, #b0b0b0);
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .game-specs__roles {
+    color: var(--color-text-secondary, #dedede);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .game-specs__meta + .game-specs__roles {
+    margin-top: 0.25rem;
+  }
+</style>
+
+{% assign breadcrumbs_enabled = site.breadcrumbs %}
+{% if page.breadcrumbs != null %}
+  {% assign breadcrumbs_enabled = page.breadcrumbs %}
+{% endif %}
+{% if page.url != "/" and breadcrumbs_enabled %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.tagline %}<meta itemprop="description" content="{{ page.tagline | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+
+    <div class="page__inner-wrap">
+      <section class="page__content e-content" itemprop="text">
+        {% if page.title %}
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+          </h1>
+        {% endif %}
+
+        {% if page.tagline %}
+          <p class="page__lead">{{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+        {% endif %}
+
+        {% assign has_meta_specs = false %}
+        {% if page.release_date or page.status or page.platform or page.genre or page.word_count %}
+          {% assign has_meta_specs = true %}
+        {% endif %}
+
+        {% assign has_specs = false %}
+        {% if has_meta_specs or page.my_roles %}
+          {% assign has_specs = true %}
+        {% endif %}
+
+        {% if has_specs %}
+          <div class="game-specs">
+            <hr class="game-specs__rule">
+            <div class="game-specs__body">
+              {% if has_meta_specs %}
+                <div class="game-specs__meta">
+                  {% assign meta_separator = false %}
+                  {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.status %}{% if meta_separator %} · {% endif %}{{ page.status }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.genre %}{% if meta_separator %} · {% endif %}{{ page.genre }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.word_count %}{% if meta_separator %} · {% endif %}{{ page.word_count }}{% endif %}
+                </div>
+              {% endif %}
+              {% if page.my_roles %}
+                <div class="game-specs__roles">{% for role in page.my_roles %} ◇ {{ role }}{% endfor %}</div>
+              {% endif %}
+            </div>
+            <hr class="game-specs__rule">
+          </div>
+        {% endif %}
+
+        {% if page.banner_image %}
+          <p><img src="{{ page.banner_image | relative_url }}" alt="{{ page.title | escape }} banner"></p>
+        {% endif %}
+
+        <h2>about</h2>
+        {{ content }}
+
+        {% if page.trailer_url or page.screenshots %}
+          <h2>media</h2>
+          {% if page.trailer_url %}
+            {% assign trailer_src = page.trailer_url %}
+            {% if trailer_src contains "watch?v=" %}
+              {% assign trailer_id = trailer_src | split: "watch?v=" | last | split: "&" | first %}
+              {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+            {% elsif trailer_src contains "youtu.be/" %}
+              {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
+              {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+            {% endif %}
+            <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          {% endif %}
+          {% if page.screenshots %}
+            {% for screenshot in page.screenshots %}
+              <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} screenshot"></p>
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+
+        {% if page.store_links or page.store_embeds %}
+          <h2>get it</h2>
+          {% if page.store_links %}
+            <p>
+              {% for store in page.store_links %}
+                <a href="{{ store.url }}">{{ store.label }}</a>{% unless forloop.last %} | {% endunless %}
+              {% endfor %}
+            </p>
+          {% endif %}
+          {% if page.store_embeds %}
+            {% for embed in page.store_embeds %}
+              {{ embed }}
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+
+        {% if page.awards and page.awards.size > 0 %}
+          <h2>recognition</h2>
+          <ul>
+            {% for award in page.awards %}
+              <li>{{ award }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="post-end-links" style="margin-top: 2em;">
+          <hr style="max-width: 300px; margin: 2em auto 1.5em auto; border: none; border-top: 1.5px solid #ccc;" />
+          <div><a href="#page-title" class="back-to-top">Back to top &uarr;</a></div>
+          {% assign cat = page.categories[0] %}
+          {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | sort: 'date' %}
+          {% assign prev_post = nil %}
+          {% for p in posts_in_cat %}
+            {% if p.url == page.url %}
+              {% break %}
+            {% endif %}
+            {% assign prev_post = p %}
+          {% endfor %}
+          {% if prev_post == nil %}
+            {% assign prev_post = posts_in_cat | last %}
+          {% endif %}
+          <div><a href="{{ prev_post.url | relative_url }}" class="back-to-top">Read also: {{ prev_post.title }}</a></div>
+        </div>
+
+      </section>
+    </div>
+
+    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
+      {% include comments.html %}
+    {% endif %}
+  </article>
+
+  {% include section-nav.html %}
+</div>

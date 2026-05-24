@@ -21,6 +21,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_pages/nonfiction.html` - Non-fiction writing section
 - `_pages/games.html` - Games section
 - `_pages/other-work.html` - Other work section
+- `_pages/contact.md` - Contact page
 - `_pages/now.html` - Current status page
 - `_pages/archive.html` - Post archive
 - `_pages/categories.html` - Category listing
@@ -96,9 +97,11 @@ This site is deployed via Netlify. The build process:
 This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme with customizations:
 - Dark skin theme
 - Desktop left sidebar navigation with social links, feed link, copyright, and font picker
-- Mobile top navigation with always-visible about/now/links and a work dropdown
+- Mobile top navigation with always-visible about/now/links/contact and a work dropdown
 - Responsive games capsule grid on `/games/`
+- Game posts use `_layouts/game.html` for structured game pages without post metadata, social share buttons, or previous/next post navigation
 - Other work section backed by the same `_posts/` workflow as games and writing
+- Dedicated contact page at `/contact/`
 - OpenDyslexic font accessibility option
 - Custom CSS for additional styling
 - Custom JavaScript for enhanced functionality
@@ -121,18 +124,31 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 
 Other work posts automatically appear on `_pages/other-work.html`.
 
-### Adding Game Capsules
+### Adding Game Posts
 1. Place the vertical capsule image in `assets/images/games/`
-2. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
-3. Use `categories: current-projects` or `categories: past-projects` so the post appears in the right `/games/` section
-4. Keep `published_year` updated; past projects show the year, current projects show `WIP`
-5. Add `games_status` to override the displayed year when a past project should show another status, such as `WIP`
+2. Create or update the game post in `_posts/` using `layout: game`
+3. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
+4. Use structured front matter for game details: `tagline`, `release_date`, `status`, `genre`, `platform`, `my_roles`, `word_count`, `banner_image`, `trailer_url`, `screenshots`, `store_links`, `store_embeds`, and `awards`
+5. Only include front matter fields that have real content; omit empty fields
+6. The game layout renders `release_date`, `status`, `genre`, `platform`, `my_roles`, and `word_count` in a compact definition list
+7. The `my_roles` field should be a YAML list and renders as a comma-separated value in the specs block
+8. Keep the body as clean Markdown prose only. Structured content such as images, embeds, store links, screenshots, and awards should live in front matter so `_layouts/game.html` can render it consistently
+9. Use `_posts/2020-09-01-Cartomante.md` as the reference format for game front matter
+
+`_posts/2020-09-01-Cartomante.md` has been migrated as the reference structured game post. The other game posts currently use `layout: game` but may still keep their existing body content until migrated.
+
+Game pages keep the custom "Read also" block, but do not render the standard post metadata footer, social share buttons, or previous/next post navigation.
+
+### Game Capsules
+1. Use `categories: current-projects` or `categories: past-projects` so the post appears in the right `/games/` section
+2. Keep `published_year` updated; past projects show the year, current projects show `WIP`
+3. Add `games_status` to override the displayed year when a past project should show another status, such as `WIP`
 
 The entire capsule card links to the game post. If `games_capsule_image` is missing, the grid renders an image placeholder.
 
 ### Navigation and Footer
 - Desktop uses a fixed left sidebar from `_includes/masthead.html`, styled in `assets/css/custom.css`
-- Mobile keeps a top bar with about, now, links, and a work dropdown
+- Desktop and mobile top links include about, now, links, and contact before the work/content links
 - The desktop sidebar includes the font picker, Bluesky icon, feed icon, and copyright
 - The mobile footer keeps the font picker, social/feed links, and centered copyright
 - Font switching is handled in `assets/js/custom.js` through `data-font-choice` controls

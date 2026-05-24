@@ -1,6 +1,7 @@
 ---
-layout: posts
+layout: game
 title: 'Stand by Me'
+tagline: 'Um jogo de puzzle colorido e groovy parcialmente baseado em física sobre cuidar dos seus amigos.'
 collection: jogos
 categories: past-projects
 published: true
@@ -8,25 +9,29 @@ published_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png
 date: '2021-07-01 12:00:00 -0300'
 permalink: /games/standbyme/
+release_date: '1º de Julho de 2021'
+status: Released
+genre: 'Puzzle parcialmente baseado em física'
+platform: PC
+my_roles:
+  - Narrative design
+  - Writing
+  - Executive production
+  - Game design
+  - Level design
+word_count: '~3.000 (Inglês + Brasileiro)'
+store_links:
+  - label: Steam
+    url: https://store.steampowered.com/app/1484600/Stand_By_Me/
+  - label: itch.io
+    url: https://garoa.itch.io/standbyme
+store_embeds:
+  - '<iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe>'
+  - '<iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>'
 ---
 
-<div style="text-align:justify">
-<p>⠀</p>
-<p> </p>
-<p> <b>Stand By Me</b> é um jogo de <i>puzzle</i> colorido e <i>groovy</i> parcialmente baseado em física sobre cuidar dos seus amigos.</p>
+Baseado em um [protótipo antigo](https://raposodev.itch.io/sbm-project) de [Gabriel Raposo](https://raposodev.itch.io), game designer da [Garoa Studios](https://garoastudios.com), *Stand by Me* foi desenvolvido entre o final de 2020 e o primeiro semestre de 2021.
 
-<p><iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe></p>
+Trabalhei no projeto como designer de narrativa, roteirista em Brasileiro e Inglês, produtor executivo, game designer e level designer.
 
-<div style="text-align:center">
-  <iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>
-</div>
-
-<!-- <p style="text-align:center"> <b> <a href= "https://store.steampowered.com/app/1484600/Stand_By_Me/">Página da Steam</a> </b> ||  <b> <a href= "https://garoa.itch.io/standbyme">Página do itch.io</a> </b> </p> -->
-<ul>
-  <li><strong>Lançamento:</strong> 1º de Julho de 2021</li>
-  <li><strong>Word count:</strong> ~3.000 (Inglês + Brasileiro)</li>
-</ul>
-<p>Baseado em um <a href="https://raposodev.itch.io/sbm-project"><b>protótipo antigo</b></a> do <a href="https://raposodev.itch.io"><b>Gabriel Raposo</b></a>, game designer da <a href="https://garoastudios.com"><strong>Garoa Studios</strong></a>, foi desenvolvido  entre o final de 2020 e primeiro semestre de 2021. Trabalhei no projeto como designer de narrativa, roteirista em Brasileiro e Inglês, produtor executivo, game designer e level designer.</p>
-<p style="text-align: center;">Trilha sonora no <a href="https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb"><strong>YouTube</strong></a> e <a href="https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL"><strong>Spotify</strong></a></p>
-
-<p style="text-align:center"> ╦ </p>
+Trilha sonora no [YouTube](https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb) e [Spotify](https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL).
