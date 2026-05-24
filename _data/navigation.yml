@@ -8,8 +8,8 @@ main:
     url: /fiction/
   - title: "📝 non-fiction"
     url: /nonfiction/
-  - title: "🗂️ projects"
-    url: /projects/
+  - title: "🗂️ other work"
+    url: /other-work/
   # - title: "Tags"
   #  url: /tags/
   # - title: "Pages"

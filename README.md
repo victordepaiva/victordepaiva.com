@@ -20,7 +20,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_pages/fiction.html` - Fiction writing section
 - `_pages/nonfiction.html` - Non-fiction writing section
 - `_pages/games.html` - Games section
-- `_pages/projects.html` - Projects section
+- `_pages/other-work.html` - Other work section
 - `_pages/now.html` - Current status page
 - `_pages/archive.html` - Post archive
 - `_pages/categories.html` - Category listing
@@ -98,7 +98,7 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 - Desktop left sidebar navigation with social links, feed link, copyright, and font picker
 - Mobile top navigation with always-visible about/now/links and a work dropdown
 - Responsive games capsule grid on `/games/`
-- Projects section backed by the same `_posts/` workflow as games and writing
+- Other work section backed by the same `_posts/` workflow as games and writing
 - OpenDyslexic font accessibility option
 - Custom CSS for additional styling
 - Custom JavaScript for enhanced functionality
@@ -111,15 +111,15 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 3. Include front matter with title, date, categories, tags
 4. Write content in Markdown format
 
-### Adding Project Posts
+### Adding Other Work Posts
 1. Create a new Markdown file in `_posts/`
 2. Use `layout: posts`
-3. Set `collection: projects`
-4. Set `categories: projects`
-5. Set a permalink under `/projects/`, for example `permalink: /projects/example-project/`
+3. Set `collection: other-work`
+4. Set `categories: other-work`
+5. Set a permalink under `/other-work/`, for example `permalink: /other-work/example-project/`
 6. Add `published: true`, `published_year`, and `date` as with other posts
 
-Project posts automatically appear on `_pages/projects.html`.
+Other work posts automatically appear on `_pages/other-work.html`.
 
 ### Adding Game Capsules
 1. Place the vertical capsule image in `assets/images/games/`
