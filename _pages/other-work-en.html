@@ -1,0 +1,19 @@
+---
+layout: category
+title: 'other work'
+permalink: /en/other-work/
+lang: en
+translation_key: other-work
+i18n_path: /other-work/
+---
+
+{% include i18n.html %}
+<p><h2>{{ i18n.section.other_work }}</h2></p>
+<ul>
+  {% assign other_work_posts = site.categories['other-work'] | i18n_best: active_lang | sort: 'date' %}
+  {% for post in other_work_posts %}
+    {% if post.url and post.published != false %}
+      <li><a href="{{ post | i18n_url_for_locale: active_lang | relative_url }}">{{ post.title }}</a> ({{ post.published_year }})</li>
+    {% endif %}
+  {% endfor %}
+</ul>

@@ -1,8 +1,16 @@
+{% include i18n.html %}
 <div class="page__footer-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   <div class="footer-left">
     <div class="font-switcher" style="display: inline-block; margin-left: 10px;">
       <a href="#" id="font1" data-font-choice="global-font-family">default</a> |
       <a href="#" id="font2" data-font-choice="open-dyslexic">opendyslexic</a>
+      <span class="footer-language-separator" aria-hidden="true"> / / </span>
+      <span class="footer-language-switcher" aria-label="{{ i18n.language_label }}">
+        {% for locale in site.i18n.locales %}
+          {% unless forloop.first %}<span aria-hidden="true">|</span>{% endunless %}
+          <a href="{{ page | i18n_url_for_locale: locale.code | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
+        {% endfor %}
+      </span>
     </div>
   </div>
   <div class="footer-right">
@@ -33,11 +41,11 @@
         </li>
 
         {% unless site.atom_feed.hide %}
-          <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+          <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" target="_blank"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
         {% endunless %}
       </ul>
     </div>
   </div>
 </div>
 
-<div class="page__footer-copyright custom-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright custom-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ i18n.layout.powered_by }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>

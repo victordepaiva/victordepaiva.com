@@ -1,6 +1,29 @@
 ---
-layout: home
-title: "home"
-permalink: /
-author_profile: false
+layout: null
+sitemap: false
 ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url=/en/">
+    <link rel="canonical" href="/en/">
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        function normalize(locale) {
+          locale = (locale || '').toLowerCase();
+          if (locale.indexOf('pt') === 0) return 'br';
+          if (locale.indexOf('en') === 0) return 'en';
+          return locale.split('-')[0];
+        }
+        var saved = window.localStorage && localStorage.getItem('localePreference');
+        var browser = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        var locale = normalize(saved || browser);
+        window.location.replace(locale === 'br' ? '/br/' : '/en/');
+      }());
+    </script>
+  </head>
+  <body><p>Redirecting to <a href="/en/">/en/</a>.</p></body>
+</html>

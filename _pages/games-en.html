@@ -1,0 +1,53 @@
+---
+layout: category
+title: 'games'
+permalink: /en/games/
+lang: en
+translation_key: games
+i18n_path: /games/
+---
+
+{% include i18n.html %}
+<p><h2>{{ i18n.section.current_projects }}</h2></p>
+{% assign current_posts = site.categories.current-projects | i18n_best: active_lang | sort: 'date' %}
+<div class="games-capsule-grid" role="list">
+  {% for post in current_posts %}
+    {% if post.url and post.published != false %}
+      <a class="games-capsule-card" href="{{ post | i18n_url_for_locale: active_lang | relative_url }}" role="listitem">
+        <figure>
+          {% if post.games_capsule_image %}
+            <img src="{{ post.games_capsule_image | relative_url }}" alt="{{ post.title | strip_html | escape }} {{ i18n.layout.capsule_art }}">
+          {% else %}
+            <div class="games-capsule-placeholder" aria-hidden="true">{{ i18n.layout.image_soon }}</div>
+          {% endif %}
+          <figcaption>
+            <span class="games-capsule-title">{{ post.title }}</span>
+            <span class="games-capsule-meta">{{ i18n.layout.wip }}</span>
+          </figcaption>
+        </figure>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<p><h2>{{ i18n.section.past_projects }}</h2></p>
+{% assign past_posts = site.categories.past-projects | i18n_best: active_lang | sort: 'date' %}
+<div class="games-capsule-grid" role="list">
+  {% for post in past_posts %}
+    {% if post.url and post.published != false %}
+      <a class="games-capsule-card" href="{{ post | i18n_url_for_locale: active_lang | relative_url }}" role="listitem">
+        <figure>
+          {% if post.games_capsule_image %}
+            <img src="{{ post.games_capsule_image | relative_url }}" alt="{{ post.title | strip_html | escape }} {{ i18n.layout.capsule_art }}">
+          {% else %}
+            <div class="games-capsule-placeholder" aria-hidden="true">{{ i18n.layout.image_soon }}</div>
+          {% endif %}
+          <figcaption>
+            <span class="games-capsule-title">{{ post.title }}</span>
+            <span class="games-capsule-meta">{{ post.games_status | default: post.published_year }}</span>
+          </figcaption>
+        </figure>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

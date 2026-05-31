@@ -29,6 +29,18 @@ logo                     : # path of logo image to display in the masthead, e.g.
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs			     : true # true, false (default)
 words_per_minute         : 250
+
+i18n:
+  default_locale: en
+  locales:
+    - code: en
+      locale: en-US
+      hreflang: en-US
+      label: en
+    - code: br
+      locale: pt-BR
+      hreflang: pt-BR
+      label: br
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:

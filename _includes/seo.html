@@ -1,4 +1,5 @@
 <!-- begin _includes/seo.html -->
+{% include i18n.html %}
 {%- if site.url -%}
   {%- assign seo_url = site.url | append: site.baseurl -%}
 {%- endif -%}
@@ -15,7 +16,7 @@
 {%- endif -%}
 
 {% if page.canonical_url %}
-  {%- assign canonical_url = page.canonical_url %}
+  {%- assign canonical_url = page.canonical_url | absolute_url %}
 {% else %}
   {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
 {% endif %}
@@ -58,7 +59,10 @@
 {% endif %}
 
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:locale" content="{{ site.locale | replace: "-", "_" | default: "en_US" }}">
+{% if page.i18n_fallback %}
+<meta name="robots" content="noindex, follow">
+{% endif %}
+<meta property="og:locale" content="{{ i18n.og_locale | default: 'en_US' }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
@@ -113,6 +117,17 @@
 {% endif %}
 
 <link rel="canonical" href="{{ canonical_url }}">
+
+{% if page.translation_key %}
+  {% assign localized_entries = site.pages | concat: site.posts | where: "translation_key", page.translation_key %}
+  {% for entry in localized_entries %}
+    {% if entry.lang and entry.i18n_fallback != true %}
+      {% assign entry_i18n = site.data.i18n[entry.lang] %}
+      <link rel="alternate" hreflang="{{ entry_i18n.locale_tag | default: entry.lang }}" href="{{ entry.url | absolute_url }}">
+    {% endif %}
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ '/-/' | append: page.i18n_path | replace: '//', '/' | absolute_url }}">
+{% endif %}
 
 {% if paginator.previous_page %}
   <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">

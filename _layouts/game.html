@@ -7,6 +7,7 @@ layout: default
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
 {% endif %}
+{% include i18n.html %}
 
 <style>
   .game-specs {
@@ -71,6 +72,14 @@ layout: default
           <p class="page__lead">{{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}</p>
         {% endif %}
 
+        {% if page.content_lang and page.content_lang != page.lang %}
+          <p class="notice--info">
+            {{ i18n.layout.content_fallback }}
+            {{ i18n.languages[page.content_lang] | default: page.content_lang }}
+            {{ i18n.layout.content_fallback_suffix }}
+          </p>
+        {% endif %}
+
         {% assign has_meta_specs = false %}
         {% if page.release_date or page.status or page.platform or page.genre or page.word_count %}
           {% assign has_meta_specs = true %}
@@ -107,11 +116,11 @@ layout: default
           <p><img src="{{ page.banner_image | relative_url }}" alt="{{ page.title | escape }} banner"></p>
         {% endif %}
 
-        <h2>about</h2>
+        <h2>{{ i18n.layout.about }}</h2>
         {{ content }}
 
         {% if page.trailer_url or page.screenshots %}
-          <h2>media</h2>
+          <h2>{{ i18n.layout.media }}</h2>
           {% if page.trailer_url %}
             {% assign trailer_src = page.trailer_url %}
             {% if trailer_src contains "watch?v=" %}
@@ -121,17 +130,17 @@ layout: default
               {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
               {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
             {% endif %}
-            <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} {{ i18n.layout.trailer }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           {% endif %}
           {% if page.screenshots %}
             {% for screenshot in page.screenshots %}
-              <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} screenshot"></p>
+              <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }}"></p>
             {% endfor %}
           {% endif %}
         {% endif %}
 
         {% if page.store_links or page.store_embeds %}
-          <h2>get it</h2>
+          <h2>{{ i18n.layout.get_it }}</h2>
           {% if page.store_links %}
             <p>
               {% for store in page.store_links %}
@@ -147,7 +156,7 @@ layout: default
         {% endif %}
 
         {% if page.awards and page.awards.size > 0 %}
-          <h2>recognition</h2>
+          <h2>{{ i18n.layout.recognition }}</h2>
           <ul>
             {% for award in page.awards %}
               <li>{{ award }}</li>
@@ -157,12 +166,12 @@ layout: default
 
         <div class="post-end-links" style="margin-top: 2em;">
           <hr style="max-width: 300px; margin: 2em auto 1.5em auto; border: none; border-top: 1.5px solid #ccc;" />
-          <div><a href="#page-title" class="back-to-top">Back to top &uarr;</a></div>
+          <div><a href="#page-title" class="back-to-top">{{ i18n.layout.back_to_top }} &uarr;</a></div>
           {% assign cat = page.categories[0] %}
-          {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | sort: 'date' %}
+          {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | i18n_best: active_lang | sort: 'date' %}
           {% assign prev_post = nil %}
           {% for p in posts_in_cat %}
-            {% if p.url == page.url %}
+            {% if p.url == page.url or p.translation_key == page.translation_key %}
               {% break %}
             {% endif %}
             {% assign prev_post = p %}
@@ -170,7 +179,7 @@ layout: default
           {% if prev_post == nil %}
             {% assign prev_post = posts_in_cat | last %}
           {% endif %}
-          <div><a href="{{ prev_post.url | relative_url }}" class="back-to-top">Read also: {{ prev_post.title }}</a></div>
+          <div><a href="{{ prev_post | i18n_url_for_locale: active_lang | relative_url }}" class="back-to-top">{{ i18n.layout.read_also }}: {{ prev_post.title }}</a></div>
         </div>
 
       </section>

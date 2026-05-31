@@ -1,0 +1,24 @@
+---
+layout: category
+title: 'fiction'
+permalink: /en/fiction/
+lang: en
+translation_key: fiction
+i18n_path: /fiction/
+---
+
+{% include i18n.html %}
+<p><h2>{{ i18n.section.short_stories }}</h2></p>
+<ul>
+  {% assign story_posts = site.categories.conto | i18n_best: active_lang | sort: 'date' %}
+  {% for post in story_posts %}
+    <li><a href="{{ post | i18n_url_for_locale: active_lang | relative_url }}">{{ post.title }}</a> ({{ post.published_year }}){% if post.original_language and post.lang != active_lang %} <span class="content-language-note">{{ i18n.layout.original_language | downcase }}: {{ i18n.languages[post.original_language] | default: post.original_language | downcase }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>
+<p><h2>{{ i18n.section.dialogues }}</h2></p>
+<ul>
+  {% assign dialogue_posts = site.categories.dialogo | i18n_best: active_lang | sort: 'date' %}
+  {% for post in dialogue_posts %}
+    <li><a href="{{ post | i18n_url_for_locale: active_lang | relative_url }}">{{ post.title }}</a> ({{ post.published_year }}){% if post.original_language and post.lang != active_lang %} <span class="content-language-note">{{ i18n.layout.original_language | downcase }}: {{ i18n.languages[post.original_language] | default: post.original_language | downcase }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>

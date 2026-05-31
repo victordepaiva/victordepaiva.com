@@ -122,4 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
       fontSwitcherClick(control.dataset.fontChoice);
     });
   });
+
+  document.querySelectorAll('[data-locale-choice]').forEach(function(control) {
+    control.addEventListener('click', function() {
+      localStorage.setItem('localePreference', control.dataset.localeChoice);
+    });
+    if (localStorage.getItem('localePreference') === control.dataset.localeChoice) {
+      control.style.fontWeight = 'bold';
+    }
+  });
 });

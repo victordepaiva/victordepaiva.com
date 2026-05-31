@@ -1,19 +1,35 @@
 ---
 layout: archive
 ---
+{% include i18n.html %}
 
 {% include page__meta.html %}
+
+{% if page.original_language %}
+  <p class="page__meta">
+    {{ i18n.layout.original_language }}:
+    {{ i18n.languages[page.original_language] | default: page.original_language }}
+  </p>
+{% endif %}
+
+{% if page.content_lang and page.content_lang != page.lang %}
+  <p class="notice--info">
+    {{ i18n.layout.content_fallback }}
+    {{ i18n.languages[page.content_lang] | default: page.content_lang }}
+    {{ i18n.layout.content_fallback_suffix }}
+  </p>
+{% endif %}
 
 {{ content }}
 
 <div class="post-end-links" style="margin-top: 2em;">
   <hr style="max-width: 300px; margin: 2em auto 1.5em auto; border: none; border-top: 1.5px solid #ccc;" />
-  <div><a href="#page-title" class="back-to-top">Back to top &uarr;</a></div>
+  <div><a href="#page-title" class="back-to-top">{{ i18n.layout.back_to_top }} &uarr;</a></div>
   {% assign cat = page.categories[0] %}
-  {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | sort: 'date' %}
+  {% assign posts_in_cat = site.posts | where_exp: 'p', 'p.categories contains cat' | where: 'published', true | i18n_best: active_lang | sort: 'date' %}
   {% assign prev_post = nil %}
   {% for p in posts_in_cat %}
-    {% if p.url == page.url %}
+    {% if p.url == page.url or p.translation_key == page.translation_key %}
       {% break %}
     {% endif %}
     {% assign prev_post = p %}
@@ -21,7 +37,7 @@ layout: archive
   {% if prev_post == nil %}
     {% assign prev_post = posts_in_cat | last %}
   {% endif %}
-  <div><a href="{{ prev_post.url | relative_url }}" class="back-to-top">Read also: {{ prev_post.title }}</a></div>
+  <div><a href="{{ prev_post | i18n_url_for_locale: active_lang | relative_url }}" class="back-to-top">{{ i18n.layout.read_also }}: {{ prev_post.title }}</a></div>
 </div>
 
 
