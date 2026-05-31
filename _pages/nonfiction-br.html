@@ -1,0 +1,28 @@
+---
+layout: category
+title: 'nao-ficcao'
+permalink: /br/nonfiction/
+lang: br
+translation_key: nonfiction
+i18n_path: /nonfiction/
+---
+
+{% include i18n.html %}
+<p><h2>{{ i18n.section.columns }}</h2></p>
+<ul>
+  {% assign nonfiction_posts = site.categories.nonfiction | i18n_best: active_lang | sort: 'date' %}
+  {% for post in nonfiction_posts %}
+    {% if post.tags contains 'columns' %}
+      <li><a href="{{ post | i18n_url_for_locale: active_lang | relative_url }}">{{ post.title }}</a> ({{ post.published_year }}){% if post.original_language and post.lang != active_lang %} <span class="content-language-note">{{ i18n.layout.original_language | downcase }}: {{ i18n.languages[post.original_language] | default: post.original_language | downcase }}</span>{% endif %}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p><h2>{{ i18n.section.position_papers }}</h2></p>
+<ul>
+  {% for post in nonfiction_posts %}
+    {% if post.tags contains 'position-papers' %}
+      <li><a href="{{ post | i18n_url_for_locale: active_lang | relative_url }}">{{ post.title }}</a> ({{ post.published_year }}){% if post.original_language and post.lang != active_lang %} <span class="content-language-note">{{ i18n.layout.original_language | downcase }}: {{ i18n.languages[post.original_language] | default: post.original_language | downcase }}</span>{% endif %}</li>
+    {% endif %}
+  {% endfor %}
+</ul>

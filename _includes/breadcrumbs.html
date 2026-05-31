@@ -1,72 +1,73 @@
 {% assign post_type = "" %}
 {% assign post_path = "" %}
+{% include i18n.html %}
 {% if page.collection == "textos" %}
   {% if page.categories contains "nonfiction" %}
-    {% assign post_type = "non-fiction" %}
+    {% assign post_type = i18n.nav.nonfiction %}
     {% assign post_path = "/nonfiction" %}
   {% else %}
-    {% assign post_type = "fiction" %}
+    {% assign post_type = i18n.nav.fiction %}
     {% assign post_path = "/fiction" %}
   {% endif %}
 {% elsif page.collection == "jogos" %}
-  {% assign post_type = "games" %}
+  {% assign post_type = i18n.nav.games %}
   {% assign post_path = "/games" %}
 {% elsif page.collection == "other-work" %}
-  {% assign post_type = "other work" %}
+  {% assign post_type = i18n.nav.other_work %}
   {% assign post_path = "/other-work" %}
 {% endif %}
 
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "home" }}</span></a>
+      <a href="{{ '/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ i18n.nav.home }}</span></a>
       <meta itemprop="position" content="1" />
     </li>
-    <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+    <span class="sep">/</span>
     
    <!-- Forçar o breadcrumb da coleção -->
     {% if post_type != "" %}
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="{{ post_path | relative_url }}" itemprop="item">
+        <a href="{{ post_path | append: '/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
           <span itemprop="name">{{ post_type }}</span>
         </a>
         <meta itemprop="position" content="2" />
       </li>
-      <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      <span class="sep">/</span>
     {% else %}
       <!-- Fallback for other collections or default case -->
       {% if page.url contains '/nonfiction/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/nonfiction' | relative_url }}" itemprop="item">
-            <span itemprop="name">non-fiction</span>
+          <a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
+            <span itemprop="name">{{ i18n.nav.nonfiction }}</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+        <span class="sep">/</span>
       {% elsif page.url contains '/fiction/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/fiction' | relative_url }}" itemprop="item">
-            <span itemprop="name">fiction</span>
+          <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
+            <span itemprop="name">{{ i18n.nav.fiction }}</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+        <span class="sep">/</span>
       {% elsif page.url contains '/games/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/games' | relative_url }}" itemprop="item">
-            <span itemprop="name">games</span>
+          <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
+            <span itemprop="name">{{ i18n.nav.games }}</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+        <span class="sep">/</span>
       {% elsif page.url contains '/other-work/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/other-work' | relative_url }}" itemprop="item">
-            <span itemprop="name">other work</span>
+          <a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
+            <span itemprop="name">{{ i18n.nav.other_work }}</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
-        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+        <span class="sep">/</span>
       {% endif %}
     {% endif %}
 

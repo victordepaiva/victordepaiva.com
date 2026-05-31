@@ -1,0 +1,2 @@
+{% assign active_lang = page.lang | default: site.i18n.default_locale | default: "en" %}
+{% assign i18n = site.data.i18n[active_lang] | default: site.data.i18n[site.i18n.default_locale] %}

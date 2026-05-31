@@ -1,4 +1,5 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
+{% include i18n.html %}
 
 <div class="masthead" id="site-header">
   <div class="masthead__inner-wrap">
@@ -14,17 +15,25 @@
         </a>
         <div class="desktop-sidebar-links" role="navigation" aria-label="desktop navigation">
           <hr class="desktop-sidebar-divider">
-          <a href="{{ '/about/' | relative_url }}">about</a>
-          <a href="{{ '/now/' | relative_url }}">now</a>
-          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">links</a>
-          <a href="{{ '/contact/' | relative_url }}">contact</a>
+          <a href="{{ '/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.home }}</a>
+          <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
+          <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
+          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a>
+          <a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a>
           <hr class="desktop-sidebar-divider">
-          <a href="{{ '/games/' | relative_url }}">🎲 games</a>
-          <a href="{{ '/fiction/' | relative_url }}">📖 fiction</a>
-          <a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a>
-          <a href="{{ '/other-work/' | relative_url }}">🗂️ other work</a>
+          <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a>
+          <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a>
+          <a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a>
+          <a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a>
         </div>
         <div class="desktop-sidebar-bottom">
+          <div class="desktop-sidebar-font-switcher" aria-label="{{ i18n.language_label }}">
+            {% for locale in site.i18n.locales %}
+              {% unless forloop.first %}<span aria-hidden="true">|</span>{% endunless %}
+              <a href="{{ page | i18n_url_for_locale: locale.code | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
+            {% endfor %}
+          </div>
+          <hr class="desktop-sidebar-divider">
           <div class="desktop-sidebar-font-switcher">
             <a href="#" data-font-choice="global-font-family">default</a>
             <span aria-hidden="true">|</span>
@@ -47,48 +56,47 @@
           <hr class="desktop-sidebar-divider">
           <div class="desktop-sidebar-copyright">
             <div>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</div>
-            <div>powered by Jekyll &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a></div>
+            <div>{{ i18n.layout.powered_by }} Jekyll &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a></div>
           </div>
         </div>
         <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              {% assign open_new_tab = false %}
-              {% assign link_title = link.title | downcase %}
-              {% if link_title contains 'itch.io' or link_title contains 'links' %}
-                {% assign open_new_tab = true %}
-              {% endif %}
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}{% if open_new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
+          <li class="masthead__menu-item"><a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a></li>
+          <li class="masthead__menu-item"><a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">{{ i18n.nav.itch }}</a></li>
+          <li class="masthead__menu-item"><a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
         </ul>
         <div class="mobile-nav-links" aria-label="mobile navigation">
-          <a href="{{ '/about/' | relative_url }}">about</a>
-          <a href="{{ '/now/' | relative_url }}">now</a>
-          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">links</a>
-          <a href="{{ '/contact/' | relative_url }}">contact</a>
+          <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
+          <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
+          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a>
+          <a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a>
           <span class="mobile-nav-separator" aria-hidden="true">|</span>
           <details class="mobile-work-menu">
             <summary>
-              <span class="mobile-work-label">work</span>
+              <span class="mobile-work-label">{{ i18n.nav.work }}</span>
               <span class="navicon" aria-hidden="true"></span>
             </summary>
             <ul>
-              <li><a href="{{ '/games/' | relative_url }}">🎲 games</a></li>
-              <li><a href="{{ '/fiction/' | relative_url }}">📖 fiction</a></li>
-              <li><a href="{{ '/nonfiction/' | relative_url }}">📝 non-fiction</a></li>
-              <li><a href="{{ '/other-work/' | relative_url }}">🗂️ other work</a></li>
+              <li><a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a></li>
+              <li><a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a></li>
+              <li><a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a></li>
+              <li><a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a></li>
             </ul>
           </details>
         </div>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
+          <span class="visually-hidden">Toggle search</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>

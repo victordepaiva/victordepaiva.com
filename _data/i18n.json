@@ -1,0 +1,122 @@
+{
+  "en": {
+    "locale_tag": "en-US",
+    "html_lang": "en",
+    "og_locale": "en_US",
+    "language_label": "language",
+    "nav": {
+      "home": "home",
+      "about": "about",
+      "now": "now",
+      "links": "links",
+      "contact": "contact",
+      "work": "work",
+      "games": "🎲 games",
+      "fiction": "📖 fiction",
+      "nonfiction": "📝 non-fiction",
+      "other_work": "🗂️ other work",
+      "itch": "🎮 itch.io"
+    },
+    "home": {
+      "bio": "Joguinista, producer, game designer, narrative designer and writer, fascinated by games as a means of expression and by the miracle of seeing complex projects to the end. Founder of <a href=\"https://garoastudios.com\">Garoa Studios</a>.",
+      "more_about": "More about me",
+      "now": "what I'm doing now",
+      "work_intro": "my work and writings <i>(non-exhaustive)</i>:",
+      "contact": "contact me"
+    },
+    "section": {
+      "current_projects": "current projects",
+      "past_projects": "past projects",
+      "short_stories": "short stories",
+      "dialogues": "dialogues",
+      "columns": "columns",
+      "position_papers": "position papers",
+      "other_work": "other work"
+    },
+    "layout": {
+      "about": "about",
+      "media": "media",
+      "get_it": "get it",
+      "recognition": "recognition",
+      "back_to_top": "Back to top",
+      "read_also": "Read also",
+      "original_language": "Original language",
+      "image_soon": "Image soon",
+      "capsule_art": "capsule art",
+      "screenshot": "screenshot",
+      "trailer": "trailer",
+      "wip": "WIP",
+      "less_than": "less than",
+      "minute_read": "minute read",
+      "powered_by": "powered by",
+      "content_fallback": "This text is available in",
+      "content_fallback_suffix": "and is shown here without changing your browsing language."
+    },
+    "languages": {
+      "br": "Brazilian Portuguese",
+      "en": "English",
+      "brazilian": "Brazilian Portuguese",
+      "english": "English"
+    }
+  },
+  "br": {
+    "locale_tag": "pt-BR",
+    "html_lang": "pt-BR",
+    "og_locale": "pt_BR",
+    "language_label": "idioma",
+    "nav": {
+      "home": "início",
+      "about": "sobre",
+      "now": "agora",
+      "links": "links",
+      "contact": "contato",
+      "work": "obra",
+      "games": "🎲 jogos",
+      "fiction": "📖 ficção",
+      "nonfiction": "📝 não-ficção",
+      "other_work": "🗂️ outros trabalhos",
+      "itch": "🎮 itch.io"
+    },
+    "home": {
+      "bio": "Joguinista, produtor, game designer, designer narrativo e escritor, fascinado por jogos como meio de expressão e pelo milagre de levar projetos complexos até o fim. Fundador da <a href=\"https://garoastudios.com\">Garoa Studios</a>.",
+      "more_about": "Mais sobre mim",
+      "now": "o que estou fazendo agora",
+      "work_intro": "meus trabalhos e escritos <i>(não-exaustivo)</i>:",
+      "contact": "fale comigo"
+    },
+    "section": {
+      "current_projects": "projetos atuais",
+      "past_projects": "projetos anteriores",
+      "short_stories": "contos",
+      "dialogues": "diálogos",
+      "columns": "colunas",
+      "position_papers": "textos de posição",
+      "other_work": "outros trabalhos"
+    },
+    "layout": {
+      "about": "sobre",
+      "media": "mídia",
+      "get_it": "acesse",
+      "recognition": "reconhecimento",
+      "back_to_top": "Voltar ao topo",
+      "read_also": "Leia também",
+      "original_language": "Idioma original",
+      "image_soon": "Imagem em breve",
+      "capsule_art": "arte da cápsula",
+      "screenshot": "captura de tela",
+      "trailer": "trailer",
+      "wip": "WIP",
+      "less_than": "menos de",
+      "minute_read": "minuto de leitura",
+      "powered_by": "feito com",
+      "content_fallback": "Este texto esta disponivel em",
+      "content_fallback_suffix": "e e exibido aqui sem mudar o idioma da navegacao."
+    },
+    "languages": {
+      "br": "brasileiro",
+      "en": "ingles",
+      "brazilian": "brasileiro",
+      "english": "inglês"
+    }
+  }
+}

@@ -653,6 +653,17 @@ a:hover {
   .mobile-work-menu li a:focus {
     background: rgba(255, 255, 255, 0.08);
   }
+
+  .footer-language-switcher {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-language-separator,
+  .footer-language-switcher {
+    display: none;
+  }
 }
 
 @media (max-width: 380px) {
@@ -664,5 +675,23 @@ a:hover {
   .mobile-work-menu summary,
   .mobile-nav-separator {
     font-size: 0.8125rem;
+  }
+}
+
+.content-language-note {
+  color: #8a8f98;
+  font-size: 0.72em;
+  text-transform: lowercase;
+}
+
+@media (min-width: 768px) {
+  .content-language-note {
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+
+  li:hover > .content-language-note,
+  li:focus-within > .content-language-note {
+    opacity: 1;
   }
 }

@@ -108,6 +108,46 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 
 ## Content Management
 
+### i18n
+
+The site supports localized URLs under `/en/` and `/br/`, plus resolver URLs under `/-/` and the legacy unprefixed paths. Use separate source files per locale instead of storing multiple languages in one Markdown file.
+
+Localized source files should end with the locale code before the extension:
+- English: `2023-02-03-ernesto-en.md`
+- Brazilian Portuguese: `2023-02-03-ernesto-br.md`
+
+The filename suffix is for source organization only. Public URLs are controlled by front matter:
+
+```yaml
+lang: br
+translation_key: ernesto
+i18n_path: /fiction/ernesto/
+permalink: /br/fiction/ernesto/
+```
+
+Use the same `translation_key` for every localized version of the same page or post. Keep `i18n_path` as the locale-free canonical path and keep slugs stable across locales, for example `/en/about/` and `/br/about/`.
+
+UI strings live in `_data/i18n.json`. Add navigation labels, layout labels, section headings, buttons, and other interface copy there. Do not put page or post body translations in `_data/i18n.json`; create localized Markdown/HTML files instead.
+
+Fallback behavior:
+- If the requested locale exists for a `translation_key`, the site renders that version at that locale URL.
+- If the requested locale is missing, the site still generates the requested locale URL as a noindex shell page and renders the best available content inside it.
+- If only one content version exists, the shell page renders that version.
+- If the requested content locale is missing and English exists, the shell page renders English.
+- Otherwise, the shell page renders the first available version for that `translation_key`.
+
+This means browsing locale and content language are separate. For example, `/en/fiction/505/` remains an English UI page with English navigation, but it can display the Brazilian Portuguese body if that is the only available content. The page shows a short notice explaining the content language and canonicalizes to the real content-language URL.
+
+Resolver URLs such as `/about/` and `/-/about/` are still noindex redirect pages for browser/manual locale discovery. Missing localized content URLs such as `/en/fiction/505/` are noindex shell pages, not redirects, so users do not get pushed into another locale namespace while browsing.
+
+For `collection: textos`, preserve the original creative text language with:
+
+```yaml
+original_language: brazilian
+```
+
+This value is displayed independently of the current UI locale. Current `textos` posts are Brazilian Portuguese originals and use `-br.md` filenames. If a future translation is added, for example `2023-02-03-ernesto-en.md`, give it the same `translation_key` so English users automatically see the English body at `/en/fiction/ernesto/` instead of the fallback shell.
+
 ### Adding Posts
 1. Create new Markdown file in `_posts/`
 2. Use YYYY-MM-DD-title.md naming convention

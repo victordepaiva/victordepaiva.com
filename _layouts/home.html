@@ -3,22 +3,23 @@ layout: category
 ---
 
 {{ content }}
+{% include i18n.html %}
 
 <!-- Minibio -->
         <div class="minibio">
-                <p>Joguinista, producer, game designer, narrative designer and writer, fascinated by games as a means of expression and by the miracle of seeing complex projects to the end. Founder of <a href="https://garoastudios.com">Garoa Studios</a>.</p>
+                <p>{{ i18n.home.bio }}</p>
         </div>
 
         <!-- Links de Navegação -->
 
-        <p> <a href="{{ '/about/' | relative_url }}">More about me</a>, and <a href="{{ '/now/' | relative_url }}">what I'm doing now</a>.</p>
+        <p> <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.home.more_about }}</a>, and <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.home.now }}</a>.</p>
 
-        <p> my work and writings <i>(non-exaustive)</i>:</p>
-        <p> <a href="{{ '/games/' | relative_url }}">games</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/fiction/' | relative_url }}">fiction</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/nonfiction/' | relative_url }}">non-fiction</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/other-work/' | relative_url }}">other work</a></p> </p>
+        <p>{{ i18n.home.work_intro }}</p>
+        <p> <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a> <span class="separator" style="color: #666; margin: 0 8px; pointer-events: none; user-select: none;">|</span> <a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a></p>
 
         <!-- Contato e Links Pessoais -->
         <div class="contact">
-          <p><a href="{{ '/contact/' | relative_url }}">contact me</a></p>
+          <p><a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.home.contact }}</a></p>
         </div>
       </div>
     </section>
