@@ -33,11 +33,11 @@ my_roles:
   - 'Game design'
   - 'Level design'
   - 'OST lyrics and vocals'
-word_count: '~22,000 (English + Brazilian Portuguese)'
+word_count: '~22,000 (English + Brazilian)'
 ---
 
 Created during a game jam in 2018, *Astro Pig* received investment from the Startup Rio 2020 program and was developed by [Garoa Studios](https://garoastudios.com) alongside [Cartomante](https://victordepaiva.com/games/cartomante/), [Stand By Me](https://victordepaiva.com/games/standbyme/), and [Cat Leather Jackets](https://victordepaiva.com/games/catleatherjackets/).
 
-I worked on the project as narrative designer, writer in Brazilian Portuguese and English, executive producer, game designer, and level designer for early versions, and also made a small contribution writing lyrics and recording vocals for one OST track.
+I worked on the project as narrative designer, writer in Brazilian and English, executive producer, game designer, and level designer for early versions, and also made a small contribution writing lyrics and recording vocals for one OST track.
 
 Soundtrack on [YouTube](https://www.youtube.com/playlist?list=PLVB_OZivbJHkafl-S9X8PcQ6Jk0sCkFMJ) and Spotify.

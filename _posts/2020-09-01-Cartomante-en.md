@@ -52,6 +52,6 @@ The game was developed over the course of three months, with every member of [Ga
 
 ### my work
 
-I worked on the game's **narrative**: characters, story, dialogues, and narrative design, in both the English and Brazilian Portuguese versions. I also contributed to the game's **UI/UX** and **production**, organizing workload, managing deadlines, defining scope, and coordinating publication on Steam, itch.io, and Nuuvem.
+I worked on the game's **narrative**: characters, story, dialogues, and narrative design, in both the English and Brazilian versions. I also contributed to the game's **UI/UX** and **production**, organizing workload, managing deadlines, defining scope, and coordinating publication on Steam, itch.io, and Nuuvem.
 
 I was responsible for most of the **social media upkeep** related to *Cartomante*, as well as its **PR** efforts: bringing the game to live events, conventions, and festivals, giving interviews, and participating in podcasts and other media appearances.

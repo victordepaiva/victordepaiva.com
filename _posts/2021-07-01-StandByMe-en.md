@@ -30,11 +30,11 @@ my_roles:
   - 'Executive production'
   - 'Game design'
   - 'Level design'
-word_count: '~3,000 (English + Brazilian Portuguese)'
+word_count: '~3,000 (English + Brazilian)'
 ---
 
 Based on an [old prototype](https://raposodev.itch.io/sbm-project) by [Gabriel Raposo](https://raposodev.itch.io), game designer at [Garoa Studios](https://garoastudios.com), *Stand by Me* was developed between late 2020 and the first half of 2021.
 
-I worked on the project as narrative designer, writer in Brazilian Portuguese and English, executive producer, game designer, and level designer.
+I worked on the project as narrative designer, writer in Brazilian and English, executive producer, game designer, and level designer.
 
 Soundtrack on [YouTube](https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb) and [Spotify](https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL).

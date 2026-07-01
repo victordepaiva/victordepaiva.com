@@ -114,7 +114,7 @@ The site supports localized URLs under `/en/` and `/br/`, plus resolver URLs und
 
 Localized source files should end with the locale code before the extension:
 - English: `2023-02-03-ernesto-en.md`
-- Brazilian Portuguese: `2023-02-03-ernesto-br.md`
+- Brazilian: `2023-02-03-ernesto-br.md`
 
 The filename suffix is for source organization only. Public URLs are controlled by front matter:
 
@@ -136,7 +136,7 @@ Fallback behavior:
 - If the requested content locale is missing and English exists, the shell page renders English.
 - Otherwise, the shell page renders the first available version for that `translation_key`.
 
-This means browsing locale and content language are separate. For example, `/en/fiction/505/` remains an English UI page with English navigation, but it can display the Brazilian Portuguese body if that is the only available content. The page shows a short notice explaining the content language and canonicalizes to the real content-language URL.
+This means browsing locale and content language are separate. For example, `/en/fiction/505/` remains an English UI page with English navigation, but it can display the Brazilian body if that is the only available content. The page shows a short notice explaining the content language and canonicalizes to the real content-language URL.
 
 Resolver URLs such as `/about/` and `/-/about/` are still noindex redirect pages for browser/manual locale discovery. Missing localized content URLs such as `/en/fiction/505/` are noindex shell pages, not redirects, so users do not get pushed into another locale namespace while browsing.
 
@@ -146,7 +146,7 @@ For `collection: textos`, preserve the original creative text language with:
 original_language: brazilian
 ```
 
-This value is displayed independently of the current UI locale. Current `textos` posts are Brazilian Portuguese originals and use `-br.md` filenames. If a future translation is added, for example `2023-02-03-ernesto-en.md`, give it the same `translation_key` so English users automatically see the English body at `/en/fiction/ernesto/` instead of the fallback shell.
+This value is displayed independently of the current UI locale. Current `textos` posts are Brazilian originals and use `-br.md` filenames. If a future translation is added, for example `2023-02-03-ernesto-en.md`, give it the same `translation_key` so English users automatically see the English body at `/en/fiction/ernesto/` instead of the fallback shell.
 
 ### Adding Posts
 1. Create new Markdown file in `_posts/`

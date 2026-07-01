@@ -38,7 +38,7 @@ my_roles:
   - 'Publishing'
   - 'QA'
   - 'Marketing'
-word_count: '~22,000 (English + Brazilian Portuguese)'
+word_count: '~22,000 (English + Brazilian)'
 ---
 
 A game by [Diana Amorim](https://bsky.app/profile/h3xi.bsky.social), responsible for the original concept, music, and programming, in partnership with [Garoa Studios](http://garoastudios.com), responsible for production, publishing, narrative, QA, and marketing, and [Kuating](https://kuating.artstation.com), responsible for the art.
@@ -51,7 +51,7 @@ A game by [Diana Amorim](https://bsky.app/profile/h3xi.bsky.social), responsible
 
 As a music and rhythm game, the beatmap inputs were simplified. The maps were rebuilt to adjust difficulty through playtests and feedback. **Practice Mode** was created, and the score and combo systems were developed together with the creator.
 
-For the narrative, we chose a linear story without choices, closer to a kinetic novel, to focus on the themes and canonical plot. Older dialogue was rewritten and new dialogue was written to remain faithful to the creator's original tone, present in the first version, in both English and Brazilian Portuguese.
+For the narrative, we chose a linear story without choices, closer to a kinetic novel, to focus on the themes and canonical plot. Older dialogue was rewritten and new dialogue was written to remain faithful to the creator's original tone, present in the first version, in both English and Brazilian.
 
 ### Production and Project Management
 

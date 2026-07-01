@@ -31,7 +31,7 @@ i18n_path: /games/
 </div>
 
 <p><h2>{{ i18n.section.past_projects }}</h2></p>
-{% assign past_posts = site.categories.past-projects | i18n_best: active_lang | sort: 'date' %}
+{% assign past_posts = site.categories.past-projects | i18n_best: active_lang | sort: 'date' | reverse %}
 <div class="games-capsule-grid" role="list">
   {% for post in past_posts %}
     {% if post.url and post.published != false %}
