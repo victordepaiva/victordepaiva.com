@@ -153,7 +153,7 @@ III. A primeira que vier na cabeça. Não quero ouvir o <a href="https://www.you
 <li>Dan Ximenes (<a href="http://store.steampowered.com/app/389170/A_Lenda_do_Heri__Edio_Definitiva/"><em>A Lenda do Herói</em></a>, <a href="http://store.steampowered.com/app/1229500/Shieldmaiden_Remix_Edition"><em>Shieldmaiden</em></a>): <strong>Resgate</strong></li>
 <li>Hugo Forte (<a href="https://store.steampowered.com/app/1903560/Atomic_Picnic/"><em>Atomic Picnic</em></a>): <strong>Nepotismo</strong></li>
 </ol>
-<p><img src="https://static.wixstatic.com/media/414b90_aa7000d0d18749c7a00658bbf7b48af5~mv2.png/v1/fill/w_370,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/414b90_aa7000d0d18749c7a00658bbf7b48af5~mv2.png" alt="Print de uma convewrsa no Telegram - o autor do post pergunta se o termo 'nepotismo' era denúncia velada de alguma coisa, e o joguinista responde que não, esclarecendo que acha extremamente mais fácil conseguir emprego com recomendação no meio gamedev."></p>
+<p><img src="https://static.wixstatic.com/media/414b90_aa7000d0d18749c7a00658bbf7b48af5~mv2.png/v1/fill/w_370,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/414b90_aa7000d0d18749c7a00658bbf7b48af5~mv2.png" alt="Print de uma conversa - o autor do post pergunta se o termo 'nepotismo' era denúncia velada de alguma coisa, e o joguinista responde que não, esclarecendo que acha extremamente mais fácil conseguir emprego com recomendação no meio gamedev."></p>
 <p><em>Por pouco o artigo não virou um exposed</em></p>
 <ol start="74">
 <li>Cabie (<a href="https://store.steampowered.com/app/2368190/Bem_Feito/"><em>Bem Feito</em></a>): <strong>Trabalho, Onírico, Arquitetura, Iusão, Encanto</strong></li>

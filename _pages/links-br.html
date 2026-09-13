@@ -1,0 +1,119 @@
+---
+layout: default
+title: 'links'
+permalink: /br/links/
+lang: br
+translation_key: linkspage
+i18n_path: /links/
+author_profile: false
+---
+
+{% include i18n.html %}
+
+<div id="main" role="main">
+  <article class="page links-page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="links">
+    <div class="page__inner-wrap">
+      <header><h1 id="page-title" class="page__title" itemprop="headline">links</h1></header>
+      <section class="page__content" itemprop="text">
+        <section class="external-links-section" aria-labelledby="links-socials-title">
+          <h2 id="links-socials-title">{{ i18n.section.socials }}</h2>
+          <div class="external-links-grid">
+            <a class="external-link-card" href="https://bsky.app/profile/victordepaiva.com?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer me">
+              <span class="external-link-icon" aria-hidden="true"><img src="{{ '/assets/images/icons/bluesky.svg' | relative_url }}" alt=""></span>
+              <span class="external-link-text">
+                <span class="external-link-title">Bluesky</span>
+                <span class="external-link-description">@victordepaiva.com</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="https://www.linkedin.com/in/victordepaiva/?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer me">
+              <span class="external-link-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">LinkedIn</span>
+                <span class="external-link-description">victordepaiva</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="https://www.youtube.com/@victordepaiva?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer me">
+              <span class="external-link-icon" aria-hidden="true"><i class="fab fa-youtube"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">YouTube</span>
+                <span class="external-link-description">@victordepaiva</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="https://www.instagram.com/victordepaiva.rio?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer me">
+              <span class="external-link-icon" aria-hidden="true"><i class="fab fa-instagram"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">Instagram</span>
+                <span class="external-link-description">@victordepaiva.rio</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <section class="external-links-section" aria-labelledby="links-other-title">
+          <h2 id="links-other-title">{{ i18n.section.other_places }}</h2>
+          <div class="external-links-grid">
+            <a class="external-link-card" href="https://www.controlesvoadores.com.br/victor?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer">
+              <span class="external-link-icon" aria-hidden="true"><i class="fas fa-newspaper"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">Controles Voadores</span>
+                <span class="external-link-description">{{ i18n.links.controles_voadores_description }}</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="https://victordepaiva.itch.io/?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer me">
+              <span class="external-link-icon" aria-hidden="true"><img src="{{ '/assets/images/icons/itchio-textless-white.svg' | relative_url }}" alt=""></span>
+              <span class="external-link-text">
+                <span class="external-link-title">itch.io</span>
+                <span class="external-link-description">{{ i18n.links.itch_description }}</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="http://lattes.cnpq.br/1035006571814551" target="_blank" rel="nofollow noopener noreferrer">
+              <span class="external-link-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">Lattes</span>
+                <span class="external-link-description">{{ i18n.links.lattes_description }}</span>
+              </span>
+            </a>
+            <a class="external-link-card" href="https://garoastudios.com?utm_source=victordepaiva.com" target="_blank" rel="nofollow noopener noreferrer">
+              <span class="external-link-icon" aria-hidden="true"><i class="fas fa-gamepad"></i></span>
+              <span class="external-link-text">
+                <span class="external-link-title">Garoa Studios</span>
+                <span class="external-link-description">{{ i18n.links.garoa_description }}</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <section class="external-links-section" id="contact" aria-labelledby="links-contact-title">
+          <h2 id="links-contact-title">{{ i18n.section.contact }}</h2>
+          <div class="external-links-grid">
+            <div class="external-link-card email-link-card">
+              <a class="email-link-main" href="mailto:contato@garoastudios.com">
+                <span class="external-link-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                <span class="external-link-text">
+                  <span class="external-link-title">{{ i18n.links.garoa_inquiries }}</span>
+                  <span class="external-link-description">contato@garoastudios.com</span>
+                </span>
+              </a>
+              <button class="email-copy-button" type="button" data-copy-email="contato@garoastudios.com" data-copy-success="{{ i18n.links.address_copied }}" aria-label="{{ i18n.links.copy_address }}">
+                <i class="fas fa-copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="external-link-card email-link-card">
+              <a class="email-link-main" href="mailto:victor.paiva@spawnd.gg">
+                <span class="external-link-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                <span class="external-link-text">
+                  <span class="external-link-title">{{ i18n.links.spawnd_inquiries }}</span>
+                  <span class="external-link-description">victor.paiva@spawnd.gg</span>
+                </span>
+              </a>
+              <button class="email-copy-button" type="button" data-copy-email="victor.paiva@spawnd.gg" data-copy-success="{{ i18n.links.address_copied }}" aria-label="{{ i18n.links.copy_address }}">
+                <i class="fas fa-copy" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </article>
+</div>

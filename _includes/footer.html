@@ -8,7 +8,12 @@
       <span class="footer-language-switcher" aria-label="{{ i18n.language_label }}">
         {% for locale in site.i18n.locales %}
           {% unless forloop.first %}<span aria-hidden="true">|</span>{% endunless %}
-          <a href="{{ page | i18n_url_for_locale: locale.code | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
+          {% assign locale_href = page | i18n_url_for_locale: locale.code %}
+          {% if locale_href == page.url and page.i18n_path and locale.code != active_lang %}
+            {% assign locale_path = page.i18n_path | remove_first: '/' %}
+            {% assign locale_href = '/' | append: locale.code | append: '/' | append: locale_path %}
+          {% endif %}
+          <a href="{{ locale_href | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
         {% endfor %}
       </span>
     </div>
@@ -34,7 +39,7 @@
         {% endif %}
 
         <li>
-          <a href="https://otakumaromba.itch.io" rel="nofollow noopener noreferrer" target="_blank">
+          <a href="https://victordepaiva.itch.io/" rel="nofollow noopener noreferrer" target="_blank">
             <img src="{{ '/assets/images/icons/itchio-textless-white.svg' | relative_url }}" alt="itch.io icon" style="width:1.25em; height:1.25em; vertical-align:middle; margin-right:0.3em;" />
             itch.io
           </a>

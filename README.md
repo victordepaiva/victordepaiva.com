@@ -21,7 +21,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_pages/nonfiction.html` - Non-fiction writing section
 - `_pages/games.html` - Games section
 - `_pages/other-work.html` - Other work section
-- `_pages/contact.md` - Contact page
+- `_pages/links.html` - External profiles and contact section
 - `_pages/now.html` - Current status page
 - `_pages/archive.html` - Post archive
 - `_pages/categories.html` - Category listing
@@ -97,11 +97,11 @@ This site is deployed via Netlify. The build process:
 This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme with customizations:
 - Dark skin theme
 - Desktop left sidebar navigation with social links, feed link, copyright, and font picker
-- Mobile top navigation with always-visible about/now/links/contact and a work dropdown
+- Mobile top navigation with always-visible about/now/links and a work dropdown
 - Responsive games capsule grid on `/games/`
 - Game posts use `_layouts/game.html` for structured game pages without post metadata, social share buttons, or previous/next post navigation
 - Other work section backed by the same `_posts/` workflow as games and writing
-- Dedicated contact page at `/contact/`
+- Native links page at `/links/`, with contact handled as a section on that page
 - OpenDyslexic font accessibility option
 - Custom CSS for additional styling
 - Custom JavaScript for enhanced functionality
@@ -127,7 +127,11 @@ permalink: /br/fiction/ernesto/
 
 Use the same `translation_key` for every localized version of the same page or post. Keep `i18n_path` as the locale-free canonical path and keep slugs stable across locales, for example `/en/about/` and `/br/about/`.
 
+Choose `translation_key` values that identify the content item, not generic UI concepts or `_data/i18n.json` keys. For example, the native links page uses `translation_key: linkspage` with `i18n_path: /links/`; using a generic key such as `links` can cause the language switcher to resolve back to the current locale instead of the translated page.
+
 UI strings live in `_data/i18n.json`. Add navigation labels, layout labels, section headings, buttons, and other interface copy there. Do not put page or post body translations in `_data/i18n.json`; create localized Markdown/HTML files instead.
+
+The language controls in the masthead and footer use `page | i18n_url_for_locale: locale.code` to generate the matching localized URL. If that filter returns the current URL for a page that has `i18n_path`, the templates fall back to `/<locale>/<i18n_path>`. When adding a localized page, verify the generated HTML for both locale links, for example that `/en/example/` points `br` to `/br/example/` and `/br/example/` points `en` to `/en/example/`.
 
 Fallback behavior:
 - If the requested locale exists for a `translation_key`, the site renders that version at that locale URL.
@@ -188,7 +192,7 @@ The entire capsule card links to the game post. If `games_capsule_image` is miss
 
 ### Navigation and Footer
 - Desktop uses a fixed left sidebar from `_includes/masthead.html`, styled in `assets/css/custom.css`
-- Desktop and mobile top links include about, now, links, and contact before the work/content links
+- Desktop and mobile top links include about, now, and links before the work/content links
 - The desktop sidebar includes the font picker, Bluesky icon, feed icon, and copyright
 - The mobile footer keeps the font picker, social/feed links, and centered copyright
 - Font switching is handled in `assets/js/custom.js` through `data-font-choice` controls

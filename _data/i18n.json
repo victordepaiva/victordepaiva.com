@@ -31,7 +31,10 @@
       "dialogues": "dialogues",
       "columns": "columns",
       "position_papers": "position papers",
-      "other_work": "other work"
+      "other_work": "other work",
+      "socials": "socials",
+      "other_places": "other places where my work is hosted",
+      "contact": "contact"
     },
     "layout": {
       "about": "about",
@@ -57,6 +60,16 @@
       "en": "English",
       "brazilian": "Brazilian",
       "english": "English"
+    },
+    "links": {
+      "controles_voadores_description": "My article column at Controles Voadores, available in Brazilian Portuguese.",
+      "itch_description": "Small games, prototypes, and experimental releases.",
+      "lattes_description": "My profile in Brazil's academic curriculum system.",
+      "garoa_description": "The studio I founded, focused on independent games.",
+      "garoa_inquiries": "Garoa inquiries",
+      "spawnd_inquiries": "spawnd inquiries",
+      "copy_address": "Copy address",
+      "address_copied": "address copied"
     }
   },
   "br": {
@@ -91,7 +104,10 @@
       "dialogues": "diálogos",
       "columns": "colunas",
       "position_papers": "notas de posicionamento",
-      "other_work": "outros trabalhos"
+      "other_work": "outros trabalhos",
+      "socials": "sociais",
+      "other_places": "outros lugares onde meu trabalho esta hospedado",
+      "contact": "contato"
     },
     "layout": {
       "about": "sobre",
@@ -117,6 +133,16 @@
       "en": "ingles",
       "brazilian": "brasileiro",
       "english": "inglês"
+    },
+    "links": {
+      "controles_voadores_description": "Minha coluna de artigos no Controles Voadores, em portugues brasileiro.",
+      "itch_description": "Jogos pequenos, prototipos e lancamentos experimentais.",
+      "lattes_description": "Meu perfil no sistema brasileiro de curriculos academicos.",
+      "garoa_description": "O estudio que fundei, focado em jogos independentes.",
+      "garoa_inquiries": "Assuntos da Garoa",
+      "spawnd_inquiries": "Assuntos do spawnd",
+      "copy_address": "Copiar endereco",
+      "address_copied": "email copiado"
     }
   }
 }

@@ -131,4 +131,64 @@ document.addEventListener('DOMContentLoaded', function () {
       control.style.fontWeight = 'bold';
     }
   });
+
+  function copyTextFallback(text) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      document.execCommand('copy');
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function() {
+        return copyTextFallback(text);
+      });
+    }
+
+    return copyTextFallback(text);
+  }
+
+  function showCopyToast(button) {
+    var card = button.closest('.email-link-card');
+    if (!card) return;
+
+    var oldToast = card.querySelector('.email-copy-toast');
+    if (oldToast) {
+      oldToast.remove();
+    }
+
+    var toast = document.createElement('span');
+    toast.className = 'email-copy-toast';
+    toast.setAttribute('role', 'status');
+    toast.textContent = button.dataset.copySuccess || 'address copied';
+    card.appendChild(toast);
+
+    window.setTimeout(function() {
+      toast.remove();
+    }, 1800);
+  }
+
+  document.querySelectorAll('[data-copy-email]').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      copyText(button.dataset.copyEmail).then(function() {
+        showCopyToast(button);
+      });
+    });
+  });
 });

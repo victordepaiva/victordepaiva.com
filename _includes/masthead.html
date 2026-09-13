@@ -17,8 +17,7 @@
           <hr class="desktop-sidebar-divider">
           <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
           <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
-          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a>
-          <a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a>
+          <a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a>
           <hr class="desktop-sidebar-divider">
           <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a>
           <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a>
@@ -29,7 +28,12 @@
           <div class="desktop-sidebar-font-switcher" aria-label="{{ i18n.language_label }}">
             {% for locale in site.i18n.locales %}
               {% unless forloop.first %}<span aria-hidden="true">|</span>{% endunless %}
-              <a href="{{ page | i18n_url_for_locale: locale.code | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
+              {% assign locale_href = page | i18n_url_for_locale: locale.code %}
+              {% if locale_href == page.url and page.i18n_path and locale.code != active_lang %}
+                {% assign locale_path = page.i18n_path | remove_first: '/' %}
+                {% assign locale_href = '/' | append: locale.code | append: '/' | append: locale_path %}
+              {% endif %}
+              <a href="{{ locale_href | relative_url }}" data-locale-choice="{{ locale.code }}">{{ locale.label }}</a>
             {% endfor %}
           </div>
           <hr class="desktop-sidebar-divider">
@@ -44,7 +48,7 @@
               <img src="{{ '/assets/images/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true">
             </a>
             <span class="desktop-sidebar-social-separator" aria-hidden="true">|</span>
-            <a href="https://otakumaromba.itch.io" rel="nofollow noopener noreferrer" target="_blank" aria-label="itch.io">
+            <a href="https://victordepaiva.itch.io/" rel="nofollow noopener noreferrer" target="_blank" aria-label="itch.io">
               <img src="{{ '/assets/images/icons/itchio-textless-white.svg' | relative_url }}" alt="" aria-hidden="true">
             </a>
             <span class="desktop-sidebar-social-separator" aria-hidden="true">|</span>
@@ -63,17 +67,15 @@
           <li class="masthead__menu-item"><a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a></li>
-          <li class="masthead__menu-item"><a href="https://otakumaromba.itch.io" target="_blank" rel="noopener noreferrer">{{ i18n.nav.itch }}</a></li>
-          <li class="masthead__menu-item"><a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a></li>
-          <li class="masthead__menu-item"><a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a></li>
+          <li class="masthead__menu-item"><a href="https://victordepaiva.itch.io/" target="_blank" rel="noopener noreferrer">{{ i18n.nav.itch }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
         </ul>
         <div class="mobile-nav-links" aria-label="mobile navigation">
           <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
           <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
-          <a href="https://linktr.ee/victordepaiva" target="_blank" rel="noopener noreferrer">{{ i18n.nav.links }}</a>
-          <a href="{{ '/contact/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.contact }}</a>
+          <a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a>
           <span class="mobile-nav-separator" aria-hidden="true">|</span>
           <details class="mobile-work-menu">
             <summary>

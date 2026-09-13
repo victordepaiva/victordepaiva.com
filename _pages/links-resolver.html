@@ -1,0 +1,40 @@
+---
+layout: null
+permalink: /-/links/
+sitemap: false
+i18n_fallback: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url=/en/links/">
+    <link rel="canonical" href="/en/links/">
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var available = {"br":"/br/links/","en":"/en/links/"};
+        function normalize(locale) {
+          locale = (locale || '').toLowerCase();
+          if (locale.indexOf('pt') === 0) return 'br';
+          if (locale.indexOf('en') === 0) return 'en';
+          return locale.split('-')[0];
+        }
+        function choose(preferred) {
+          var keys = Object.keys(available);
+          var locale = normalize(preferred);
+          if (available[locale]) return available[locale];
+          if (available.en) return available.en;
+          return keys.length ? available[keys[0]] : '/en/links/';
+        }
+        var saved = window.localStorage && localStorage.getItem('localePreference');
+        var browser = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        window.location.replace(choose(saved || browser) + (window.location.hash || ''));
+      }());
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/en/links/">/en/links/</a>.</p>
+  </body>
+</html>

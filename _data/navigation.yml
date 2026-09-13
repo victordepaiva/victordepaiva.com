@@ -17,11 +17,9 @@ main:
   # - title: "Collections"
   #  url: /collection-archive/
   - title: "🎮 itch.io"
-    url: https://otakumaromba.itch.io
+    url: https://victordepaiva.itch.io/
   - title: "🔗 links"
-    url: https://linktr.ee/victordepaiva
-  - title: "contact"
-    url: /contact/
+    url: /-/links/
   - title: "|"
     url: ""
   - title: "about"
