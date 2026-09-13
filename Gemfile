@@ -6,6 +6,7 @@ gem 'github-pages'
 gem 'jekyll-include-cache'
 gem 'fiddle'
 gem 'faraday-retry'
+gem 'csv'
 
 group :development do
     gem "webrick", "~> 1.8"
