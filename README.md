@@ -86,6 +86,18 @@ This site is deployed via Netlify. The build process:
 2. Runs `bundle exec jekyll build`
 3. Serves the generated `_site/` directory
 
+### Dependency Lockfile
+
+This is an application repository, so `Gemfile.lock` must be tracked and committed. Do not add it back to `.gitignore`. Netlify builds from a fresh checkout; without the lockfile it can resolve a different Jekyll/GitHub Pages dependency set than the one tested locally.
+
+When changing Ruby gems:
+1. Edit `Gemfile`
+2. Run `bundle install`
+3. Commit both `Gemfile` and `Gemfile.lock`
+4. Verify with `bundle exec jekyll build`
+
+The project uses Ruby 3.4.x. Some libraries that older Jekyll/GitHub Pages dependencies still `require` were removed from Ruby's default standard-library load path in Ruby 3.4, so they must be explicit bundled gems. Keep compatibility gems such as `csv` and `bigdecimal` in `Gemfile` unless the Jekyll dependency stack is upgraded and Netlify builds prove they are no longer needed.
+
 ### Sitemap
 - Custom sitemap.xml is generated at `/sitemap.xml`
 - Includes all published posts and pages
