@@ -5,6 +5,8 @@ collection: jogos
 categories: past-projects
 published: true
 published_year: '2020'
+work_start_year: '2020'
+work_end_year: '2020'
 games_capsule_image: /assets/images/games/cartomante-library-capsule.png
 date: '2020-09-01 12:00:00 -0300'
 platform: PC

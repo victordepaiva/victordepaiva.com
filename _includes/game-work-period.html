@@ -1,0 +1,11 @@
+{%- assign work_start_year = include.post.work_start_year -%}
+{%- assign work_end_year = include.post.work_end_year -%}
+{%- if work_start_year -%}
+  {%- if work_end_year == nil or work_end_year == "" -%}
+    {{- work_start_year -}}-{{- i18n.layout.ongoing -}}
+  {%- elsif work_start_year == work_end_year -%}
+    {{- work_start_year -}}
+  {%- else -%}
+    {{- work_start_year -}}-{{- work_end_year -}}
+  {%- endif -%}
+{%- endif -%}

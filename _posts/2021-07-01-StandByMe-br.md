@@ -6,6 +6,8 @@ collection: jogos
 categories: past-projects
 published: true
 published_year: '2021'
+work_start_year: '2020'
+work_end_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png
 date: '2021-07-01 12:00:00 -0300'
 release_date: '1º de Julho de 2021'

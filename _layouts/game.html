@@ -81,7 +81,7 @@ layout: default
         {% endif %}
 
         {% assign has_meta_specs = false %}
-        {% if page.release_date or page.status or page.platform or page.genre or page.word_count %}
+        {% if page.work_start_year or page.release_date or page.status or page.platform or page.genre or page.word_count %}
           {% assign has_meta_specs = true %}
         {% endif %}
 
@@ -97,6 +97,7 @@ layout: default
               {% if has_meta_specs %}
                 <div class="game-specs__meta">
                   {% assign meta_separator = false %}
+                  {% if page.work_start_year %}{% if meta_separator %} · {% endif %}{{ i18n.layout.worked_on }}: {% include game-work-period.html post=page %}{% assign meta_separator = true %}{% endif %}
                   {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date }}{% assign meta_separator = true %}{% endif %}
                   {% if page.status %}{% if meta_separator %} · {% endif %}{{ page.status }}{% assign meta_separator = true %}{% endif %}
                   {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform }}{% assign meta_separator = true %}{% endif %}

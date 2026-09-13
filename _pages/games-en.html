@@ -22,7 +22,7 @@ i18n_path: /games/
           {% endif %}
           <figcaption>
             <span class="games-capsule-title">{{ post.title }}</span>
-            <span class="games-capsule-meta">{{ i18n.layout.wip }}</span>
+            <span class="games-capsule-meta">{% include game-work-period.html post=post %}</span>
           </figcaption>
         </figure>
       </a>
@@ -44,7 +44,7 @@ i18n_path: /games/
           {% endif %}
           <figcaption>
             <span class="games-capsule-title">{{ post.title }}</span>
-            <span class="games-capsule-meta">{{ post.games_status | default: post.published_year }}</span>
+            <span class="games-capsule-meta">{% include game-work-period.html post=post %}</span>
           </figcaption>
         </figure>
       </a>

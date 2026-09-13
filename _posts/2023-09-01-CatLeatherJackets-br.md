@@ -6,6 +6,8 @@ collection: jogos
 categories: past-projects
 published: true
 published_year: '2023'
+work_start_year: '2021'
+work_end_year: '2023'
 games_capsule_image: /assets/images/games/cat-leather-jackets-library-capsule.png
 date: '2023-08-27 12:00:00 -0300'
 release_date: '1º de Dezembro de 2023'

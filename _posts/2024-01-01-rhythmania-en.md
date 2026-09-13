@@ -6,6 +6,8 @@ collection: jogos
 categories: current-projects
 published: true
 published_year: '2024'
+work_start_year: '2024'
+work_end_year:
 games_capsule_image: /assets/images/games/rhythmania-library-capsule.png
 date: '2024-01-01 12:00:00 -0300'
 status: In development

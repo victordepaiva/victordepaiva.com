@@ -184,9 +184,9 @@ Other work posts automatically appear on `_pages/other-work.html`.
 1. Place the vertical capsule image in `assets/images/games/`
 2. Create or update the game post in `_posts/` using `layout: game`
 3. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
-4. Use structured front matter for game details: `tagline`, `release_date`, `status`, `genre`, `platform`, `my_roles`, `word_count`, `banner_image`, `trailer_url`, `screenshots`, `store_links`, `store_embeds`, and `awards`
+4. Use structured front matter for game details: `tagline`, `release_date`, `work_start_year`, `work_end_year`, `status`, `genre`, `platform`, `my_roles`, `word_count`, `banner_image`, `trailer_url`, `screenshots`, `store_links`, `store_embeds`, and `awards`
 5. Only include front matter fields that have real content; omit empty fields
-6. The game layout renders `release_date`, `status`, `genre`, `platform`, `my_roles`, and `word_count` in a compact definition list
+6. The game layout renders `work_start_year`/`work_end_year`, `release_date`, `status`, `genre`, `platform`, `my_roles`, and `word_count` in a compact definition list
 7. The `my_roles` field should be a YAML list and renders as a comma-separated value in the specs block
 8. Keep the body as clean Markdown prose only. Structured content such as images, embeds, store links, screenshots, and awards should live in front matter so `_layouts/game.html` can render it consistently
 9. Use `_posts/2020-09-01-Cartomante.md` as the reference format for game front matter
@@ -197,8 +197,9 @@ Game pages keep the custom "Read also" block, but do not render the standard pos
 
 ### Game Capsules
 1. Use `categories: current-projects` or `categories: past-projects` so the post appears in the right `/games/` section
-2. Keep `published_year` updated; past projects show the year, current projects show `WIP`
-3. Add `games_status` to override the displayed year when a past project should show another status, such as `WIP`
+2. Set `work_start_year` and `work_end_year` to show the period worked on the project in capsule metadata
+3. Leave `work_end_year` blank for ongoing work; the site renders the localized `ongoing` label
+4. If `work_start_year` and `work_end_year` are the same, the capsule renders a single year
 
 The entire capsule card links to the game post. If `games_capsule_image` is missing, the grid renders an image placeholder.
 
