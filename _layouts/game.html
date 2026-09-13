@@ -39,6 +39,17 @@ layout: default
   .game-specs__meta + .game-specs__roles {
     margin-top: 0.25rem;
   }
+
+  .game-store-embed {
+    margin: 1rem 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .game-store-embed iframe {
+    display: block;
+    max-width: 100%;
+  }
 </style>
 
 {% assign breadcrumbs_enabled = site.breadcrumbs %}
@@ -151,7 +162,7 @@ layout: default
           {% endif %}
           {% if page.store_embeds %}
             {% for embed in page.store_embeds %}
-              {{ embed }}
+              <div class="game-store-embed">{{ embed }}</div>
             {% endfor %}
           {% endif %}
         {% endif %}
