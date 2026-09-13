@@ -15,7 +15,7 @@ store_links:
     url: https://store.steampowered.com/app/2322070/RhythMania/
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/2322070/" frameborder="0" width="646" height="190"></iframe>'
-  - '<iframe src="https://www.spawnd.gg/-/games/embed/26?description=true" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media; clipboard-write; clipboard-read; web-share; cross-origin-isolated" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+  - '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.spawnd.gg/-/games/embed/26?description=true" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; clipboard-write; clipboard-read; web-share; cross-origin-isolated" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
 lang: 'br'
 translation_key: 'rhythmania'
 i18n_path: '/games/rhythmania/'
