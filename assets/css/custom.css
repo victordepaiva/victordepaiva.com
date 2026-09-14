@@ -207,6 +207,74 @@ body {
   }
 }
 
+/* Widen content containers while preserving the fixed desktop side navigation. */
+:root {
+  --content-edge-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+  --content-column-inset: clamp(6rem, 16vw, 12rem);
+}
+
+#main {
+  padding-left: var(--content-edge-padding);
+  padding-right: var(--content-edge-padding);
+}
+
+.breadcrumbs {
+  padding-left: var(--content-edge-padding);
+  padding-right: var(--content-edge-padding);
+}
+
+@media (min-width: 1024px) {
+  .page,
+  .archive,
+  .page__related {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    width: calc(100% - var(--content-column-inset));
+  }
+
+  .breadcrumbs ol {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - var(--content-column-inset));
+  }
+
+  #main > .sidebar + .page,
+  #main > .sidebar + .archive {
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 200px;
+    width: calc(100% - 200px);
+  }
+
+  #main > .sidebar ~ .page__related {
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (min-width: 1280px) {
+  #main,
+  .breadcrumbs {
+    max-width: 1460px;
+  }
+
+  #main > .sidebar + .page,
+  #main > .sidebar + .archive {
+    padding-right: 300px;
+    width: calc(100% - 300px);
+  }
+
+  #main > .sidebar ~ .page__related {
+    width: calc(100% - 300px);
+  }
+}
+
 /* Fonte Padrão */
 body.global-font-family {
   --global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
