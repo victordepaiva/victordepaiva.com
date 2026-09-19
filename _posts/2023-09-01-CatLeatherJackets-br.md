@@ -10,20 +10,20 @@ work_start_year: '2021'
 work_end_year: '2023'
 games_capsule_image: /assets/images/games/cat-leather-jackets-library-capsule.png
 date: '2023-08-27 12:00:00 -0300'
-release_date: '1º de Dezembro de 2023'
-status: Released
-genre: 'Visual novel musical'
-platform: PC
+release_date: '1º de dezembro de 2023'
+status: lançado
+genre: 'visual novel musical'
+platform: pc
 my_roles:
-  - Game design
-  - Narrative design
-  - Writing
-  - Production
-  - Project management
-  - Publishing
-  - QA
-  - Marketing
-word_count: '~22.000 (Inglês + Brasileiro)'
+  - game design
+  - design narrativo
+  - roteiro
+  - produção
+  - gestão de projeto
+  - publicação
+  - qa
+  - marketing
+word_count: '~22.000 (inglês + brasileiro)'
 banner_image: /assets/images/posts/clj-images/catleatherjackets_characters_banner.png
 screenshots:
   - /assets/images/posts/clj-images/priya_bus.gif
@@ -41,24 +41,25 @@ lang: 'br'
 translation_key: 'catleatherjackets'
 i18n_path: '/games/catleatherjackets/'
 permalink: '/br/games/catleatherjackets/'
+overview: >-
+  Jogo feito por [Diana Amorim](https://bsky.app/profile/h3xi.bsky.social),
+  responsável pelo conceito original, músicas e programação, em parceria com a
+  [Garoa Studios](http://garoastudios.com), responsável por produção, publicação,
+  narrativa, QA e marketing, e [Kuating](https://kuating.artstation.com),
+  responsável pela arte.
+about_project: |-
+  *Cat Leather Jackets* foi originalmente criado e desenvolvido individualmente por Diana Amorim até o estabelecimento de parceria com a Garoa. Em cima do briefing dos personagens preexistentes, foram estabelecidos novos temas e conceitos, e criou-se uma narrativa original com a aprovação da criadora.
+
+  A criadora buscou a parceria com a Garoa Studios para finalização e lançamento comercial do título.
+technical_work: |-
+  Também um jogo de música e ritmo, os inputs dos beatmaps foram simplificados. Os mapas foram refeitos para adequação de dificuldade a partir de playtests e coleta de feedback. Foi criado o **Modo Prática**, e o sistema de pontuação e combos foi trabalhado junto com a criadora.
+
+  Para a narrativa, optou-se por uma história linear, sem escolhas, como kinetic novel, para foco nos temas e enredo canonicamente apresentados. Os diálogos antigos foram reescritos e os novos foram escritos seguindo a fidelidade do tom original da criadora, presente na primeira versão, tanto em inglês quanto em brasileiro.
+
+  Em competência de produção, o escopo foi revisado, o cronograma organizado, foi convidado o artista Kuating para a execução dos sprites de personagem, e a produção musical e sound design foram revisados. Organizou-se playtests para análise de qualidade, e o projeto foi inscrito em eventos, feiras, mostras e competições, sendo agraciado com seleções e exposição. Também foi feita intermediação com veículos de mídia para cobertura, divulgação e levantamento de wishlists.
+additional_links:
+  - label: Trilha sonora no YouTube
+    url: https://www.youtube.com/playlist?list=PLVB_OZivbJHlxSHFUQDdUFPFwvoHS6PNZ
+  - label: Trilha sonora no Spotify
+    url: https://open.spotify.com/intl-pt/album/1whBNH0ictxUK1L4bPKAPs
 ---
-
-Jogo feito por [Diana Amorim](https://bsky.app/profile/h3xi.bsky.social), responsável pelo conceito original, músicas e programação, em parceria com a [Garoa Studios](http://garoastudios.com), responsável por produção, publicação, narrativa, QA e marketing, e [Kuating](https://kuating.artstation.com), responsável pela arte.
-
-### O Projeto
-
-*Cat Leather Jackets* foi originalmente criado e desenvolvido individualmente por Diana Amorim até o estabelecimento de parceria com a Garoa. Em cima do briefing dos personagens preexistentes, foram estabelecidos novos temas e conceitos, e criou-se uma narrativa original com a aprovação da criadora.
-
-### Game Design e Design de Narrativa
-
-Também um jogo de música e ritmo, os inputs dos beatmaps foram simplificados. Os mapas foram refeitos para adequação de dificuldade a partir de playtests e coleta de feedback. Foi criado o **Modo Prática**, e o sistema de pontuação e combos foi trabalhado junto com a criadora.
-
-Para a narrativa, optou-se por uma história linear, sem escolhas, como kinetic novel, para foco nos temas e enredo canonicamente apresentados. Os diálogos antigos foram reescritos e os novos foram escritos seguindo a fidelidade do tom original da criadora, presente na primeira versão, tanto em Inglês quanto em Brasileiro.
-
-### Produção e Gestão de Projeto
-
-A criadora buscou a parceria com a Garoa Studios para finalização e lançamento comercial do título. Em competência de produção, o escopo foi revisado, o cronograma organizado, foi convidado o artista Kuating para a execução dos sprites de personagem, e a produção musical e sound design foram revisados.
-
-Organizou-se playtests para análise de qualidade, e o projeto foi inscrito em eventos, feiras, mostras e competições, sendo agraciado com seleções e exposição. Também foi feita intermediação com veículos de mídia para cobertura, divulgação e levantamento de wishlists.
-
-Trilha sonora no [YouTube](https://www.youtube.com/playlist?list=PLVB_OZivbJHlxSHFUQDdUFPFwvoHS6PNZ) e no [Spotify](https://open.spotify.com/intl-pt/album/1whBNH0ictxUK1L4bPKAPs).

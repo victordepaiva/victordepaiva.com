@@ -111,7 +111,8 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 - Desktop left sidebar navigation with social links, feed link, copyright, and font picker
 - Mobile top navigation with always-visible about/now/links and a work dropdown
 - Responsive games capsule grid on `/games/`
-- Game posts use `_layouts/game.html` for structured game pages without post metadata, social share buttons, or previous/next post navigation
+- Game posts use `_layouts/game.html` for structured, collapsible game sections without post metadata, social share buttons, or previous/next post navigation
+- Game and writing post pages use a wider content inset on large desktop viewports (`1280px` and up)
 - Other work section backed by the same `_posts/` workflow as games and writing
 - Native links page at `/links/`, with contact handled as a section on that page
 - OpenDyslexic font accessibility option
@@ -184,14 +185,21 @@ Other work posts automatically appear on `_pages/other-work.html`.
 1. Place the vertical capsule image in `assets/images/games/`
 2. Create or update the game post in `_posts/` using `layout: game`
 3. Add `games_capsule_image: /assets/images/games/your-image.png` to the game post front matter
-4. Use structured front matter for game details: `tagline`, `release_date`, `work_start_year`, `work_end_year`, `status`, `genre`, `platform`, `my_roles`, `word_count`, `banner_image`, `trailer_url`, `screenshots`, `store_links`, `store_embeds`, and `awards`
+4. Use structured front matter for game details: `tagline`, `release_date`, `work_start_year`, `work_end_year`, `status`, `genre`, `platform`, `my_roles`, `word_count`, `banner_image`, `overview`, `about_project`, `technical_work`, `trailer_url`, `screenshots`, `play_embeds`, `store_links`, `store_embeds`, `additional_links`, and `awards`
 5. Only include front matter fields that have real content; omit empty fields
-6. The game layout renders `work_start_year`/`work_end_year`, `release_date`, `status`, `genre`, `platform`, `my_roles`, and `word_count` in a compact definition list
-7. The `my_roles` field should be a YAML list and renders as a comma-separated value in the specs block
-8. Keep the body as clean Markdown prose only. Structured content such as images, embeds, store links, screenshots, and awards should live in front matter so `_layouts/game.html` can render it consistently
-9. Use `_posts/2020-09-01-Cartomante.md` as the reference format for game front matter
+6. The game layout renders `work_start_year`/`work_end_year`, `release_date`, `status`, `genre`, `platform`, `my_roles`, and `word_count` in the compact summary block. That block is always shown in lowercase
+7. Keep Brazilian summary copy accented (`lançado`, `inglês`, `produção`) and write ordinals as `1º`. English dates may keep `1st`
+8. The `my_roles` field should be a YAML list and renders with a diamond separator in the summary block
+9. Store editorial copy as Markdown-capable YAML block scalars in `overview`, `about_project`, and `technical_work`. Keep the Markdown body empty after the closing front matter delimiter
+10. The rendered section order is Overview, Try it, About the project, Technical work, Awards, and Links. Each rendered section is expanded by default and can be collapsed from a control immediately to the left of the heading. Game section headings do not get permalink/copy-anchor buttons
+11. Overview always renders. Screenshots follow its prose, and `trailer_url` renders the YouTube video at the end of the section
+12. `play_embeds` is for playable experiences such as Spawnd and controls whether Try it appears
+13. `awards` is a YAML list and supports Markdown links. Awards is omitted when the list is absent and renders as a responsive two-column list when present
+14. Links is omitted when no link fields exist. The Links section and all game-page media (images, GIFs, embeds) are centered. `store_embeds` render first in a shared column matching the Steam widget width (`646px`, shrinking on smaller screens) and may include image badges as well as iframes. `store_links` and `additional_links` (`label` and `url` pairs) follow when present
+15. About the project and Technical work always render. If either field is absent, the layout uses the localized WIP placeholder from `_data/i18n.json`; empty Try it, Awards, and Links sections are not rendered
+16. Use `_posts/2020-09-01-Cartomante-en.md` and `_posts/2020-09-01-Cartomante-br.md` as reference formats for localized game front matter, including award links and mixed store embeds
 
-`_posts/2020-09-01-Cartomante.md` has been migrated as the reference structured game post. The other game posts currently use `layout: game` but may still keep their existing body content until migrated.
+All localized game posts use the structured section fields. Keep corresponding English and Brazilian posts aligned by `translation_key`, but localize their editorial fields independently.
 
 Game pages keep the custom "Read also" block, but do not render the standard post metadata footer, social share buttons, or previous/next post navigation.
 

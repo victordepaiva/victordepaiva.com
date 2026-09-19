@@ -12,6 +12,7 @@ layout: default
 <style>
   .game-specs {
     margin: 1rem 0 1.5rem;
+    text-transform: lowercase;
   }
 
   .game-specs__rule {
@@ -40,16 +41,6 @@ layout: default
     margin-top: 0.25rem;
   }
 
-  .game-store-embed {
-    margin: 1rem 0;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .game-store-embed iframe {
-    display: block;
-    max-width: 100%;
-  }
 </style>
 
 {% assign breadcrumbs_enabled = site.breadcrumbs %}
@@ -65,7 +56,7 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry game-page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.tagline %}<meta itemprop="description" content="{{ page.tagline | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
@@ -108,16 +99,16 @@ layout: default
               {% if has_meta_specs %}
                 <div class="game-specs__meta">
                   {% assign meta_separator = false %}
-                  {% if page.work_start_year %}{% if meta_separator %} · {% endif %}{{ i18n.layout.worked_on }}: {% include game-work-period.html post=page %}{% assign meta_separator = true %}{% endif %}
-                  {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.status %}{% if meta_separator %} · {% endif %}{{ page.status }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.genre %}{% if meta_separator %} · {% endif %}{{ page.genre }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.word_count %}{% if meta_separator %} · {% endif %}{{ page.word_count }}{% endif %}
+                  {% if page.work_start_year %}{% if meta_separator %} · {% endif %}{{ i18n.layout.worked_on | downcase }}: {% include game-work-period.html post=page %}{% assign meta_separator = true %}{% endif %}
+                  {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date | downcase }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.status %}{% if meta_separator %} · {% endif %}{{ page.status | downcase }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform | downcase }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.genre %}{% if meta_separator %} · {% endif %}{{ page.genre | downcase }}{% assign meta_separator = true %}{% endif %}
+                  {% if page.word_count %}{% if meta_separator %} · {% endif %}{{ page.word_count | downcase }}{% endif %}
                 </div>
               {% endif %}
               {% if page.my_roles %}
-                <div class="game-specs__roles">{% for role in page.my_roles %} ◇ {{ role }}{% endfor %}</div>
+                <div class="game-specs__roles">{% for role in page.my_roles %} ◇ {{ role | downcase }}{% endfor %}</div>
               {% endif %}
             </div>
             <hr class="game-specs__rule">
@@ -128,52 +119,129 @@ layout: default
           <p><img src="{{ page.banner_image | relative_url }}" alt="{{ page.title | escape }} banner"></p>
         {% endif %}
 
-        <h2>{{ i18n.layout.about }}</h2>
-        {{ content }}
-
-        {% if page.trailer_url or page.screenshots %}
-          <h2>{{ i18n.layout.media }}</h2>
-          {% if page.trailer_url %}
-            {% assign trailer_src = page.trailer_url %}
-            {% if trailer_src contains "watch?v=" %}
-              {% assign trailer_id = trailer_src | split: "watch?v=" | last | split: "&" | first %}
-              {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
-            {% elsif trailer_src contains "youtu.be/" %}
-              {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
-              {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
-            {% endif %}
-            <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} {{ i18n.layout.trailer }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          {% endif %}
-          {% if page.screenshots %}
-            {% for screenshot in page.screenshots %}
-              <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }}"></p>
-            {% endfor %}
-          {% endif %}
-        {% endif %}
-
-        {% if page.store_links or page.store_embeds %}
-          <h2>{{ i18n.layout.get_it }}</h2>
-          {% if page.store_links %}
-            <p>
-              {% for store in page.store_links %}
-                <a href="{{ store.url }}">{{ store.label }}</a>{% unless forloop.last %} | {% endunless %}
+        {% assign overview_content = page.overview | default: content %}
+        <section class="game-section" aria-labelledby="game-overview-heading">
+          <h2 class="game-section__heading" id="game-overview-heading">
+            <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-overview-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.overview }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+              <span>{{ i18n.layout.overview }}</span>
+              <span class="game-section__chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="game-section__content" id="game-overview-content">
+            {{ overview_content | markdownify }}
+            {% if page.screenshots %}
+              {% for screenshot in page.screenshots %}
+                <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }}"></p>
               {% endfor %}
-            </p>
-          {% endif %}
-          {% if page.store_embeds %}
-            {% for embed in page.store_embeds %}
-              <div class="game-store-embed">{{ embed }}</div>
-            {% endfor %}
-          {% endif %}
+            {% endif %}
+            {% if page.trailer_url %}
+              {% assign trailer_src = page.trailer_url %}
+              {% if trailer_src contains "watch?v=" %}
+                {% assign trailer_id = trailer_src | split: "watch?v=" | last | split: "&" | first %}
+                {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+              {% elsif trailer_src contains "youtu.be/" %}
+                {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
+                {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+              {% endif %}
+              <div class="game-embed game-embed--video">
+                <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} {{ i18n.layout.trailer }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            {% endif %}
+          </div>
+        </section>
+
+        {% if page.play_embeds and page.play_embeds.size > 0 %}
+          <section class="game-section" aria-labelledby="game-try-heading">
+            <h2 class="game-section__heading" id="game-try-heading">
+              <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-try-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.try_it }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+                <span>{{ i18n.layout.try_it }}</span>
+                <span class="game-section__chevron" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="game-section__content" id="game-try-content">
+              {% for embed in page.play_embeds %}
+                <div class="game-embed game-embed--playable">{{ embed }}</div>
+              {% endfor %}
+            </div>
+          </section>
         {% endif %}
+
+        {% assign about_project_content = page.about_project | default: i18n.layout.wip_about_project %}
+        <section class="game-section" aria-labelledby="game-about-heading">
+          <h2 class="game-section__heading" id="game-about-heading">
+            <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-about-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.about_project }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+              <span>{{ i18n.layout.about_project }}</span>
+              <span class="game-section__chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="game-section__content" id="game-about-content">
+            {{ about_project_content | markdownify }}
+          </div>
+        </section>
+
+        {% assign technical_work_content = page.technical_work | default: i18n.layout.wip_technical_work %}
+        <section class="game-section" aria-labelledby="game-technical-heading">
+          <h2 class="game-section__heading" id="game-technical-heading">
+            <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-technical-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.technical_work }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+              <span>{{ i18n.layout.technical_work }}</span>
+              <span class="game-section__chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="game-section__content" id="game-technical-content">
+            {{ technical_work_content | markdownify }}
+          </div>
+        </section>
 
         {% if page.awards and page.awards.size > 0 %}
-          <h2>{{ i18n.layout.recognition }}</h2>
-          <ul>
-            {% for award in page.awards %}
-              <li>{{ award }}</li>
-            {% endfor %}
-          </ul>
+          <section class="game-section" aria-labelledby="game-awards-heading">
+            <h2 class="game-section__heading" id="game-awards-heading">
+              <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-awards-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.awards }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+                <span>{{ i18n.layout.awards }}</span>
+                <span class="game-section__chevron" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="game-section__content" id="game-awards-content">
+              <ul class="game-awards">
+                {% for award in page.awards %}
+                  <li>{{ award | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </section>
+        {% endif %}
+
+        {% if page.store_links or page.store_embeds or page.additional_links %}
+          <section class="game-section game-section--links" aria-labelledby="game-links-heading">
+            <h2 class="game-section__heading" id="game-links-heading">
+              <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-links-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.links }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+                <span>{{ i18n.layout.links }}</span>
+                <span class="game-section__chevron" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="game-section__content" id="game-links-content">
+              {% if page.store_embeds %}
+                <div class="game-store-embeds">
+                  {% for embed in page.store_embeds %}
+                    <div class="game-embed game-embed--store">{{ embed }}</div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if page.store_links %}
+                <p class="game-store-links">
+                  {% for store in page.store_links %}
+                    <a href="{{ store.url }}">{{ store.label }}</a>{% unless forloop.last %} | {% endunless %}
+                  {% endfor %}
+                </p>
+              {% endif %}
+              {% if page.additional_links %}
+                <p class="game-additional-links">
+                  {% for link in page.additional_links %}
+                    <a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} | {% endunless %}
+                  {% endfor %}
+                </p>
+              {% endif %}
+            </div>
+          </section>
         {% endif %}
 
         <div class="post-end-links" style="margin-top: 2em;">
@@ -204,3 +272,22 @@ layout: default
 
   {% include section-nav.html %}
 </div>
+
+<script>
+  (function () {
+    var toggles = document.querySelectorAll('[data-game-section-toggle]');
+
+    Array.prototype.forEach.call(toggles, function (toggle) {
+      toggle.addEventListener('click', function () {
+        var content = document.getElementById(toggle.getAttribute('aria-controls'));
+        var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        var label = isExpanded ? toggle.dataset.expandLabel : toggle.dataset.collapseLabel;
+        var title = toggle.querySelector('span').textContent.trim();
+
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        toggle.setAttribute('aria-label', label + ': ' + title);
+        content.hidden = isExpanded;
+      });
+    });
+  }());
+</script>

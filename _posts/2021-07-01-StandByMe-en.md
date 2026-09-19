@@ -9,7 +9,7 @@ work_start_year: '2020'
 work_end_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png
 date: '2021-07-01 12:00:00 -0300'
-platform: PC
+platform: pc
 store_links:
   - label: Steam
     url: https://store.steampowered.com/app/1484600/Stand_By_Me/
@@ -23,20 +23,27 @@ translation_key: 'standbyme'
 i18n_path: '/games/standbyme/'
 permalink: '/en/games/standbyme/'
 tagline: 'A colorful, groovy, partially physics-based puzzle game about taking care of your friends.'
-release_date: 'July 1st, 2021'
-status: 'Released'
-genre: 'Partially physics-based puzzle'
+release_date: 'july 1st, 2021'
+status: 'released'
+genre: 'partially physics-based puzzle'
 my_roles:
-  - 'Narrative design'
-  - 'Writing'
-  - 'Executive production'
-  - 'Game design'
-  - 'Level design'
-word_count: '~3,000 (English + Brazilian)'
+  - 'narrative design'
+  - 'writing'
+  - 'executive production'
+  - 'game design'
+  - 'level design'
+word_count: '~3,000 (english + brazilian)'
+overview: >-
+  Based on an [old prototype](https://raposodev.itch.io/sbm-project) by
+  [Gabriel Raposo](https://raposodev.itch.io), game designer at
+  [Garoa Studios](https://garoastudios.com), *Stand by Me* was developed between
+  late 2020 and the first half of 2021.
+technical_work: >-
+  I worked on the project as narrative designer, writer in Brazilian and English,
+  executive producer, game designer, and level designer.
+additional_links:
+  - label: Soundtrack on YouTube
+    url: https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb
+  - label: Soundtrack on Spotify
+    url: https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL
 ---
-
-Based on an [old prototype](https://raposodev.itch.io/sbm-project) by [Gabriel Raposo](https://raposodev.itch.io), game designer at [Garoa Studios](https://garoastudios.com), *Stand by Me* was developed between late 2020 and the first half of 2021.
-
-I worked on the project as narrative designer, writer in Brazilian and English, executive producer, game designer, and level designer.
-
-Soundtrack on [YouTube](https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb) and [Spotify](https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL).

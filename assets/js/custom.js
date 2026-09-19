@@ -1,5 +1,14 @@
 // assets/js/custom.js
 document.addEventListener('DOMContentLoaded', function () {
+  function removeGameHeadingAnchors() {
+    document.querySelectorAll('.game-section__heading > .header-link').forEach(function(anchor) {
+      anchor.remove();
+    });
+  }
+
+  removeGameHeadingAnchors();
+  window.setTimeout(removeGameHeadingAnchors, 0);
+
   // Always remove both font classes before applying the saved one
   document.body.classList.remove('global-font-family', 'open-dyslexic');
   var savedFont = localStorage.getItem('fontPreference');
