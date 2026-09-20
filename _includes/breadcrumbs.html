@@ -1,76 +1,96 @@
-{% assign post_type = "" %}
-{% assign post_path = "" %}
 {% include i18n.html %}
-{% if page.collection == "textos" %}
-  {% if page.categories contains "nonfiction" %}
-    {% assign post_type = i18n.nav.nonfiction %}
-    {% assign post_path = "/nonfiction" %}
-  {% else %}
-    {% assign post_type = i18n.nav.fiction %}
-    {% assign post_path = "/fiction" %}
-  {% endif %}
-{% elsif page.collection == "jogos" %}
-  {% assign post_type = i18n.nav.games %}
-  {% assign post_path = "/games" %}
-{% elsif page.collection == "other-work" %}
-  {% assign post_type = i18n.nav.other_work %}
-  {% assign post_path = "/other-work" %}
+
+{% assign breadcrumbs_enabled = site.breadcrumbs %}
+{% if page.breadcrumbs != null %}
+  {% assign breadcrumbs_enabled = page.breadcrumbs %}
 {% endif %}
 
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="{{ '/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ i18n.nav.home }}</span></a>
-      <meta itemprop="position" content="1" />
-    </li>
-    <span class="sep">/</span>
-    
-   <!-- Forçar o breadcrumb da coleção -->
-    {% if post_type != "" %}
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="{{ post_path | append: '/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
-          <span itemprop="name">{{ post_type }}</span>
-        </a>
-        <meta itemprop="position" content="2" />
-      </li>
-      <span class="sep">/</span>
-    {% else %}
-      <!-- Fallback for other collections or default case -->
-      {% if page.url contains '/nonfiction/' %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
-            <span itemprop="name">{{ i18n.nav.nonfiction }}</span>
-          </a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      {% elsif page.url contains '/fiction/' %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
-            <span itemprop="name">{{ i18n.nav.fiction }}</span>
-          </a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      {% elsif page.url contains '/games/' %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
-            <span itemprop="name">{{ i18n.nav.games }}</span>
-          </a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      {% elsif page.url contains '/other-work/' %}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
-            <span itemprop="name">{{ i18n.nav.other_work }}</span>
-          </a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
+{% assign crumb_path = page.i18n_path | default: "" | strip %}
+{% if crumb_path == "" %}
+  {% assign crumb_path = page.url | default: "/" %}
+  {% if page.lang %}
+    {% assign locale_prefix = "/" | append: page.lang %}
+    {% assign crumb_path = crumb_path | remove_first: locale_prefix %}
+  {% endif %}
+{% endif %}
+{% if crumb_path == "" %}
+  {% assign crumb_path = "/" %}
+{% endif %}
+
+{% assign is_home = false %}
+{% if page.translation_key == "home" or crumb_path == "/" or page.url == "/" %}
+  {% assign is_home = true %}
+{% endif %}
+
+{% if breadcrumbs_enabled and is_home != true %}
+  {% unless paginator %}
+    {% assign parent_label = "" %}
+    {% assign parent_path = "" %}
+    {% assign current_label = page.title %}
+
+    {% if crumb_path == "/games/" or page.translation_key == "games" %}
+      {% assign current_label = i18n.nav.games %}
+    {% elsif crumb_path == "/fiction/" or page.translation_key == "fiction" %}
+      {% assign current_label = i18n.nav.fiction %}
+    {% elsif crumb_path == "/nonfiction/" or page.translation_key == "nonfiction" %}
+      {% assign current_label = i18n.nav.nonfiction %}
+    {% elsif crumb_path == "/other-work/" or page.translation_key == "other-work" %}
+      {% assign current_label = i18n.nav.other_work %}
+    {% elsif crumb_path == "/about/" or page.translation_key == "about" %}
+      {% assign current_label = i18n.nav.about %}
+    {% elsif crumb_path == "/links/" or page.translation_key == "linkspage" %}
+      {% assign current_label = i18n.nav.links %}
+    {% elsif crumb_path == "/now/" or page.translation_key == "now" %}
+      {% assign current_label = i18n.nav.now %}
+    {% elsif crumb_path contains "/games/" or page.collection == "jogos" %}
+      {% assign parent_label = i18n.nav.games %}
+      {% assign parent_path = "/games/" %}
+    {% elsif crumb_path contains "/nonfiction/" or page.categories contains "nonfiction" %}
+      {% assign parent_label = i18n.nav.nonfiction %}
+      {% assign parent_path = "/nonfiction/" %}
+    {% elsif crumb_path contains "/fiction/" %}
+      {% assign parent_label = i18n.nav.fiction %}
+      {% assign parent_path = "/fiction/" %}
+    {% elsif crumb_path contains "/other-work/" or page.collection == "other-work" %}
+      {% assign parent_label = i18n.nav.other_work %}
+      {% assign parent_path = "/other-work/" %}
+    {% elsif page.collection == "textos" %}
+      {% if page.categories contains "nonfiction" %}
+        {% assign parent_label = i18n.nav.nonfiction %}
+        {% assign parent_path = "/nonfiction/" %}
+      {% else %}
+        {% assign parent_label = i18n.nav.fiction %}
+        {% assign parent_path = "/fiction/" %}
       {% endif %}
     {% endif %}
 
-    <li class="current">{{ page.title }}</li>
-  </ol>
-</nav>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/' | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ i18n.nav.home }}</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+
+        {% if parent_label != "" %}
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ parent_path | prepend: active_lang | prepend: '/' | relative_url }}" itemprop="item">
+              <span itemprop="name">{{ parent_label }}</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <span class="sep">/</span>
+          <li class="current" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ current_label }}</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        {% else %}
+          <li class="current" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ current_label }}</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        {% endif %}
+      </ol>
+    </nav>
+  {% endunless %}
+{% endif %}

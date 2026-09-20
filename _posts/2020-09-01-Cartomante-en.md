@@ -10,7 +10,7 @@ work_start_year: '2020'
 work_end_year: '2020'
 games_capsule_image: /assets/images/games/cartomante-library-capsule.png
 date: '2020-09-01 12:00:00 -0300'
-release_date: 'september 1st 2024'
+release_date: 'september 1st 2020'
 status: released
 genre: 'comedy and magical realism visual novel'
 platform: pc
@@ -21,6 +21,9 @@ my_roles:
   - production
   - social media
   - pr
+  - marketing
+  - publishing
+  - localization
 word_count: '~40.000 (english + brazilian)'
 banner_image: /assets/images/posts/cartomante-images/cartomante_characters_banner.png
 trailer_url: 'https://www.youtube.com/embed/qPkon4cQZhc?si=4fAEjRDARs7MrG2w'
@@ -66,6 +69,15 @@ about_project: |-
   Over the two months following that original week-long “internal jam”, I worked on writing the rest of the dialogue. Because of our self-imposed scope limitations, we would only have those same three clients across every run. Also because of those limitations, we would only have three of the Major Arcana (to the frustration of some players to this day). To add a little variety, each card can be interpreted in three different ways. And with that combination of clients, cards, and readings (plus a few additional dialogue choices), we managed to reach the final version with more than thirty endings (with all of the original text written in Portuguese and English in parallel - no machine translation or AI back then).
 
   Curiously, despite being our shortest game, our cheapest one, the only one (at the time) we had not originally intended to release commercially, and definitely our least polished, Cartomante is, in some respects, our biggest success; it is how many of our fans first discovered us, it held our sales record for years, and its visual and creative direction ended up becoming the cornerstone of our studio for quite a while.
+tech_and_tools:
+  - unity
+  - ink
+  - twine
+  - trello
+  - photoshop
+  - discord
+  - telegram
+  - sns
 technical_work: |-
   I spent the most hours working on the game’s <b>narrative</b>, from start to finish: design, worldbuilding, characterization, story, dialogue and choice branching, writing, editing, and revision in both the English and Brazilian Portuguese versions.
 

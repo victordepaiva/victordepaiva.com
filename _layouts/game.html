@@ -10,6 +10,10 @@ layout: default
 {% include i18n.html %}
 
 <style>
+  .game-page .page__lead {
+    margin-bottom: 0.3rem;
+  }
+
   .game-specs {
     margin: 1rem 0 1.5rem;
     text-transform: lowercase;
@@ -29,29 +33,23 @@ layout: default
     color: var(--color-text-tertiary, #b0b0b0);
     font-size: 0.75rem;
     line-height: 1.4;
+    margin: 0 0 0.9rem;
+    text-transform: lowercase;
   }
 
-  .game-specs__roles {
-    color: var(--color-text-secondary, #dedede);
-    font-size: 13px;
-    line-height: 1.4;
+  .page__title + .game-specs__meta {
+    margin-top: 0.35rem;
   }
 
-  .game-specs__meta + .game-specs__roles {
-    margin-top: 0.25rem;
+  .game-specs__meta + .game-specs {
+    margin-top: 0;
+  }
+
+  .game-specs .game-badges {
+    margin-bottom: 0;
   }
 
 </style>
-
-{% assign breadcrumbs_enabled = site.breadcrumbs %}
-{% if page.breadcrumbs != null %}
-  {% assign breadcrumbs_enabled = page.breadcrumbs %}
-{% endif %}
-{% if page.url != "/" and breadcrumbs_enabled %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
 
 <div id="main" role="main">
   {% include sidebar.html %}
@@ -74,6 +72,45 @@ layout: default
           <p class="page__lead">{{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}</p>
         {% endif %}
 
+        {% assign has_meta_specs = false %}
+        {% if page.work_start_year or page.release_date or page.status or page.platform or page.genre or page.word_count %}
+          {% assign has_meta_specs = true %}
+        {% endif %}
+
+        {% assign status_key = page.status | downcase | strip %}
+        {% assign is_released = false %}
+        {% if page.release_date %}
+          {% if status_key == 'released' or status_key == 'lançado' %}
+            {% assign is_released = true %}
+          {% endif %}
+        {% endif %}
+
+        {% assign word_count_display = '' %}
+        {% if page.word_count %}
+          {% assign word_count_parts = page.word_count | split: '(' %}
+          {% if word_count_parts.size > 1 %}
+            {% assign word_count_display = word_count_parts.first | strip | downcase | append: ' ' | append: i18n.layout.words | append: ' (' | append: word_count_parts.last | downcase %}
+          {% else %}
+            {% assign word_count_display = page.word_count | downcase | append: ' ' | append: i18n.layout.words %}
+          {% endif %}
+        {% endif %}
+
+        {% if has_meta_specs %}
+          <div class="game-specs__meta">
+            {% assign meta_separator = false %}
+            {% if page.work_start_year %}{% if meta_separator %} · {% endif %}{{ i18n.layout.worked_on | downcase }}: {% include game-work-period.html post=page %}{% assign meta_separator = true %}{% endif %}
+            {% if is_released %}
+              {% if meta_separator %} · {% endif %}{{ status_key }}{% if i18n.layout.released_date_connector != "" %} {{ i18n.layout.released_date_connector }}{% endif %} {{ page.release_date | downcase }}{% assign meta_separator = true %}
+            {% else %}
+              {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date | downcase }}{% assign meta_separator = true %}{% endif %}
+              {% if page.status %}{% if meta_separator %} · {% endif %}{{ status_key }}{% assign meta_separator = true %}{% endif %}
+            {% endif %}
+            {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform | downcase }}{% assign meta_separator = true %}{% endif %}
+            {% if page.genre %}{% if meta_separator %} · {% endif %}{{ page.genre | downcase }}{% assign meta_separator = true %}{% endif %}
+            {% if word_count_display != "" %}{% if meta_separator %} · {% endif %}{{ word_count_display }}{% endif %}
+          </div>
+        {% endif %}
+
         {% if page.content_lang and page.content_lang != page.lang %}
           <p class="notice--info">
             {{ i18n.layout.content_fallback }}
@@ -82,34 +119,15 @@ layout: default
           </p>
         {% endif %}
 
-        {% assign has_meta_specs = false %}
-        {% if page.work_start_year or page.release_date or page.status or page.platform or page.genre or page.word_count %}
-          {% assign has_meta_specs = true %}
-        {% endif %}
-
-        {% assign has_specs = false %}
-        {% if has_meta_specs or page.my_roles %}
-          {% assign has_specs = true %}
-        {% endif %}
-
-        {% if has_specs %}
+        {% if page.my_roles and page.my_roles.size > 0 %}
           <div class="game-specs">
             <hr class="game-specs__rule">
             <div class="game-specs__body">
-              {% if has_meta_specs %}
-                <div class="game-specs__meta">
-                  {% assign meta_separator = false %}
-                  {% if page.work_start_year %}{% if meta_separator %} · {% endif %}{{ i18n.layout.worked_on | downcase }}: {% include game-work-period.html post=page %}{% assign meta_separator = true %}{% endif %}
-                  {% if page.release_date %}{% if meta_separator %} · {% endif %}{{ page.release_date | downcase }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.status %}{% if meta_separator %} · {% endif %}{{ page.status | downcase }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.platform %}{% if meta_separator %} · {% endif %}{{ page.platform | downcase }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.genre %}{% if meta_separator %} · {% endif %}{{ page.genre | downcase }}{% assign meta_separator = true %}{% endif %}
-                  {% if page.word_count %}{% if meta_separator %} · {% endif %}{{ page.word_count | downcase }}{% endif %}
-                </div>
-              {% endif %}
-              {% if page.my_roles %}
-                <div class="game-specs__roles">{% for role in page.my_roles %} ◇ {{ role | downcase }}{% endfor %}</div>
-              {% endif %}
+              <ul class="game-badges" aria-label="{{ i18n.layout.my_roles | escape }}">
+                {% for role in page.my_roles %}
+                  <li class="game-badges__badge">{{ role | downcase | escape }}</li>
+                {% endfor %}
+              </ul>
             </div>
             <hr class="game-specs__rule">
           </div>
@@ -172,6 +190,13 @@ layout: default
             </button>
           </h2>
           <div class="game-section__content" id="game-technical-content">
+            {% if page.tech_and_tools and page.tech_and_tools.size > 0 %}
+              <ul class="game-badges game-badges--section" aria-label="{{ i18n.layout.tech_and_tools | escape }}">
+                {% for tool in page.tech_and_tools %}
+                  <li class="game-badges__badge">{{ tool | downcase | escape }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
             {{ technical_work_content | markdownify }}
           </div>
         </section>

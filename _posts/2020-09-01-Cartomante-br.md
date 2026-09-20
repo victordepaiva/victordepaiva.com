@@ -28,7 +28,7 @@ translation_key: 'cartomante'
 i18n_path: '/games/cartomante/'
 permalink: '/br/games/cartomante/'
 tagline: 'Uma visual novel de comédia e realismo mágico em que você lê tarô para clientes excêntricos.'
-release_date: '1º de setembro de 2024'
+release_date: '1º de setembro de 2020'
 status: 'lançado'
 genre: 'visual novel de comédia e realismo mágico'
 my_roles:
@@ -38,6 +38,9 @@ my_roles:
   - 'produção'
   - 'redes sociais'
   - 'pr'
+  - 'marketing'
+  - 'publicação'
+  - 'localização'
 word_count: '~40.000 (inglês + brasileiro)'
 awards:
   - 'Finalista de Melhor Jogo Brasileiro no [BIG Festival](https://latam.gamescom.global/pt/big-festival/#sobre) 2021'
@@ -66,6 +69,15 @@ about_project: |-
   Nos dois meses subsequentes à semana original da "jam interna", trabalhei em escrever o restante dos diálogos. Pela limitação de escopo auto-imposta, só teríamos os mesmos três clientes em todas as runs. Também pela limitação, teríamos só três dos arcanos maiores (frustrando alguns jogadores até hoje). Para dar um pouco de variedade, cada carta pode ser interpretada de três maneiras diferentes. E, com essa combinação de clientes, cartas, e leituras (e mais algumas escolhas no diálogo), conseguimos chegar na versão final com mais de trinta finais (com todo o texto original escrito em português e inglês em paralelo - nada de tradução automática ou IA naquela época).
 
   Curiosamente, mesmo sendo nosso jogo mais curto, o mais barato, o único (até então) que não originalmente queríamos lançar comercialmente, e com certeza o menos polido, Cartomante é sob certos aspectos nosso maior sucesso; como vários dos nossos fãs nos conheceram, nosso recorde de vendas por anos, e a direção visual e criativa que acabou se tornando a pedra angular do nosso estúdio por um bom tempo.
+tech_and_tools:
+  - unity
+  - ink
+  - twine
+  - trello
+  - photoshop
+  - discord
+  - telegram
+  - sns
 technical_work: |-
   A maior parte das horas que trabalhei no jogo foi dedicada à <b>narrativa</b>, do começo ao fim: design, construção de mundo, caracterização, história, diálogos e ramificações de escolhas, escrita, edição e revisão tanto da versão em inglês quanto da versão em português brasileiro.
 
