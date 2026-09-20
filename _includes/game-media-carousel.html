@@ -1,0 +1,123 @@
+{% assign carousel_count = 0 %}
+{% if page.trailer_url %}
+  {% assign carousel_count = carousel_count | plus: 1 %}
+{% endif %}
+{% if page.screenshots %}
+  {% assign carousel_count = carousel_count | plus: page.screenshots.size %}
+{% endif %}
+
+{% if carousel_count > 0 %}
+  <section class="game-section" aria-labelledby="game-media-heading">
+    <h2 class="game-section__heading" id="game-media-heading">
+      <button class="game-section__toggle" type="button" aria-expanded="true" aria-controls="game-media-content" aria-label="{{ i18n.layout.collapse_section }}: {{ i18n.layout.media }}" data-game-section-toggle data-expand-label="{{ i18n.layout.expand_section | escape }}" data-collapse-label="{{ i18n.layout.collapse_section | escape }}">
+        <span>{{ i18n.layout.media }}</span>
+        <span class="game-section__chevron" aria-hidden="true"></span>
+      </button>
+    </h2>
+    <div class="game-section__content" id="game-media-content">
+      <div class="game-media-carousel" data-game-media-carousel>
+        <div class="game-media-carousel__stage">
+          {% if carousel_count > 1 %}
+            <button class="game-media-carousel__nav game-media-carousel__nav--prev" type="button" data-carousel-prev disabled aria-label="{{ i18n.layout.carousel_previous | escape }}">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="game-media-carousel__nav game-media-carousel__nav--next" type="button" data-carousel-next aria-label="{{ i18n.layout.carousel_next | escape }}">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          {% endif %}
+          <div class="game-media-carousel__viewport">
+            <ul class="game-media-carousel__track" data-carousel-track tabindex="0" role="list">
+              {% assign slide_index = 0 %}
+
+              {% if page.trailer_url %}
+                {% assign slide_index = slide_index | plus: 1 %}
+                {% assign trailer_src = page.trailer_url %}
+                {% if trailer_src contains "watch?v=" %}
+                  {% assign trailer_id = trailer_src | split: "watch?v=" | last | split: "&" | first %}
+                  {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+                {% elsif trailer_src contains "youtu.be/" %}
+                  {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
+                  {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
+                {% endif %}
+                {% if trailer_src contains "?" %}
+                  {% unless trailer_src contains "enablejsapi=" %}
+                    {% assign trailer_src = trailer_src | append: "&enablejsapi=1" %}
+                  {% endunless %}
+                {% else %}
+                  {% assign trailer_src = trailer_src | append: "?enablejsapi=1" %}
+                {% endif %}
+                <li class="game-media-carousel__slide{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
+                  <div class="game-media-carousel__frame game-media-carousel__frame--video">
+                    <iframe src="{{ trailer_src }}" title="{{ page.title | escape }} {{ i18n.layout.trailer }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
+                </li>
+              {% endif %}
+
+              {% if page.screenshots %}
+                {% for screenshot in page.screenshots %}
+                  {% assign screenshot_down = screenshot | downcase %}
+                  {% if screenshot_down contains ".gif" %}
+                    {% assign slide_index = slide_index | plus: 1 %}
+                    <li class="game-media-carousel__slide{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
+                      <div class="game-media-carousel__frame">
+                        <img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
+                      </div>
+                      <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+                {% for screenshot in page.screenshots %}
+                  {% assign screenshot_down = screenshot | downcase %}
+                  {% assign is_looping_video = false %}
+                  {% if screenshot_down contains ".webm" or screenshot_down contains ".mp4" %}
+                    {% assign is_looping_video = true %}
+                  {% endif %}
+                  {% if is_looping_video %}
+                    {% assign slide_index = slide_index | plus: 1 %}
+                    {% assign video_type = "video/mp4" %}
+                    {% if screenshot_down contains ".webm" %}
+                      {% assign video_type = "video/webm" %}
+                    {% endif %}
+                    <li class="game-media-carousel__slide game-media-carousel__slide--looping{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
+                      <div class="game-media-carousel__frame">
+                        <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
+                          <source src="{{ screenshot | relative_url }}" type="{{ video_type }}">
+                        </video>
+                      </div>
+                      <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+                {% for screenshot in page.screenshots %}
+                  {% assign screenshot_down = screenshot | downcase %}
+                  {% assign is_motion = false %}
+                  {% if screenshot_down contains ".gif" or screenshot_down contains ".webm" or screenshot_down contains ".mp4" %}
+                    {% assign is_motion = true %}
+                  {% endif %}
+                  {% unless is_motion %}
+                    {% assign slide_index = slide_index | plus: 1 %}
+                    <li class="game-media-carousel__slide{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
+                      <div class="game-media-carousel__frame">
+                        <img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
+                      </div>
+                      <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
+                    </li>
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+        {% if carousel_count > 1 %}
+          <div class="game-media-carousel__dots" data-carousel-dots role="group" aria-label="{{ i18n.layout.carousel_position | escape }}">
+            {% for slide_number in (1..carousel_count) %}
+              <button class="game-media-carousel__dot{% if slide_number == 1 %} is-active{% endif %}" type="button"{% if slide_number == 1 %} aria-current="true"{% endif %} aria-label="{{ i18n.layout.carousel_slide }} {{ slide_number }} {{ i18n.layout.carousel_of }} {{ carousel_count }}" data-carousel-index="{{ slide_number | minus: 1 }}"></button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

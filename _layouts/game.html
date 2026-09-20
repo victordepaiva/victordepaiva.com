@@ -129,24 +129,6 @@ layout: default
           </h2>
           <div class="game-section__content" id="game-overview-content">
             {{ overview_content | markdownify }}
-            {% if page.screenshots %}
-              {% for screenshot in page.screenshots %}
-                <p><img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }}"></p>
-              {% endfor %}
-            {% endif %}
-            {% if page.trailer_url %}
-              {% assign trailer_src = page.trailer_url %}
-              {% if trailer_src contains "watch?v=" %}
-                {% assign trailer_id = trailer_src | split: "watch?v=" | last | split: "&" | first %}
-                {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
-              {% elsif trailer_src contains "youtu.be/" %}
-                {% assign trailer_id = trailer_src | split: "youtu.be/" | last | split: "?" | first %}
-                {% assign trailer_src = "https://www.youtube.com/embed/" | append: trailer_id %}
-              {% endif %}
-              <div class="game-embed game-embed--video">
-                <iframe width="560" height="315" src="{{ trailer_src }}" title="{{ page.title | escape }} {{ i18n.layout.trailer }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-            {% endif %}
           </div>
         </section>
 
@@ -165,6 +147,8 @@ layout: default
             </div>
           </section>
         {% endif %}
+
+        {% include game-media-carousel.html %}
 
         {% assign about_project_content = page.about_project | default: i18n.layout.wip_about_project %}
         <section class="game-section" aria-labelledby="game-about-heading">

@@ -25,6 +25,16 @@ store_links:
     url: https://store.steampowered.com/app/2322070/RhythMania/
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/2322070/" frameborder="0" width="646" height="190"></iframe>'
+trailer_url: 'https://www.youtube.com/embed/cOjvLEuSWg4?si=X_hh37MvjFNFLZ7A'
+screenshots:
+  - /assets/images/posts/rhythmania-images/rhythmania-footage.webm
+  - /assets/images/posts/rhythmania-images/rhythmania-footage2.webm
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-1.jpg
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-2.jpg
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-3.jpg
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-4.jpg
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-5.jpg
+  - /assets/images/posts/rhythmania-images/rhythmania-screenshot-6.jpg
 play_embeds:
   - '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.spawnd.gg/-/games/embed/26?description=true" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; clipboard-write; clipboard-read; web-share; cross-origin-isolated" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
 lang: 'en'

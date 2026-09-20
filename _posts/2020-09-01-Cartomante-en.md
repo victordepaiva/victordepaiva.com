@@ -27,6 +27,10 @@ trailer_url: 'https://www.youtube.com/embed/qPkon4cQZhc?si=4fAEjRDARs7MrG2w'
 screenshots:
   - /assets/images/posts/cartomante-images/cartomante-footage1_EN.gif
   - /assets/images/posts/cartomante-images/cartomante-footage2_EN.gif
+  - /assets/images/posts/cartomante-images/cartomante-screenshot-1.jpg
+  - /assets/images/posts/cartomante-images/cartomante-screenshot-2.jpg
+  - /assets/images/posts/cartomante-images/cartomante-screenshot-3.jpg
+  - /assets/images/posts/cartomante-images/cartomante-screenshot-4.jpg
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1361760/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/672126" frameborder="0" width="552" height="167"><a href="https://garoa.itch.io/cartomante">Cartomante - Fortune Teller by Garoa</a></iframe>'
