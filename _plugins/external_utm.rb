@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 # Appends utm_source=victordepaiva.com to outbound <a href> URLs in rendered HTML.
-# Internal paths and this site's own hosts are left unchanged. Existing utm_source
-# values are kept once (duplicates are collapsed) so source files can include or
-# omit the tag without producing ?utm_source=...?utm_source=...
+# Internal paths, this site's own hosts, lattes.cnpq.br, and <a data-skip-utm>
+# links are left unchanged. Existing utm_source values are kept once (duplicates
+# are collapsed) so source files can include or omit the tag without producing
+# ?utm_source=...?utm_source=...
 
 require "uri"
 
@@ -11,20 +12,26 @@ module ExternalUtm
   PARAM_KEY = "utm_source"
   PARAM_VALUE = "victordepaiva.com"
   PARAM = "#{PARAM_KEY}=#{PARAM_VALUE}"
-  A_HREF_REGEX = /(<a\b[^>]*?\bhref\s*=\s*)(["'])(.*?)\2/im
+  A_OPEN_REGEX = /<a\b[^>]*>/im
+  HREF_ATTR_REGEX = /(\bhref\s*=\s*)(["'])(.*?)\2/im
   SKIP_SCHEMES = %w[mailto tel javascript data blob sms whatsapp].freeze
   LOCAL_HOSTS = %w[localhost 127.0.0.1 ::1].freeze
+  SKIP_UTM_HOSTS = %w[lattes.cnpq.br].freeze
 
   module_function
 
   def rewrite_html(html)
     return html if html.nil? || html.empty?
 
-    html.gsub(A_HREF_REGEX) do
-      prefix = Regexp.last_match(1)
-      quote = Regexp.last_match(2)
-      href = Regexp.last_match(3)
-      "#{prefix}#{quote}#{rewrite_href(href)}#{quote}"
+    html.gsub(A_OPEN_REGEX) do |tag|
+      skip_tag = tag.match?(/\bdata-skip-utm\b/i)
+      tag.sub(HREF_ATTR_REGEX) do
+        prefix = Regexp.last_match(1)
+        quote = Regexp.last_match(2)
+        href = Regexp.last_match(3)
+        rewritten = skip_tag ? leave_untagged(href) : rewrite_href(href)
+        "#{prefix}#{quote}#{rewritten}#{quote}"
+      end
     end
   end
 
@@ -34,12 +41,14 @@ module ExternalUtm
     raw = href.strip
     return href if raw.empty?
     return href if skip_href?(raw)
+    return leave_untagged(href) if skip_utm_host?(host_for(raw))
     return href unless outbound_http?(raw)
 
-    tagged = apply_utm(raw)
-    original_used_entities = href.include?("&amp;")
-    tagged = tagged.gsub("&", "&amp;") if original_used_entities || tagged.include?("&")
-    tagged
+    encode_ampersands(href, apply_utm(raw))
+  end
+
+  def leave_untagged(href)
+    encode_ampersands(href, strip_utm(href))
   end
 
   def skip_href?(href)
@@ -75,8 +84,13 @@ module ExternalUtm
     hostname == "victordepaiva.com" || hostname.end_with?(".victordepaiva.com")
   end
 
-  def apply_utm(href)
-    decoded = href.gsub("&amp;", "&")
+  def skip_utm_host?(host)
+    hostname = host.to_s.downcase.delete_prefix("www.")
+    SKIP_UTM_HOSTS.any? { |skipped| hostname == skipped || hostname.end_with?(".#{skipped}") }
+  end
+
+  def split_href(href)
+    decoded = href.to_s.gsub("&amp;", "&")
     hash_index = decoded.index("#")
     hash = hash_index ? decoded[hash_index..] : ""
     without_hash = hash_index ? decoded[0...hash_index] : decoded
@@ -84,7 +98,25 @@ module ExternalUtm
     query_index = without_hash.index("?")
     base = query_index ? without_hash[0...query_index] : without_hash
     query = query_index ? without_hash[(query_index + 1)..] : ""
+    [base, query, hash]
+  end
 
+  def encode_ampersands(original, href)
+    return href unless original.to_s.include?("&amp;") || href.include?("&")
+
+    href.gsub("&", "&amp;")
+  end
+
+  def strip_utm(href)
+    base, query, hash = split_href(href)
+    kept = query.split(/[&?]/).reject { |part| part.nil? || part.empty? || part.match?(/\A#{PARAM_KEY}=/i) }
+    return "#{base}#{hash}" if kept.empty?
+
+    "#{base}?#{kept.join('&')}#{hash}"
+  end
+
+  def apply_utm(href)
+    base, query, hash = split_href(href)
     parts = query.split(/[&?]/)
     kept = []
     saw_utm = false
@@ -155,7 +187,9 @@ if $PROGRAM_NAME == __FILE__
     "mailto:contato@garoastudios.com" => "mailto:contato@garoastudios.com",
     "#" => "#",
     "https://garoastudios.com?utm_source=victordepaiva.com" => "https://garoastudios.com?utm_source=victordepaiva.com",
-    "//example.com/x" => "//example.com/x?utm_source=victordepaiva.com"
+    "//example.com/x" => "//example.com/x?utm_source=victordepaiva.com",
+    "http://lattes.cnpq.br/1035006571814551" => "http://lattes.cnpq.br/1035006571814551",
+    "http://lattes.cnpq.br/1035006571814551?utm_source=victordepaiva.com" => "http://lattes.cnpq.br/1035006571814551"
   }
 
   examples.each do |input, expected|
@@ -177,6 +211,13 @@ if $PROGRAM_NAME == __FILE__
   unless html == expected_html
     failures += 1
     warn "rewrite_html is not idempotent:\n  expected #{expected_html.inspect}\n  actual   #{html.inspect}"
+  end
+
+  lattes_html = ExternalUtm.rewrite_html('<a data-skip-utm href="https://example.com/x">skip</a> <a href="http://lattes.cnpq.br/1035006571814551">Lattes</a>')
+  expected_lattes_html = '<a data-skip-utm href="https://example.com/x">skip</a> <a href="http://lattes.cnpq.br/1035006571814551">Lattes</a>'
+  unless lattes_html == expected_lattes_html
+    failures += 1
+    warn "rewrite_html skip failed:\n  expected #{expected_lattes_html.inspect}\n  actual   #{lattes_html.inspect}"
   end
 
   raise "#{failures} ExternalUtm checks failed" unless failures.zero?

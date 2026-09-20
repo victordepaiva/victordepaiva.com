@@ -131,6 +131,8 @@ Rules:
 - Fragments stay at the end (`?utm_source=victordepaiva.com#section`)
 - Internal URLs are never tagged: `/about`, `/links`, `/games/rhythmania`, `https://victordepaiva.com/...`, and `www.victordepaiva.com`
 - `mailto:`, `tel:`, `javascript:`, and in-page `#` links are skipped
+- The Lattes profile on `/links/` is skipped because `lattes.cnpq.br` breaks when a query string is added. Mark that card with `data-skip-utm` as well
+- Other one-off exceptions can use `data-skip-utm` on the `<a>` tag
 - Embeds (`iframe src`, images, stylesheets) are not tagged; only user-facing links are
 - If `utm_source` is already present, it is kept once. Duplicates such as `?utm_source=victordepaiva.com?utm_source=victordepaiva.com` are collapsed
 

@@ -13,6 +13,9 @@
     sms: true,
     whatsapp: true
   };
+  var SKIP_UTM_HOSTS = {
+    'lattes.cnpq.br': true
+  };
 
   function isInternalHost(hostname) {
     if (!hostname) return true;
@@ -20,6 +23,16 @@
     if (host === 'localhost' || host === '127.0.0.1' || host === '::1') return true;
     host = host.replace(/^www\./, '');
     return host === 'victordepaiva.com' || host.slice(-18) === '.victordepaiva.com';
+  }
+
+  function isSkipUtmHost(hostname) {
+    if (!hostname) return false;
+    var host = hostname.replace(/^\[|\]$/g, '').toLowerCase().replace(/:\d+$/, '').replace(/^www\./, '');
+    if (SKIP_UTM_HOSTS[host]) return true;
+    for (var skipped in SKIP_UTM_HOSTS) {
+      if (SKIP_UTM_HOSTS[skipped] && host.slice(-(skipped.length + 1)) === '.' + skipped) return true;
+    }
+    return false;
   }
 
   function skipHref(raw) {
@@ -57,9 +70,41 @@
     return base + '?' + kept.join('&') + hash;
   }
 
+  function stripUtm(href) {
+    var decoded = String(href).replace(/&amp;/g, '&');
+    var hashIndex = decoded.indexOf('#');
+    var hash = hashIndex === -1 ? '' : decoded.slice(hashIndex);
+    var withoutHash = hashIndex === -1 ? decoded : decoded.slice(0, hashIndex);
+    var queryIndex = withoutHash.indexOf('?');
+    var base = queryIndex === -1 ? withoutHash : withoutHash.slice(0, queryIndex);
+    var query = queryIndex === -1 ? '' : withoutHash.slice(queryIndex + 1);
+    var parts = query ? query.split(/[&?]/) : [];
+    var kept = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i] || /^utm_source=/i.test(parts[i])) continue;
+      kept.push(parts[i]);
+    }
+    if (!kept.length) return base + hash;
+    return base + '?' + kept.join('&') + hash;
+  }
+
+  function shouldSkipUtm(anchor) {
+    if (!anchor || !anchor.getAttribute) return true;
+    if (anchor.hasAttribute('data-skip-utm')) return true;
+    var raw = anchor.getAttribute('href');
+    if (skipHref(raw)) return false;
+    try {
+      var url = new URL(raw, window.location.href);
+      return isSkipUtmHost(url.hostname);
+    } catch (error) {
+      return false;
+    }
+  }
+
   function isOutboundHttpAnchor(anchor) {
     var raw = anchor.getAttribute('href');
     if (skipHref(raw)) return false;
+    if (shouldSkipUtm(anchor)) return false;
     try {
       var url = new URL(raw, window.location.href);
       if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
@@ -71,6 +116,12 @@
 
   function applyToAnchor(anchor) {
     if (!anchor || !anchor.getAttribute) return;
+    if (shouldSkipUtm(anchor)) {
+      var skipped = anchor.getAttribute('href');
+      var stripped = stripUtm(skipped);
+      if (stripped !== skipped) anchor.setAttribute('href', stripped);
+      return;
+    }
     if (!isOutboundHttpAnchor(anchor)) return;
     var raw = anchor.getAttribute('href');
     var tagged = tagHref(raw);
