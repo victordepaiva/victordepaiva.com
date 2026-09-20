@@ -40,6 +40,8 @@ layout: archive
   <div><a href="{{ prev_post | i18n_url_for_locale: active_lang | relative_url }}" class="back-to-top">{{ i18n.layout.read_also }}: {{ prev_post.title }}</a></div>
 </div>
 
+{% include section-nav.html %}
+
 
 <!--
 <ul class="taxonomy__index">

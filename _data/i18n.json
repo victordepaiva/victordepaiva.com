@@ -68,7 +68,9 @@
       "minute_read": "minute read",
       "powered_by": "powered by",
       "content_fallback": "This text is available in",
-      "content_fallback_suffix": "and is shown here without changing your browsing language."
+      "content_fallback_suffix": "and is shown here without changing your browsing language.",
+      "contents": "Contents",
+      "on_this_page": "On this page"
     },
     "languages": {
       "br": "Brazilian",
@@ -156,7 +158,9 @@
       "minute_read": "minuto de leitura",
       "powered_by": "feito com",
       "content_fallback": "Este texto está disponível em",
-      "content_fallback_suffix": "e é exibido aqui sem mudar o idioma da navegação."
+      "content_fallback_suffix": "e é exibido aqui sem mudar o idioma da navegação.",
+      "contents": "Conteúdo",
+      "on_this_page": "Nesta página"
     },
     "languages": {
       "br": "brasileiro",
