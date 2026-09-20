@@ -364,6 +364,23 @@ a:hover:before, a:focus:before {
   transform: scaleX(1);
 }
 
+/* Homepage banner */
+.home-banner {
+  display: block;
+  margin: 0 auto 1.75rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.home-banner img {
+  display: block;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: auto;
+}
+
 /* Style separators */
 .separator {
   color: #666;

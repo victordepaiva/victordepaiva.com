@@ -14,16 +14,17 @@
       "menu": "menu",
       "games": "🎲 games",
       "fiction": "📖 fiction",
-      "nonfiction": "📝 non-fiction",
+      "nonfiction": "📝 nonfiction",
       "other_work": "🗂️ other work",
       "itch": "🎮 itch.io"
     },
     "home": {
-      "bio": "Joguinista, producer, game designer, narrative designer and writer, fascinated by games as a means of expression and by the miracle of seeing complex projects to the end. Founder of <a href=\"https://garoastudios.com\">Garoa Studios</a>.",
-      "more_about": "More about me",
-      "now": "what I'm doing now",
-      "work_intro": "my work and writings <i>(non-exhaustive)</i>:",
-      "contact": "contact me"
+      "banner_alt": "Illustration of characters from Victor's games, by Kuating",
+      "bio": "joguinista, producer, game designer, narrative designer, writer and localizer, fascinated by games as a means of expression and by the miracle of bringing complex projects until the end. founder of <a href=\"https://garoastudios.com\">Garoa</a> and product lead for <a href=\"https://www.spawnd.gg\">spawnd.gg</a>.",
+      "more_about": "more about me",
+      "now_connector": ", and ",
+      "now": "what I'm doing right now",
+      "work_intro": "my work and writings, non-exhaustive:"
     },
     "section": {
       "current_projects": "current projects",
@@ -119,11 +120,12 @@
       "itch": "🎮 itch.io"
     },
     "home": {
-      "bio": "Joguinista, produtor, game designer, designer narrativo e escritor, fascinado por jogos como meio de expressão e pelo milagre de levar projetos complexos até o fim. Fundador da <a href=\"https://garoastudios.com\">Garoa Studios</a>.",
-      "more_about": "Mais sobre mim",
+      "banner_alt": "Ilustração de personagens dos jogos de Victor, por Kuating",
+      "bio": "joguinista, produtor, game designer, designer de narrativa, escritor e localizador, fascinado por jogos como meio de expressão e pelo milagre de levar projetos complexos até o fim. fundador da <a href=\"https://garoastudios.com\">Garoa</a> e líder de produto no <a href=\"https://www.spawnd.gg\">spawnd.gg</a>.",
+      "more_about": "mais sobre mim",
+      "now_connector": ", e ",
       "now": "o que estou fazendo agora",
-      "work_intro": "meus trabalhos e escritos <i>(não-exaustivo)</i>:",
-      "contact": "fale comigo"
+      "work_intro": "meus trabalhos e escritos, não-exaustivos:"
     },
     "section": {
       "current_projects": "projetos atuais",
