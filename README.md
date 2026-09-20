@@ -13,6 +13,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_includes/` - Reusable HTML components and snippets
 - `_sass/` - SCSS stylesheets and theme customization
 - `_data/` - YAML data files for site content
+- `_plugins/` - Jekyll plugins (i18n, outbound UTM tagging)
 
 ### Content Pages
 - `index.html` - Homepage (root directory)
@@ -77,7 +78,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - **Pages**: HTML files in `_pages/` directory (except homepage in root)
 - **Images**: Organized by type in `assets/images/` (posts, icons, branding)
 - **Styles**: Custom CSS in `assets/css/custom.css`
-- **Scripts**: Custom JavaScript in `assets/js/custom.js`
+- **Scripts**: Custom JavaScript in `assets/js/custom.js`, including runtime outbound UTM tagging
 
 ## Deployment
 
@@ -118,6 +119,26 @@ This site is based on the [Minimal Mistakes](https://github.com/mmistakes/minima
 - OpenDyslexic font accessibility option
 - Custom CSS for additional styling
 - Custom JavaScript for enhanced functionality
+- Automatic `utm_source=victordepaiva.com` tagging on outbound links
+
+## Outbound link UTM tags
+
+Every outbound HTTP(S) `<a href>` on the site automatically gets `utm_source=victordepaiva.com`. Do not add this query parameter by hand on new links; the site applies it once at build time and again in the browser so future pages, posts, Markdown, YAML `url` fields, and HTML all receive it.
+
+Rules:
+- External destinations such as `https://www.spawnd.gg/` become `https://www.spawnd.gg/?utm_source=victordepaiva.com`
+- If the URL already has a query string, the tag is appended with `&` (`?foo=1&utm_source=victordepaiva.com`)
+- Fragments stay at the end (`?utm_source=victordepaiva.com#section`)
+- Internal URLs are never tagged: `/about`, `/links`, `/games/rhythmania`, `https://victordepaiva.com/...`, and `www.victordepaiva.com`
+- `mailto:`, `tel:`, `javascript:`, and in-page `#` links are skipped
+- Embeds (`iframe src`, images, stylesheets) are not tagged; only user-facing links are
+- If `utm_source` is already present, it is kept once. Duplicates such as `?utm_source=victordepaiva.com?utm_source=victordepaiva.com` are collapsed
+
+Implementation:
+- `_plugins/external_utm.rb` rewrites rendered HTML during `jekyll build` / `jekyll serve`
+- `assets/js/custom.js` tags the same outbound anchors at runtime, including links added later, and will not re-append an existing `utm_source`
+
+Existing source files may already include the tag on some links (for example `/links/` cards). That is safe. New content should omit it and rely on the automatic rewrite.
 
 ## Content Management
 
@@ -170,6 +191,7 @@ This value is displayed independently of the current UI locale. Current `textos`
 2. Use YYYY-MM-DD-title.md naming convention
 3. Include front matter with title, date, categories, tags
 4. Write content in Markdown format
+5. Leave outbound URLs untagged. The site appends `?utm_source=victordepaiva.com` automatically; do not add it manually, and do not add it to internal paths
 
 ### Adding Other Work Posts
 1. Create a new Markdown file in `_posts/`
@@ -195,7 +217,7 @@ Other work posts automatically appear on `_pages/other-work.html`.
 11. Overview always renders and is prose only. `banner_image` stays above Overview and is not part of the carousel. Media is omitted when both `trailer_url` and `screenshots` are empty. The game layout builds the Media carousel itself, in this order regardless of front-matter list order: YouTube from `trailer_url`, then GIFs from `screenshots`, then looping videos (`.webm` / `.mp4`) from `screenshots`, then remaining still images from `screenshots`. Looping videos play muted, autoplay, and loop with no playback controls. Do not put store badges, playable embeds, capsule art, or editorial Markdown images from About / Technical work into `screenshots`. The carousel is swipe-snapped on mobile and uses desktop chevrons plus a centered position indicator when there is more than one item
 12. `play_embeds` is for playable experiences such as Spawnd and controls whether Try it appears
 13. `awards` is a YAML list and supports Markdown links. Awards is omitted when the list is absent and renders as a responsive two-column list when present
-14. Links is omitted when no link fields exist. The Links section and all game-page media (images, GIFs, embeds) are centered. `store_embeds` render first in a shared column matching the Steam widget width (`646px`, shrinking on smaller screens) and may include image badges as well as iframes. `store_links` and `additional_links` (`label` and `url` pairs) follow when present
+14. Links is omitted when no link fields exist. The Links section and all game-page media (images, GIFs, embeds) are centered. `store_embeds` render first in a shared column matching the Steam widget width (`646px`, shrinking on smaller screens) and may include image badges as well as iframes. `store_links` and `additional_links` (`label` and `url` pairs) follow when present. Leave those `url` values without UTM parameters; outbound `<a href>` links are tagged automatically, but `iframe src` embeds are not
 15. About the project and Technical work always render. If either field is absent, the layout uses the localized WIP placeholder from `_data/i18n.json`; empty Media, Try it, Awards, and Links sections are not rendered
 16. `tech_and_tools` is a YAML list of tool names. When present, Technical work starts with lowercase tag badges and no subsection heading, so the row does not appear in the on-this-page outline. Omit the field when empty
 17. Use `_posts/2020-09-01-Cartomante-en.md` and `_posts/2020-09-01-Cartomante-br.md` as reference formats for localized game front matter, including award links and mixed store embeds
@@ -218,6 +240,7 @@ The entire capsule card links to the game post. If `games_capsule_image` is miss
 - The desktop sidebar includes the font picker, Bluesky icon, feed icon, and copyright
 - The mobile footer keeps the font picker, social/feed links, and centered copyright
 - Font switching is handled in `assets/js/custom.js` through `data-font-choice` controls
+- Outbound link UTM tagging is handled by `_plugins/external_utm.rb` and `assets/js/custom.js`; see **Outbound link UTM tags**
 
 ### Working with Drafts
 1. Create draft files in `_drafts/` directory (no date required)

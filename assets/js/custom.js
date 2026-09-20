@@ -1,4 +1,137 @@
 // assets/js/custom.js
+
+(function initOutboundUtm() {
+  var UTM_KEY = 'utm_source';
+  var UTM_VALUE = 'victordepaiva.com';
+  var UTM_PAIR = UTM_KEY + '=' + UTM_VALUE;
+  var SKIP_SCHEMES = {
+    mailto: true,
+    tel: true,
+    javascript: true,
+    data: true,
+    blob: true,
+    sms: true,
+    whatsapp: true
+  };
+
+  function isInternalHost(hostname) {
+    if (!hostname) return true;
+    var host = hostname.replace(/^\[|\]$/g, '').toLowerCase().replace(/:\d+$/, '');
+    if (host === 'localhost' || host === '127.0.0.1' || host === '::1') return true;
+    host = host.replace(/^www\./, '');
+    return host === 'victordepaiva.com' || host.slice(-18) === '.victordepaiva.com';
+  }
+
+  function skipHref(raw) {
+    if (!raw) return true;
+    var href = String(raw).trim();
+    if (!href || href.charAt(0) === '#') return true;
+    var colon = href.indexOf(':');
+    if (colon === -1) return false;
+    return !!SKIP_SCHEMES[href.slice(0, colon).toLowerCase()];
+  }
+
+  function tagHref(href) {
+    var decoded = String(href).replace(/&amp;/g, '&');
+    var hashIndex = decoded.indexOf('#');
+    var hash = hashIndex === -1 ? '' : decoded.slice(hashIndex);
+    var withoutHash = hashIndex === -1 ? decoded : decoded.slice(0, hashIndex);
+    var queryIndex = withoutHash.indexOf('?');
+    var base = queryIndex === -1 ? withoutHash : withoutHash.slice(0, queryIndex);
+    var query = queryIndex === -1 ? '' : withoutHash.slice(queryIndex + 1);
+    var parts = query ? query.split(/[&?]/) : [];
+    var kept = [];
+    var sawUtm = false;
+    for (var i = 0; i < parts.length; i++) {
+      var part = parts[i];
+      if (!part) continue;
+      if (/^utm_source=/i.test(part)) {
+        if (sawUtm) continue;
+        sawUtm = true;
+        kept.push(UTM_PAIR);
+      } else {
+        kept.push(part);
+      }
+    }
+    if (!sawUtm) kept.push(UTM_PAIR);
+    return base + '?' + kept.join('&') + hash;
+  }
+
+  function isOutboundHttpAnchor(anchor) {
+    var raw = anchor.getAttribute('href');
+    if (skipHref(raw)) return false;
+    try {
+      var url = new URL(raw, window.location.href);
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+      return !isInternalHost(url.hostname);
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function applyToAnchor(anchor) {
+    if (!anchor || !anchor.getAttribute) return;
+    if (!isOutboundHttpAnchor(anchor)) return;
+    var raw = anchor.getAttribute('href');
+    var tagged = tagHref(raw);
+    if (tagged === raw) return;
+    var normalized = raw.replace(/&amp;/g, '&');
+    var utmCount = (normalized.match(/utm_source=/gi) || []).length;
+    if (utmCount === 1 && /(?:[?&])utm_source=victordepaiva\.com(?:&|#|$)/.test(normalized)) return;
+    anchor.setAttribute('href', tagged);
+  }
+
+  function applyToRoot(root) {
+    if (!root) return;
+    if (root.tagName === 'A') applyToAnchor(root);
+    if (!root.querySelectorAll) return;
+    var nodes = root.querySelectorAll('a[href]');
+    for (var i = 0; i < nodes.length; i++) applyToAnchor(nodes[i]);
+  }
+
+  function bindJustInTime(eventName) {
+    document.addEventListener(eventName, function(event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+      applyToAnchor(target.closest('a[href]'));
+    }, true);
+  }
+
+  function start() {
+    applyToRoot(document);
+    bindJustInTime('click');
+    bindJustInTime('auxclick');
+    bindJustInTime('contextmenu');
+
+    if (!window.MutationObserver || !document.documentElement) return;
+    var observer = new MutationObserver(function(mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        var mutation = mutations[i];
+        if (mutation.type === 'attributes') {
+          applyToAnchor(mutation.target);
+          continue;
+        }
+        var nodes = mutation.addedNodes;
+        for (var j = 0; j < nodes.length; j++) {
+          if (nodes[j].nodeType === 1) applyToRoot(nodes[j]);
+        }
+      }
+    });
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['href']
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
   function removeGameHeadingAnchors() {
     document.querySelectorAll('.game-section__heading > .header-link').forEach(function(anchor) {
