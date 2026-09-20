@@ -73,16 +73,16 @@
           <li class="masthead__menu-item"><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
         </ul>
         <div class="mobile-nav-links" aria-label="mobile navigation">
-          <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
-          <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
-          <a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a>
-          <span class="mobile-nav-separator" aria-hidden="true">|</span>
           <details class="mobile-work-menu">
             <summary>
-              <span class="mobile-work-label">{{ i18n.nav.work }}</span>
+              <span class="mobile-work-label">{{ i18n.nav.menu }}</span>
               <span class="navicon" aria-hidden="true"></span>
             </summary>
             <ul>
+              <li><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a></li>
+              <li><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
+              <li><a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a></li>
+              <li class="mobile-nav-menu-divider" aria-hidden="true"></li>
               <li><a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a></li>
               <li><a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a></li>
               <li><a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a></li>

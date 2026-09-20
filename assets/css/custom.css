@@ -31,6 +31,19 @@ body {
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 767px) {
+  html {
+    font-size: 16.2px;
+  }
+
+  body {
+    line-height: 1.65;
+  }
+
+  p,
+  .page__content p {
+    margin: 0 0 1.55em;
+  }
+
   #scroll-percentage {
     font-size: 14px;
   }
@@ -211,6 +224,12 @@ body {
 :root {
   --content-edge-padding: clamp(0.75rem, 2.5vw, 1.5rem);
   --content-column-inset: clamp(6rem, 16vw, 12rem);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --content-edge-padding: 1.25rem;
+  }
 }
 
 #main {
@@ -706,6 +725,34 @@ a:hover {
   height: auto;
 }
 
+.game-store-embeds .game-embed:has(> iframe[src*="itch.io"]) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 552px;
+  width: 100%;
+}
+
+.game-store-embeds iframe[src*="itch.io"] {
+  height: 167px;
+  max-width: 100%;
+  width: 100%;
+}
+
+/*
+  Itch hides the title below a 320px iframe and shows a cover-only card.
+  At 360px the column is ~319px, so give the widget 322px and let it
+  sit 1px into the page padding instead of clipping.
+*/
+@media (max-width: 370px) {
+  .game-store-embeds .game-embed:has(> iframe[src*="itch.io"]) {
+    margin-left: calc((100% - 322px) / 2);
+    margin-right: calc((100% - 322px) / 2);
+    max-width: none;
+    overflow: visible;
+    width: 322px;
+  }
+}
+
 .game-embed--video iframe,
 .game-embed--playable > iframe {
   aspect-ratio: 16 / 9;
@@ -741,7 +788,7 @@ a:hover {
   }
 }
 
-/* Mobile masthead: keep about/now/links visible and move work tabs into a dropdown. */
+/* Mobile masthead: all links live in a single menu dropdown. */
 @media (max-width: 767px) {
   .masthead__inner-wrap {
     padding-left: 0.75em;
@@ -772,31 +819,8 @@ a:hover {
     align-items: center;
     display: flex;
     flex: 0 0 auto;
-    gap: 0.45rem;
     justify-content: flex-end;
     margin-left: auto;
-  }
-
-  .mobile-nav-links a,
-  .mobile-work-menu summary {
-    align-items: center;
-    color: inherit;
-    display: flex;
-    font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: inherit;
-    line-height: 1;
-    margin: 0;
-    min-height: 2rem;
-    padding: 0.35rem 0.05rem;
-  }
-
-  .mobile-nav-separator {
-    color: #666;
-    font-family: inherit;
-    font-size: 0.875rem;
-    line-height: 1;
-    user-select: none;
   }
 
   .mobile-nav-links a:before,
@@ -810,10 +834,18 @@ a:hover {
 
   .mobile-work-menu summary {
     align-items: center;
+    color: inherit;
     cursor: pointer;
     display: flex;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: inherit;
     gap: 0.4rem;
+    line-height: 1;
     list-style: none;
+    margin: 0;
+    min-height: 2rem;
+    padding: 0.35rem 0.05rem;
   }
 
   .mobile-work-menu summary::-webkit-details-marker {
@@ -865,8 +897,17 @@ a:hover {
     display: block;
   }
 
-  .mobile-work-menu li:last-child {
+  .mobile-work-menu li:last-child,
+  .mobile-work-menu li:has(+ .mobile-nav-menu-divider) {
     border-bottom: 0;
+  }
+
+  .mobile-work-menu .mobile-nav-menu-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    height: 0;
+    margin: 0.4rem 0.5rem;
+    padding: 0;
   }
 
   .mobile-work-menu li a {
@@ -892,18 +933,6 @@ a:hover {
   .footer-language-separator,
   .footer-language-switcher {
     display: none;
-  }
-}
-
-@media (max-width: 380px) {
-  .mobile-nav-links {
-    gap: 0.4rem;
-  }
-
-  .mobile-nav-links a,
-  .mobile-work-menu summary,
-  .mobile-nav-separator {
-    font-size: 0.8125rem;
   }
 }
 
