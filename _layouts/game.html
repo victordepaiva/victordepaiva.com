@@ -124,7 +124,8 @@ layout: default
             <hr class="game-specs__rule">
             <div class="game-specs__body">
               <ul class="game-badges" aria-label="{{ i18n.layout.my_roles | escape }}">
-                {% for role in page.my_roles %}
+                {% assign sorted_roles = page.my_roles | sort_alpha %}
+                {% for role in sorted_roles %}
                   <li class="game-badges__badge">{{ role | downcase | escape }}</li>
                 {% endfor %}
               </ul>
@@ -192,7 +193,8 @@ layout: default
           <div class="game-section__content" id="game-technical-content">
             {% if page.tech_and_tools and page.tech_and_tools.size > 0 %}
               <ul class="game-badges game-badges--section" aria-label="{{ i18n.layout.tech_and_tools | escape }}">
-                {% for tool in page.tech_and_tools %}
+                {% assign sorted_tools = page.tech_and_tools | sort_alpha %}
+                {% for tool in sorted_tools %}
                   <li class="game-badges__badge">{{ tool | downcase | escape }}</li>
                 {% endfor %}
               </ul>
