@@ -57,18 +57,6 @@
               {% if page.screenshots %}
                 {% for screenshot in page.screenshots %}
                   {% assign screenshot_down = screenshot | downcase %}
-                  {% if screenshot_down contains ".gif" %}
-                    {% assign slide_index = slide_index | plus: 1 %}
-                    <li class="game-media-carousel__slide{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
-                      <div class="game-media-carousel__frame">
-                        <img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
-                      </div>
-                      <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-                {% for screenshot in page.screenshots %}
-                  {% assign screenshot_down = screenshot | downcase %}
                   {% assign is_looping_video = false %}
                   {% if screenshot_down contains ".webm" or screenshot_down contains ".mp4" %}
                     {% assign is_looping_video = true %}
@@ -84,6 +72,18 @@
                         <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" aria-label="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
                           <source src="{{ screenshot | relative_url }}" type="{{ video_type }}">
                         </video>
+                      </div>
+                      <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+                {% for screenshot in page.screenshots %}
+                  {% assign screenshot_down = screenshot | downcase %}
+                  {% if screenshot_down contains ".gif" %}
+                    {% assign slide_index = slide_index | plus: 1 %}
+                    <li class="game-media-carousel__slide{% if slide_index == 1 %} is-current{% endif %}" data-carousel-slide>
+                      <div class="game-media-carousel__frame">
+                        <img src="{{ screenshot | relative_url }}" alt="{{ page.title | escape }} {{ i18n.layout.screenshot }} {{ slide_index }}">
                       </div>
                       <div class="game-media-carousel__swipe-catch" aria-hidden="true"></div>
                     </li>
