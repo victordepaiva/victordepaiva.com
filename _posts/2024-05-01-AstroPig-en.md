@@ -26,16 +26,31 @@ screenshots:
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-9.jpg
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-10.jpg
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-11.jpg
-store_links:
-  - label: Steam
-    url: https://store.steampowered.com/app/1800390/Astro_Pig/
-  - label: itch.io
-    url: https://garoa.itch.io/astro-pig
-  - label: Nuuvem
-    url: https://www.nuuvem.com/br-pt/item/astro-pig
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1800390/" frameborder="0" width="646" height="190"></iframe>'
+  - '<iframe src="https://store.steampowered.com/widget/3095460/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/1817080" frameborder="0" width="552" height="167"><a href="https://garoa.itch.io/astro-pig">Astro Pig by Garoa</a></iframe>'
+  - '<a href="https://www.nuuvem.com/br-pt/item/astro-pig"><img src="/assets/images/posts/astro-pig-images/available-on-nuuvem.png" alt="Available on Nuuvem"></a>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/2JOULsEF1SashRN9p4Uj89?utm_source=generator&theme=0&si=0369575f0fe643c1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/7JLLED2ne5oKWVEmzz1VLZ?utm_source=generator&theme=0&si=df1bf65871d74861" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4lfkvKhAkAqy0YRmDoxbrA?utm_source=generator&theme=0&si=4ce660518d4b4e84" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe width="560" height="315" src="https://www.youtube.com/embed/mFHKavVXifY?si=RVWul_-MbFGjQkzf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+awards:
+  - 'Official selection for [Cozy Quest](https://store.steampowered.com/sale/cozyquest2025) 2025'
+  - 'Finalist for the [GWB Game Awards](https://gameinstitute.tencent.com/awards2024) 2024'
+  - 'Winner of the Popular Vote at [gamescom latam BIG Festival](https://latam.gamescom.global/en/big-festival-en/) 2024'
+  - 'Finalist for Best Brazilian Game at [gamescom latam BIG Festival](https://latam.gamescom.global/en/big-festival-en/) 2024'
+  - 'Finalist for Best Sound at [gamescom latam BIG Festival](https://latam.gamescom.global/en/big-festival-en/) 2024'
+  - 'Official exhibitor at [Perifacon](https://perifacon.com.br/) 2023'
+  - 'Official selection for Festival Jogatório 2023'
+  - 'Official selection for the 7th [Ecrã Festival](https://www.festivalecra.com.br/en)'
+  - 'Recipient of the [Startup Rio 2020](https://www.faperj.br/?id=239.6.9) grant from the State of Rio de Janeiro'
+  - '2019 Game of the Year by Popular Vote at [Drops de Jogos](https://dropsdejogos.uai.com.br/), a Brazilian games news site'
+  - 'Winner of Best Game by Popular Vote at [SBGames](https://www.sbgames.org/) 2019'
+  - 'Official selection for Panorama Brasil Students at [BIG Festival](https://latam.gamescom.global/en/big-festival-en/) 2019'
+  - '2nd place at the Game Audio Showcase at [Bizzart Festival](https://bizzart.com.br/) 2019'
+  - 'Winner of the Games Showcase at [SJEEC](https://revistas.uneb.br/sjec/issue/archive) 2019'
+  - 'Winner of Gamethon at [Hacktudo](https://www.hacktudo.com.br/) 2018'
 lang: 'en'
 translation_key: 'astropig'
 i18n_path: '/games/astropig/'
@@ -110,9 +125,4 @@ technical_work: >-
   executive producer, game designer, and level designer for early versions, and
   also made a small contribution writing lyrics and recording vocals for one OST
   track.
-additional_links:
-  - label: Soundtrack on Steam
-    url: https://store.steampowered.com/app/3095460/Astro_Pig_Soundtrack/
-  - label: Soundtrack on YouTube
-    url: https://www.youtube.com/playlist?list=PLVB_OZivbJHkafl-S9X8PcQ6Jk0sCkFMJ
 ---

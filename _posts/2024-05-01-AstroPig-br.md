@@ -38,16 +38,31 @@ screenshots:
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-9.jpg
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-10.jpg
   - /assets/images/posts/astro-pig-images/astro-pig-screenshot-11.jpg
-store_links:
-  - label: Steam
-    url: https://store.steampowered.com/app/1800390/Astro_Pig/
-  - label: itch.io
-    url: https://garoa.itch.io/astro-pig
-  - label: Nuuvem
-    url: https://www.nuuvem.com/br-pt/item/astro-pig
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1800390/" frameborder="0" width="646" height="190"></iframe>'
+  - '<iframe src="https://store.steampowered.com/widget/3095460/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/1817080" frameborder="0" width="552" height="167"><a href="https://garoa.itch.io/astro-pig">Astro Pig by Garoa</a></iframe>'
+  - '<a href="https://www.nuuvem.com/br-pt/item/astro-pig"><img src="/assets/images/posts/astro-pig-images/available-on-nuuvem.png" alt="Available on Nuuvem"></a>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/2JOULsEF1SashRN9p4Uj89?utm_source=generator&theme=0&si=0369575f0fe643c1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/7JLLED2ne5oKWVEmzz1VLZ?utm_source=generator&theme=0&si=df1bf65871d74861" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4lfkvKhAkAqy0YRmDoxbrA?utm_source=generator&theme=0&si=4ce660518d4b4e84" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  - '<iframe width="560" height="315" src="https://www.youtube.com/embed/mFHKavVXifY?si=RVWul_-MbFGjQkzf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+awards:
+  - 'Seleção oficial do [Cozy Quest](https://store.steampowered.com/sale/cozyquest2025) 2025'
+  - 'Finalista do [GWB Game Awards](https://gameinstitute.tencent.com/awards2024) 2024'
+  - 'Vencedor do Voto Popular no [gamescom latam BIG Festival](https://latam.gamescom.global/pt/big-festival/#sobre) 2024'
+  - 'Finalista de Melhor Jogo Brasileiro no [gamescom latam BIG Festival](https://latam.gamescom.global/pt/big-festival/#sobre) 2024'
+  - 'Finalista de Melhor Som no [gamescom latam BIG Festival](https://latam.gamescom.global/pt/big-festival/#sobre) 2024'
+  - 'Expositor oficial na [Perifacon](https://perifacon.com.br/) 2023'
+  - 'Seleção oficial do Festival Jogatório 2023'
+  - 'Seleção oficial do 7º [Festival Ecrã](https://www.festivalecra.com.br/)'
+  - 'Contemplado pelo edital [Startup Rio 2020](https://www.faperj.br/?id=239.6.9) do Estado do Rio de Janeiro'
+  - 'Jogo do Ano de 2019 por Voto Popular no [Drops de Jogos](https://dropsdejogos.uai.com.br/)'
+  - 'Vencedor de Melhor Jogo por Voto Popular no [SBGames](https://www.sbgames.org/) 2019'
+  - 'Seleção oficial do Panorama Brasil Estudantes no [BIG Festival](https://latam.gamescom.global/pt/big-festival/#sobre) 2019'
+  - '2º lugar na mostra de Áudio em Games do [Bizzart Festival](https://bizzart.com.br/) 2019'
+  - 'Vencedor da Mostra de Games do [SJEEC](https://revistas.uneb.br/sjec/issue/archive) 2019'
+  - 'Vencedor da Gamethon no [Hacktudo](https://www.hacktudo.com.br/) 2018'
 lang: 'br'
 translation_key: 'astropig'
 i18n_path: '/games/astropig/'
@@ -108,10 +123,5 @@ about_project: |-
 technical_work: >-
   Trabalhei no projeto como designer de narrativa, roteirista em brasileiro e
   inglês, produtor executivo, game designer e level designer de versões iniciais,
-  além de uma ponta fazendo a letra e alguns vocais de uma das tracks da OST.
-additional_links:
-  - label: Trilha sonora na Steam
-    url: https://store.steampowered.com/app/3095460/Astro_Pig_Soundtrack/
-  - label: Trilha sonora no YouTube
-    url: https://www.youtube.com/playlist?list=PLVB_OZivbJHkafl-S9X8PcQ6Jk0sCkFMJ
+  além de uma ponta fazendo a letra e alguns vocais de uma das   tracks da OST.
 ---
