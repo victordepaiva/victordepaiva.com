@@ -57,8 +57,8 @@ awards:
   - 'Seleção oficial de Trilha Sonora no Festival de Artes do [SBGames](https://www.sbgames.org/) 2021'
 lang: 'br'
 translation_key: 'catleatherjackets'
-i18n_path: '/games/catleatherjackets/'
-permalink: '/br/games/catleatherjackets/'
+i18n_path: '/games/cat-leather-jackets/'
+permalink: '/br/games/cat-leather-jackets/'
 overview: >-
   Jogo feito por [Diana Amorim](https://bsky.app/profile/h3xi.bsky.social),
   responsável pelo conceito original, músicas e programação, em parceria com a
