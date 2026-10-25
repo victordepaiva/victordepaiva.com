@@ -8,6 +8,7 @@ published_year: '2024'
 work_start_year: '2018'
 work_end_year: '2024'
 games_capsule_image: /assets/images/games/astro-pig-library-capsule.png
+banner_image: /assets/images/posts/astro-pig-images/astro-pig-banner.jpg
 date: '2024-05-01 12:00:00 -0300'
 platform: pc
 trailer_url: 'https://www.youtube.com/watch?v=HdFu2XK3DF0'
@@ -53,23 +54,28 @@ awards:
   - 'Winner of Gamethon at [Hacktudo](https://www.hacktudo.com.br/) 2018'
 lang: 'en'
 translation_key: 'astropig'
-i18n_path: '/games/astropig/'
-permalink: '/en/games/astropig/'
+i18n_path: '/games/astro-pig/'
+permalink: '/en/games/astro-pig/'
 tagline: 'A lo-fi adventure, puzzle, and platformer game about a little space cadet pig and his smart spaceship.'
 release_date: 'may 1st, 2024'
 status: 'released'
 genre: 'lo-fi adventure, puzzle, and platformer'
 my_roles:
-  - 'narrative design'
-  - 'writing'
   - 'executive production'
   - 'game design'
   - 'level design'
-  - 'ost lyrics and vocals'
+  - 'narrative design'
+  - 'writing'
+  - 'localization'
+  - 'lyrics and vocals'
+  - 'marketing'
+  - 'pr'
+  - 'qa'
+  - 'ui/ux'
 word_count: '~22,000 (english + brazilian)'
 overview: >-
-  A lo-fi adventure, puzzle, and platformer about a little space cadet pig and
-  his smart spaceship.
+  A 90-s inspired lo-fi adventure puzzle platformer about a piglet astronaut and
+  his intelligent ship.
 about_project: |-
   <h4>a game jam and the origin of Garoa</h4>
 
@@ -120,9 +126,26 @@ about_project: |-
   Despite that, I was very happy with the game we shipped. We also won Best Game by Popular Vote at gamescom latam, which gave us the chance to get up on stage, thank people for the award, and shake hands with some big names in the Brazilian games community, like BRKsEdu (one of the country's best-known gaming YouTubers). The project also opened up different opportunities for us over those years, and we learned a lot about game development, running a company, fundraising, long-term production, and, perhaps above all, recognizing the limits of an idea. If there is one cautionary tale I would leave from this story, it is this: be careful about taking a game jam project and deciding that it necessarily has to become a full game. Sometimes a game works perfectly for a weekend game jam because it was made to last only a weekend.
 
   You can hear a version of this story at [the following link](https://open.spotify.com/episode/1Ui7dg3YDz0Vkamc9Exh9x), in an episode of Controles Voadores, a Brazilian games podcast (available only in Brazilian Portuguese).
+tech_and_tools:
+  - unity
+  - trello
+  - clickup
+  - discord
+  - telegram
+  - sns
+  - photoshop
+  - premiere
+  - audacity
+  - google docs
+  - google sheets
 technical_work: >-
-  I worked on the project as narrative designer, writer in Brazilian and English,
-  executive producer, game designer, and level designer for early versions, and
-  also made a small contribution writing lyrics and recording vocals for one OST
-  track.
+  As one of our longest-running projects, I've touched on every aspect of it at
+  some point. I was the dedicated narrative designer, writer, and localizer in
+  Brazilian and English, the executive producer responsible for securing funding,
+  and the one responsible for marketing and PR. I also did a little bit of game
+  design, level design, and UI/UX, and conducted playtests, reviews, and quality
+  assurance together with our game design team. I also made a small contribution
+  writing lyrics and recording vocals for one specific OST track (I won't tell
+  you which, but if you hear a lady singing in Japanese in what seems to be a
+  sample from an '80s song, pay close attention).
 ---

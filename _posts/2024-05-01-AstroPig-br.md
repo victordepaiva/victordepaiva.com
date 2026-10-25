@@ -9,18 +9,24 @@ published_year: '2024'
 work_start_year: '2018'
 work_end_year: '2024'
 games_capsule_image: /assets/images/games/astro-pig-library-capsule.png
+banner_image: /assets/images/posts/astro-pig-images/astro-pig-banner.jpg
 date: '2024-05-01 12:00:00 -0300'
 release_date: '1º de maio de 2024'
 status: lançado
 genre: 'lo-fi adventure, puzzle e plataforma'
 platform: pc
 my_roles:
-  - design narrativo
-  - roteiro
   - produção executiva
   - game design
   - level design
-  - letras e vocais da trilha sonora
+  - design narrativo
+  - roteiro
+  - localização
+  - letras e vocais
+  - marketing
+  - pr
+  - qa
+  - ui/ux
 word_count: '~22.000 (inglês + brasileiro)'
 trailer_url: 'https://www.youtube.com/watch?v=HdFu2XK3DF0'
 screenshots:
@@ -65,11 +71,11 @@ awards:
   - 'Vencedor da Gamethon no [Hacktudo](https://www.hacktudo.com.br/) 2018'
 lang: 'br'
 translation_key: 'astropig'
-i18n_path: '/games/astropig/'
-permalink: '/br/games/astropig/'
+i18n_path: '/games/astro-pig/'
+permalink: '/br/games/astro-pig/'
 overview: >-
-  Um jogo lo-fi de aventura, puzzle e plataforma sobre um porquinho cadete
-  espacial e sua nave inteligente.
+  Um puzzle-platformer lo-fi de aventura com estética anos 90 sobre um porquinho
+  astronauta e sua nave inteligente.
 about_project: |-
   <h4>a game jam e a origem da Garoa</h4>
 
@@ -120,8 +126,27 @@ about_project: |-
   Apesar disso, fiquei muito feliz com o jogo que entregamos. Também fomos vencedores de Melhor Jogo por Voto Popular na gamescom latam, o que nos deu a oportunidade de subir ao palco, agradecer pelo prêmio e apertar a mão de algumas figuras grandes da comunidade brasileira de jogos, como BRKsEdu. O projeto também abriu diferentes oportunidades para nós ao longo desses anos, e aprendemos muito sobre desenvolvimento de jogos, administração de empresa, captação de recursos, produção de longo prazo e, talvez principalmente, reconhecer os limites de uma ideia. Se existe uma <i>cautionary tale</i> que eu deixaria dessa história, é justamente esta: cuidado ao pegar um projeto de <i>game jam</i> e decidir que ele precisa, necessariamente, virar um jogo completo. Às vezes, um jogo funciona perfeitamente para uma game jam de fim de semana porque foi criado para durar só um fim de semana.
 
   Você pode ouvir uma versão dessa história no [link a seguir](https://open.spotify.com/episode/1Ui7dg3YDz0Vkamc9Exh9x), em um episódio de podcast do Controles Voadores (disponível apenas em brasileiro).
+tech_and_tools:
+  - unity
+  - trello
+  - clickup
+  - discord
+  - telegram
+  - sns
+  - photoshop
+  - premiere
+  - audacity
+  - google docs
+  - google sheets
 technical_work: >-
-  Trabalhei no projeto como designer de narrativa, roteirista em brasileiro e
-  inglês, produtor executivo, game designer e level designer de versões iniciais,
-  além de uma ponta fazendo a letra e alguns vocais de uma das   tracks da OST.
+  Como um dos nossos projetos mais longos, atuei em todos os aspectos dele em
+  algum momento. Fui o designer de narrativa, roteirista e localizador dedicado
+  das versões em brasileiro e inglês, o produtor executivo responsável pela
+  captação de recursos, e quem cuidou de marketing e PR. Também fiz um pouco de
+  game design, level design e UI/UX, e conduzi playtests, revisões e controle de
+  qualidade junto com o nosso time de game design. Também dei uma pequena
+  contribuição escrevendo a letra e gravando os vocais de uma faixa específica
+  da OST (não vou contar qual, mas se você ouvir uma moça cantando em japonês
+  no que parece ser um sample de uma música dos anos 80, preste bastante
+  atenção).
 ---
