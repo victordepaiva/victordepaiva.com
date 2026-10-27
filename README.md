@@ -16,7 +16,7 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_plugins/` - Jekyll plugins (i18n, outbound UTM tagging)
 
 ### Content Pages
-- `index.html` - Homepage (root directory)
+- `/en/` and `/br/` - localized homepages (`_pages/home-en.html`, `_pages/home-br.html`). `/` is a Netlify language redirect
 - `_pages/about.html` - About page
 - `_pages/fiction.html` - Fiction writing section
 - `_pages/nonfiction.html` - Non-fiction writing section
@@ -178,7 +178,11 @@ Fallback behavior:
 
 This means browsing locale and content language are separate. For example, `/en/fiction/505/` remains an English UI page with English navigation, but it can display the Brazilian body if that is the only available content. The page shows a short notice explaining the content language and canonicalizes to the real content-language URL.
 
-Resolver URLs such as `/about/` and `/-/about/` are still noindex redirect pages for browser/manual locale discovery. Missing localized content URLs such as `/en/fiction/505/` are noindex shell pages, not redirects, so users do not get pushed into another locale namespace while browsing.
+Legacy unprefixed URLs (`/about/`, `/`) and resolver URLs (`/-/about/`, `/-/`) are not HTML pages. `jekyll build` writes a Netlify `_redirects` file that 301s them. `Language=pt` sends Portuguese (`Accept-Language` `pt` / `pt-BR` / `pt-*`, or the `nf_lang=pt` cookie the language switcher sets from `localStorage`) to `/br/...` when that translation exists. Every other request, including a crawler with no `Accept-Language`, falls through to `/en/...` when English exists. A page that exists in only one locale always redirects there, rather than to a noindex shell. Netlify matches either trailing-slash form, keeps the query string, and the browser keeps the hash. `jekyll serve` does not apply `_redirects`; preview `/en/` and `/br/` locally and test the rules on a Netlify deploy preview.
+
+`hreflang="x-default"` points at the English URL when that translation exists, and otherwise at the only indexable translation. It does not point at `/-/` or another noindex URL.
+
+Missing localized content URLs such as `/en/fiction/505/` are noindex shell pages, not redirects, so users do not get pushed into another locale namespace while browsing.
 
 For `collection: textos`, preserve the original creative text language with:
 
@@ -216,7 +220,7 @@ Other work posts automatically appear on `_pages/other-work.html`.
 8. The `my_roles` field should be a YAML list and renders as lowercase tag badges in the summary block, using the same badge style as `tech_and_tools`
 9. Store editorial copy as Markdown-capable YAML block scalars in `overview`, `about_project`, and `technical_work`. Keep the Markdown body empty after the closing front matter delimiter
 10. The rendered section order is Overview, Try it, Media, About the project, Technical work, Awards, and Links. Each rendered section is expanded by default and can be collapsed from a control immediately to the left of the heading. Game section headings do not get permalink/copy-anchor buttons
-11. Overview always renders and is prose only. `banner_image` stays above Overview and is not part of the carousel. Media is omitted when both `trailer_url` and `screenshots` are empty. The game layout builds the Media carousel itself, in this order regardless of front-matter list order: YouTube from `trailer_url`, then looping videos (`.webm` / `.mp4`) from `screenshots`, then GIFs from `screenshots`, then remaining still images from `screenshots`. Looping videos play muted, autoplay, and loop with no playback controls. Do not put store badges, playable embeds, capsule art, or editorial Markdown images from About / Technical work into `screenshots`. The carousel is swipe-snapped on mobile and uses desktop chevrons plus a centered position indicator when there is more than one item
+11. Overview always renders and is prose only. `banner_image` stays above Overview and is not part of the carousel. Media is omitted when both `trailer_url` and `screenshots` are empty. The game layout builds the Media carousel itself, in this order regardless of front-matter list order: YouTube from `trailer_url`, then looping videos (`.webm` / `.mp4`) from `screenshots`, then GIFs from `screenshots`, then remaining still images from `screenshots`. A screenshot entry may be a map with `webm`, `mp4`, and `poster` instead of a single path; that still counts as one looping video and emits both sources. Looping videos play muted, autoplay, and loop with no playback controls. Do not put store badges, playable embeds, capsule art, or editorial Markdown images from About / Technical work into `screenshots`. The carousel is swipe-snapped on mobile and uses desktop chevrons plus a centered position indicator when there is more than one item
 12. `play_embeds` is for playable experiences such as Spawnd and controls whether Try it appears
 13. `awards` is a YAML list and supports Markdown links. Awards is omitted when the list is absent and renders as a responsive two-column list when present
 14. Links is omitted when no link fields exist. The Links section and all game-page media (images, GIFs, embeds) are centered. `store_embeds` render first in a shared column matching the Steam widget width (`646px`, shrinking on smaller screens) and may include image badges as well as iframes. `store_links` and `additional_links` (`label` and `url` pairs) follow when present. Leave those `url` values without UTM parameters; outbound `<a href>` links are tagged automatically, but `iframe src` embeds are not
@@ -255,7 +259,7 @@ The entire capsule card links to the game post. If `games_capsule_image` is miss
 1. Create HTML file in `_pages/` directory
 2. Include front matter with layout and permalink specification
 3. Use existing layouts or create custom ones
-4. Homepage (`index.html`) must remain in root directory
+4. Localized homepages live at `/en/` and `/br/`. The site root is a Netlify language redirect, not `index.html`
 
 ### Adding Images
 1. Place images in appropriate `assets/images/` subdirectory:

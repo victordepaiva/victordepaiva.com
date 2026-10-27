@@ -5,10 +5,12 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        {% assign localized_home = '/' | prepend: active_lang | prepend: '/' %}
+        {% assign localized_links = '/links/' | prepend: active_lang | prepend: '/' %}
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+          <a class="site-logo" href="{{ localized_home | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" href="{{ localized_home | relative_url }}">
           <img class="desktop-sidebar-home-icon" src="{{ '/assets/images/branding/drill_white_horizontal_transparent.png' | relative_url }}" alt="" aria-hidden="true">
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
@@ -17,7 +19,7 @@
           <hr class="desktop-sidebar-divider">
           <a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a>
           <a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a>
-          <a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a>
+          <a href="{{ localized_links | relative_url }}">{{ i18n.nav.links }}</a>
           <hr class="desktop-sidebar-divider">
           <a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a>
           <a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a>
@@ -68,7 +70,7 @@
           <li class="masthead__menu-item"><a href="{{ '/nonfiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.nonfiction }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/other-work/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.other_work }}</a></li>
           <li class="masthead__menu-item"><a href="https://victordepaiva.itch.io/" target="_blank" rel="noopener noreferrer">{{ i18n.nav.itch }}</a></li>
-          <li class="masthead__menu-item"><a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ localized_links | relative_url }}">{{ i18n.nav.links }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a></li>
           <li class="masthead__menu-item"><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
         </ul>
@@ -81,7 +83,7 @@
             <ul>
               <li><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.about }}</a></li>
               <li><a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.now }}</a></li>
-              <li><a href="{{ '/-/links/' | relative_url }}">{{ i18n.nav.links }}</a></li>
+              <li><a href="{{ localized_links | relative_url }}">{{ i18n.nav.links }}</a></li>
               <li class="mobile-nav-menu-divider" aria-hidden="true"></li>
               <li><a href="{{ '/games/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.games }}</a></li>
               <li><a href="{{ '/fiction/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.nav.fiction }}</a></li>
