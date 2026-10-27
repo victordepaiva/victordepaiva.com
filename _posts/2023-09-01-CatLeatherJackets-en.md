@@ -10,11 +10,13 @@ work_end_year: '2023'
 games_capsule_image: /assets/images/games/cat-leather-jackets-library-capsule.png
 date: '2023-08-27 12:00:00 -0300'
 platform: pc
-banner_image: /assets/images/posts/clj-images/catleatherjackets_characters_banner.png
+banner_image: /assets/images/posts/clj-images/catleatherjackets_characters_banner.webp
 trailer_url: 'https://www.youtube.com/watch?v=InR20y_pXoA'
 screenshots:
   - /assets/images/posts/clj-images/clj-webm-2.webm
-  - /assets/images/posts/clj-images/priya_bus.gif
+  - webm: /assets/images/posts/clj-images/priya_bus.webm
+    mp4: /assets/images/posts/clj-images/priya_bus.mp4
+    poster: /assets/images/posts/clj-images/priya_bus-poster.webp
   - /assets/images/posts/clj-images/clj-screenshot-1.jpg
   - /assets/images/posts/clj-images/clj-screenshot-2.jpg
   - /assets/images/posts/clj-images/clj-screenshot-3.jpg

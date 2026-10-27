@@ -120,13 +120,19 @@
 
 {% if page.translation_key %}
   {% assign localized_entries = site.pages | concat: site.posts | where: "translation_key", page.translation_key %}
+  {% assign x_default_url = nil %}
   {% for entry in localized_entries %}
     {% if entry.lang and entry.i18n_fallback != true %}
       {% assign entry_i18n = site.data.i18n[entry.lang] %}
       <link rel="alternate" hreflang="{{ entry_i18n.locale_tag | default: entry.lang }}" href="{{ entry.url | absolute_url }}">
+      {% if x_default_url == nil or entry.lang == site.i18n.default_locale %}
+        {% assign x_default_url = entry.url %}
+      {% endif %}
     {% endif %}
   {% endfor %}
-  <link rel="alternate" hreflang="x-default" href="{{ '/-/' | append: page.i18n_path | replace: '//', '/' | absolute_url }}">
+  {% if x_default_url %}
+    <link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}">
+  {% endif %}
 {% endif %}
 
 {% if paginator.previous_page %}

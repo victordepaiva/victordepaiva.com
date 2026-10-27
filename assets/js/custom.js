@@ -316,14 +316,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  function syncNetlifyLanguage(locale) {
+    if (locale !== 'en' && locale !== 'br') return;
+    // Netlify's nf_lang cookie overrides Accept-Language for Language= redirects.
+    // Brazilian pages use locale "br"; the redirect condition is Language=pt.
+    var language = locale === 'br' ? 'pt' : 'en';
+    document.cookie = 'nf_lang=' + language + '; Path=/; Max-Age=31536000; SameSite=Lax; Secure';
+  }
+
   document.querySelectorAll('[data-locale-choice]').forEach(function(control) {
     control.addEventListener('click', function() {
       localStorage.setItem('localePreference', control.dataset.localeChoice);
+      syncNetlifyLanguage(control.dataset.localeChoice);
     });
     if (localStorage.getItem('localePreference') === control.dataset.localeChoice) {
       control.style.fontWeight = 'bold';
     }
   });
+
+  try {
+    syncNetlifyLanguage(localStorage.getItem('localePreference'));
+  } catch (error) {}
 
   function copyTextFallback(text) {
     var textarea = document.createElement('textarea');
