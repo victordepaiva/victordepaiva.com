@@ -13,8 +13,12 @@ platform: pc
 banner_image: /assets/images/posts/cartomante-images/cartomante_characters_banner.png
 trailer_url: 'https://www.youtube.com/embed/qPkon4cQZhc?si=4fAEjRDARs7MrG2w'
 screenshots:
-  - /assets/images/posts/cartomante-images/cartomante-footage1_EN.gif
-  - /assets/images/posts/cartomante-images/cartomante-footage2_EN.gif
+  - webm: /assets/images/posts/cartomante-images/cartomante-footage1_EN.webm
+    mp4: /assets/images/posts/cartomante-images/cartomante-footage1_EN.mp4
+    poster: /assets/images/posts/cartomante-images/cartomante-footage1_EN-poster.webp
+  - webm: /assets/images/posts/cartomante-images/cartomante-footage2_EN.webm
+    mp4: /assets/images/posts/cartomante-images/cartomante-footage2_EN.mp4
+    poster: /assets/images/posts/cartomante-images/cartomante-footage2_EN-poster.webp
   - /assets/images/posts/cartomante-images/cartomante-screenshot-1.jpg
   - /assets/images/posts/cartomante-images/cartomante-screenshot-2.jpg
   - /assets/images/posts/cartomante-images/cartomante-screenshot-3.jpg

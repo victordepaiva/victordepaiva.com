@@ -14,13 +14,19 @@ layout: null
         <loc>{{ site.url }}{{ post.url }}</loc>
         {% if post.translation_key %}
           {% assign alternates = site.posts | concat: site.pages | where: "translation_key", post.translation_key %}
+          {% assign x_default_url = nil %}
           {% for alternate in alternates %}
-            {% if alternate.lang and alternate.sitemap != false %}
+            {% if alternate.lang and alternate.sitemap != false and alternate.i18n_fallback != true %}
               {% assign alternate_i18n = site.data.i18n[alternate.lang] %}
         <xhtml:link rel="alternate" hreflang="{{ alternate_i18n.locale_tag | default: alternate.lang }}" href="{{ site.url }}{{ alternate.url }}" />
+              {% if x_default_url == nil or alternate.lang == site.i18n.default_locale %}
+                {% assign x_default_url = alternate.url %}
+              {% endif %}
             {% endif %}
           {% endfor %}
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/-/{{ post.i18n_path | remove_first: '/' }}" />
+          {% if x_default_url %}
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ x_default_url }}" />
+          {% endif %}
         {% endif %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
         <changefreq>monthly</changefreq>
@@ -43,18 +49,32 @@ layout: null
     {% if page.sitemap == false or page.i18n_fallback %}
       {% assign include_page = false %}
     {% endif %}
+    {% assign page_url_down = page.url | downcase %}
+    {% if page_url_down contains '/assets/' %}
+      {% assign include_page = false %}
+    {% endif %}
+    {% assign page_ext = page_url_down | split: '.' | last %}
+    {% if page_ext == 'js' or page_ext == 'css' or page_ext == 'scss' or page_ext == 'json' or page_ext == 'map' or page_ext == 'xml' or page_ext == 'txt' %}
+      {% assign include_page = false %}
+    {% endif %}
     {% if include_page %}
       <url>
         <loc>{{ site.url }}{{ page.url }}</loc>
         {% if page.translation_key %}
           {% assign alternates = site.posts | concat: site.pages | where: "translation_key", page.translation_key %}
+          {% assign x_default_url = nil %}
           {% for alternate in alternates %}
-            {% if alternate.lang and alternate.sitemap != false %}
+            {% if alternate.lang and alternate.sitemap != false and alternate.i18n_fallback != true %}
               {% assign alternate_i18n = site.data.i18n[alternate.lang] %}
         <xhtml:link rel="alternate" hreflang="{{ alternate_i18n.locale_tag | default: alternate.lang }}" href="{{ site.url }}{{ alternate.url }}" />
+              {% if x_default_url == nil or alternate.lang == site.i18n.default_locale %}
+                {% assign x_default_url = alternate.url %}
+              {% endif %}
             {% endif %}
           {% endfor %}
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/-/{{ page.i18n_path | remove_first: '/' }}" />
+          {% if x_default_url %}
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ x_default_url }}" />
+          {% endif %}
         {% endif %}
         {% if page.last_modified_at %}
           <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
