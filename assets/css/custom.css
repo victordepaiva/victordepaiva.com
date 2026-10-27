@@ -381,6 +381,22 @@ a:hover:before, a:focus:before {
   width: auto;
 }
 
+/* Homepage H1 is the one-line bio. Keep it at body size so it wraps like the
+   paragraph it replaced and does not stretch the banner column. */
+.minibio .home-bio {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.5;
+  margin: 0 0 1.3em;
+  text-transform: none;
+}
+
+.minibio .home-bio a {
+  font-weight: inherit;
+}
+
 /* Style separators */
 .separator {
   color: #666;

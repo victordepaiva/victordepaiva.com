@@ -1,0 +1,50 @@
+{%- comment -%}
+  Canonical Person + WebSite graph. Emit this only for translation_key home
+  and about (those keys match _pages/home-en.html, home-br.html, about-en.html,
+  and about-br.html). sameAs is site.social.links so it cannot drift from config.
+  image is omitted until _plugins/headshot.rb sees the headshot file.
+  spawnd.gg role is provisional: Product Manager, spawnd.gg (Nuuvem).
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://victordepaiva.com/#person",
+      "name": "Victor de Paiva",
+      "alternateName": ["Victor Hugo Ferreira de Paiva", "otakumaromba"],
+      "url": "https://victordepaiva.com/"{% if site.headshot_image %},
+      "image": {{ site.headshot_image | absolute_url | jsonify }}{% endif %},
+      "jobTitle": "Founder & CEO, Garoa Studios",
+      "description": "Brazilian game developer from Rio de Janeiro, Founder & CEO of Garoa Studios and Product Manager for spawnd.gg (Nuuvem).",
+      "nationality": { "@type": "Country", "name": "Brazil" },
+      "homeLocation": { "@type": "Place", "name": "Rio de Janeiro, Brazil" },
+      "knowsLanguage": ["pt-BR", "en", "ja", "ru", "es"],
+      "knowsAbout": ["game development", "game production", "narrative design", "game writing", "game design", "localization", "rhythm games", "visual novels"],
+      "worksFor": [
+        { "@type": "Organization", "@id": "https://garoastudios.com/#organization", "name": "Garoa Studios", "url": "https://garoastudios.com" },
+        { "@type": "Organization", "name": "Nuuvem", "url": "https://www.nuuvem.com", "sameAs": "https://www.wikidata.org/wiki/Q30934859" }
+      ],
+      "hasOccupation": [
+        { "@type": "Occupation", "name": "Founder & CEO", "description": "Garoa Studios, since 2018" },
+        { "@type": "Occupation", "name": "Product Manager", "description": "spawnd.gg (Nuuvem), since 2025" },
+        { "@type": "Occupation", "name": "Columnist", "description": "Controles Voadores" }
+      ],
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "CEFET/RJ" },
+        { "@type": "EducationalOrganization", "name": "Estácio" }
+      ],
+      "sameAs": {{ site.social.links | jsonify }}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://victordepaiva.com/#website",
+      "url": "https://victordepaiva.com/",
+      "name": "Victor de Paiva",
+      "inLanguage": ["en-US", "pt-BR"],
+      "author": { "@id": "https://victordepaiva.com/#person" }
+    }
+  ]
+}
+</script>

@@ -13,4 +13,11 @@
 <!-- Umami Cloud -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="f961be44-a181-4e72-97e8-fbab3ce18555"></script>
 
+{% comment %}
+  translation_key home/about is set on both /en/ and /br/ versions of those pages.
+{% endcomment %}
+{% if page.translation_key == "home" or page.translation_key == "about" %}
+  {% include head/person-jsonld.html %}
+{% endif %}
+
 <!-- end custom head snippets -->
