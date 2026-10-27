@@ -1246,9 +1246,7 @@ a:hover {
   width: 2.4rem;
 }
 
-.external-link-icon img,
-.external-link-icon svg {
-  display: block;
+.external-link-icon img {
   height: 1.2rem;
   width: 1.2rem;
 }
