@@ -20,7 +20,7 @@ title                    : "Victor de Paiva"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Victor de Paiva"
-description              : "Escritos pessoais | Personal writings."
+description              : "Founder & CEO, Garoa Studios. Brazilian game developer. | Fundador e CEO da Garoa Studios. Desenvolvedor de jogos brasileiro."
 url                      : "https://victordepaiva.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -85,6 +85,11 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
+# Search Console. Leave these empty until Victor verifies the domain.
+# seo.html prints the meta tag only when a value is present, so a blank key
+# renders nothing. To enable, uncomment one of the examples and paste the token:
+# google_site_verification: "paste-google-token-here"
+# bing_site_verification: "paste-bing-token-here"
 google_site_verification :
 bing_site_verification   :
 naver_site_verification  :
@@ -98,13 +103,36 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+# Default Open Graph image. Leave empty: _plugins/headshot.rb sets this to
+# /assets/images/victor-de-paiva.jpg only after that file exists, so a missing
+# headshot is never referenced. Alt text for the avatar is author.name.
+og_image                 :
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
+# sameAs for the single Person entity (home/about graph and other pages).
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person # Person or Organization (defaults to Person)
+  name                   : "Victor de Paiva"
+  links:
+    - "https://bsky.app/profile/victordepaiva.com"
+    - "https://x.com/otakumaromba"
+    - "https://www.instagram.com/victordepaiva.rio"
+    - "https://www.tiktok.com/@victordepaiva.rio"
+    - "https://www.threads.com/@victordepaiva.rio"
+    - "https://www.linkedin.com/in/victordepaiva"
+    - "https://www.youtube.com/@victordepaiva"
+    - "https://www.twitch.tv/otakumaromba"
+    - "https://medium.com/@victordepaiva"
+    - "https://github.com/victordepaiva"
+    - "https://victordepaiva.itch.io/"
+    - "https://steamcommunity.com/id/victordepaiva"
+    - "https://linktr.ee/victordepaiva"
+    - "https://filmfreeway.com/victordepaiva"
+    - "http://lattes.cnpq.br/1035006571814551"
+    - "https://www.controlesvoadores.com.br/victor"
+    - "https://www.goodreads.com/victordepaiva"
+    - "https://letterboxd.com/victordepaiva/"
+    - "https://backloggd.com/u/victordepaiva/"
 
 # Analytics
 analytics:
@@ -117,7 +145,9 @@ analytics:
 # Site Author
 author:
   name             : "Victor de Paiva"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  # Set by _plugins/headshot.rb when assets/images/victor-de-paiva.jpg exists.
+  # Do not point this at the file before Victor adds it. Alt text is author.name.
+  avatar           :
   bio              : ""
   location         : ""
   email            :

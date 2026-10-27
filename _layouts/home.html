@@ -18,7 +18,7 @@ layout: category
 {% endif %}
 
 <div class="minibio">
-  <p>{{ i18n.home.bio }}</p>
+  <h1 class="home-bio" id="page-title">{{ i18n.home.bio }}</h1>
 </div>
 
 <p><a href="{{ '/about/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.home.more_about }}</a>{{ i18n.home.now_connector }}<a href="{{ '/now/' | prepend: active_lang | prepend: '/' | relative_url }}">{{ i18n.home.now }}</a>.</p>

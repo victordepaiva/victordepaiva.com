@@ -136,6 +136,12 @@
   <link rel="next" href="{{ paginator.next_page_path | absolute_url }}">
 {% endif %}
 
+{% comment %}
+  Home and about already emit the full Person graph (head/person-jsonld.html).
+  Skip this block there so each of those pages has one Person. Everywhere else,
+  keep a single Person that uses the same @id, job title, and sameAs list.
+{% endcomment %}
+{% unless page.translation_key == "home" or page.translation_key == "about" %}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -145,12 +151,16 @@
       "logo": {{ site_og_image | jsonify }}{% endif %}
     {% else %}
       "@type": "Person",
+      "@id": "https://victordepaiva.com/#person",
       "name": {{ site.social.name | default: site.name | jsonify }},
-      "url": {{ '/' | absolute_url |jsonify }}{% if site.social.links %},
+      "jobTitle": "Founder & CEO, Garoa Studios",
+      "url": {{ '/' | absolute_url | jsonify }}{% if site.headshot_image %},
+      "image": {{ site.headshot_image | absolute_url | jsonify }}{% endif %}{% if site.social.links %},
       "sameAs": {{ site.social.links | jsonify }}{% endif %}
     {% endif %}
   }
 </script>
+{% endunless %}
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
