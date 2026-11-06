@@ -99,7 +99,7 @@ about_project: |-
 
   Depois da <i>jam</i>, continuamos juntos de maneira informal. Mantivemos um grupo no Telegram, conversávamos sobre o projeto e começamos a organizar novas frentes. Em algum momento, abriu no Rio de Janeiro um edital da Faperj (Fundo de Apoio à Pesquisa do Estado do Rio de Janeiro, um programa subsidiado pelo governo de financiamento a projetos) chamado Startup Rio, que possuía uma linha que aceitava inscrição de jogos eletrônicos. Alguns colegas nossos da RING já haviam conseguido financiamento pelo programa, e ouvimos de diferentes pessoas que o Astro Pig poderia ser um bom candidato - nesse meio tempo, tínhamos levado o protótipo para apresentações e <i>playtests</i> públicos em diferentes lugares do Rio de Janeiro: feiras de jogo, eventos de anime, um circo, e outros espaços bastante variados. Já tínhamos, portanto, alguma validação de que havia interesse pelo projeto. Nos inscrevemos e fomos selecionados para produzir o jogo.
 
-  Foi a partir daí que nasceu formalmente a Garoa, com nome, identidade e logo, por volta de maio ou junho de 2019. Mas, na prática, a Garoa nasceu junto com o próprio Astro Pig.
+  Foi a partir daí que nasceu formalmente a Garoa, com nome, identidade e logo, por volta de maio ou junho de 2019. Mas, na prática, a equipe já trabalhava junta desde o próprio Astro Pig, concebido naquela game jam de 2018.
 
   <h4>Startup Rio e os anos seguintes</h4>
 
