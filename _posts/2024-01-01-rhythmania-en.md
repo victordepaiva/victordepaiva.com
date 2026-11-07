@@ -44,7 +44,7 @@ permalink: '/en/games/rhythmania/'
 overview: |-
   *RhythMania* is currently in development.
 
-  The embedded demo is powered by spawnd, a platform I work on as product lead.
+  The embedded demo is powered by spawnd, a platform I work on as Product Manager.
 technical_work: >-
   I'm working on the project as executive producer, narrative designer, and
   localization coordinator, as well as contributing to marketing, game design,
