@@ -7,6 +7,7 @@
     "nav": {
       "home": "home",
       "about": "about",
+      "press": "press",
       "now": "now",
       "links": "links",
       "contact": "contact",
@@ -108,6 +109,7 @@
     "nav": {
       "home": "início",
       "about": "sobre",
+      "press": "imprensa",
       "now": "agora",
       "links": "links",
       "contact": "contato",
@@ -121,7 +123,7 @@
     },
     "home": {
       "banner_alt": "Ilustração de personagens dos jogos de Victor, por Kuating",
-      "bio": "joguinista, produtor, game designer, designer de narrativa, escritor e localizador, fascinado por jogos como meio de expressão e pelo milagre de levar projetos complexos até o fim. fundador e CEO da <a href=\"https://garoastudios.com\">Garoa</a> e gerente de produto no <a href=\"https://www.spawnd.gg\">spawnd.gg</a>.",
+      "bio": "joguinista, produtor, game designer, designer de narrativa, escritor e localizador, fascinado por jogos como meio de expressão e pelo milagre de levar projetos complexos até o fim. fundador e CEO da <a href=\"https://garoastudios.com\">Garoa</a> e Product Owner no <a href=\"https://www.spawnd.gg\">spawnd.gg</a>.",
       "more_about": "mais sobre mim",
       "now_connector": ", e ",
       "now": "o que estou fazendo agora",
