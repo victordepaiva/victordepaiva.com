@@ -143,11 +143,11 @@
 {% endif %}
 
 {% comment %}
-  Home and about already emit the full Person graph (head/person-jsonld.html).
+  Home, about, and press already emit the full Person graph (head/person-jsonld.html).
   Skip this block there so each of those pages has one Person. Everywhere else,
   keep a single Person that uses the same @id, job title, and sameAs list.
 {% endcomment %}
-{% unless page.translation_key == "home" or page.translation_key == "about" %}
+{% unless page.translation_key == "home" or page.translation_key == "about" or page.translation_key == "press" %}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",

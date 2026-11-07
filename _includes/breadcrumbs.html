@@ -38,6 +38,8 @@
       {% assign current_label = i18n.nav.other_work %}
     {% elsif crumb_path == "/about/" or page.translation_key == "about" %}
       {% assign current_label = i18n.nav.about %}
+    {% elsif crumb_path == "/press/" or page.translation_key == "press" %}
+      {% assign current_label = i18n.nav.press %}
     {% elsif crumb_path == "/links/" or page.translation_key == "linkspage" %}
       {% assign current_label = i18n.nav.links %}
     {% elsif crumb_path == "/now/" or page.translation_key == "now" %}
