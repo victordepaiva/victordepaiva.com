@@ -44,7 +44,7 @@ my_roles:
 overview: |-
   *RhythMania* está atualmente em desenvolvimento.
 
-  A demo incorporada é disponibilizada pelo spawnd, plataforma na qual trabalho como product lead.
+  A demo incorporada é disponibilizada pelo spawnd, plataforma na qual trabalho como Product Owner.
 technical_work: >-
   Trabalho no projeto como produtor executivo, designer narrativo e coordenador
   de localização, além de contribuir com marketing, game design e UX.
