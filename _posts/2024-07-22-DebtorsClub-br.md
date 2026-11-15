@@ -25,5 +25,5 @@ translation_key: 'debtorsclub'
 i18n_path: '/games/debtorsclub/'
 permalink: '/br/games/debtorsclub/'
 overview: >-
-  Em *Debtor's Club*, você é um cobrador de dívidas em uma prefeitura corrupta.
+  Em *Debtors' Club*, você é um cobrador de dívidas em uma prefeitura corrupta.
 ---

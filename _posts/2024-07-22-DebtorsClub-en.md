@@ -25,5 +25,5 @@ permalink: '/en/games/debtorsclub/'
 tagline: 'A narrative resource management game where you are a debt collector in a corrupt city hall.'
 genre: 'narrative resource management'
 overview: >-
-  In *Debtor's Club*, you are a debt collector in a corrupt city hall.
+  In *Debtors' Club*, you are a debt collector in a corrupt city hall.
 ---
