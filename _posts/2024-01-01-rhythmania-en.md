@@ -1,6 +1,7 @@
 ---
 layout: game
 title: 'RhythMania'
+description: "RhythMania, a one-button rhythm game inspired by Rhythm Heaven, in development for PC. executive production, game design, and narrative design."
 tagline: 'A one-button rhythm game inspired by the Rhythm Heaven franchise.'
 collection: jogos
 categories: current-projects

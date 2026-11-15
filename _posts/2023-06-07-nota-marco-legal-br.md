@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'Nota de Posicionamento ACJOGOS-RJ – PL 2.796/2021 (Marco Legal dos Games)'
+description: "nota de posicionamento da ACJOGOS-RJ sobre o PL 2.796/2021 (Marco Legal dos Games), publicada em 7 de junho de 2023."
 collection: textos
 categories: nonfiction
 tags: position-papers

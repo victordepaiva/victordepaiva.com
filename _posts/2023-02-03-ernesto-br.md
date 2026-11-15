@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'Ernesto'
+description: "Ernesto, conto escrito em português e publicado em 2023 na seção de ficção do site."
 collection: textos
 categories: conto
 published: true

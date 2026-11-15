@@ -21,9 +21,34 @@
   {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
 {% endif %}
 
-{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
-{%- if seo_description -%}
-  {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
+{%- comment -%}
+  Explicit page.description wins. Liquid treats an empty string as present, so
+  size is the emptiness check. An excerpt that is empty or only whitespace
+  (game posts have no body; many posts open on a braille blank) must not
+  become an empty meta description. Fall back to site.description in that case.
+{%- endcomment -%}
+{%- assign seo_description = '' -%}
+{%- if page.description -%}
+  {%- assign seo_candidate = page.description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
+  {%- assign seo_candidate_text = seo_candidate | replace: '⠀', '' | strip -%}
+  {%- if seo_candidate_text.size > 0 -%}
+    {%- assign seo_description = seo_candidate -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if seo_description.size == 0 and page.excerpt -%}
+  {%- assign seo_candidate = page.excerpt | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
+  {%- assign seo_candidate_text = seo_candidate | replace: '⠀', '' | strip -%}
+  {%- if seo_candidate_text.size > 0 -%}
+    {%- assign seo_description = seo_candidate -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if seo_description.size == 0 -%}
+  {%- comment -%}
+    site.description is plain text. Markdown would read its pipe as a table
+    and drop it, so escape it as written.
+  {%- endcomment -%}
+  {%- assign seo_description = site.description | strip -%}
+  {%- assign seo_description = seo_description | escape_once -%}
 {%- endif -%}
 
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}

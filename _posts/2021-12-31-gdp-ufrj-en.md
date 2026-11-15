@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'GDP UFRJ (WIP)'
+description: "work with GDP UFRJ (2017–2021), a university game development group: coordinating director, project manager, and other community roles."
 collection: other-work
 categories: other-work
 tags: communities

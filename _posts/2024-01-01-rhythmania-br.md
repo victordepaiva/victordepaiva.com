@@ -1,6 +1,7 @@
 ---
 layout: game
 title: 'RhythMania'
+description: "RitMania, jogo de ritmo de um botão inspirado em Rhythm Heaven, em desenvolvimento para PC. produção executiva, game design e design de narrativa."
 collection: jogos
 categories: current-projects
 published: true

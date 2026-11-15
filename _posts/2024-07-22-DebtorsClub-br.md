@@ -1,6 +1,7 @@
 ---
 layout: game
-title: "Debtor's Club"
+title: "Debtors' Club"
+description: "Debtors’ Club, jogo narrativo de gestão de recursos sobre um cobrador numa prefeitura corrupta. papel: designer de narrativa, escritor e localizador."
 tagline: 'Um jogo narrativo de gerenciamento de recursos em que você é um cobrador de dívidas em uma prefeitura corrupta.'
 collection: jogos
 categories: past-projects

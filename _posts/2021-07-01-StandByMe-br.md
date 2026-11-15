@@ -1,6 +1,7 @@
 ---
 layout: game
 title: 'Stand by Me'
+description: "Stand by Me, puzzle colorido e groovy, em parte baseado em física, sobre cuidar dos amigos. lançado em 2021 para PC pela Garoa Studios."
 tagline: 'Um jogo de puzzle colorido e groovy parcialmente baseado em física sobre cuidar dos seus amigos.'
 collection: jogos
 categories: past-projects

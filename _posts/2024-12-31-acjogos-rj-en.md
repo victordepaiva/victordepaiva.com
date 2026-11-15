@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'ACJOGOS-RJ (WIP)'
+description: "work with ACJOGOS-RJ (2022–2024) as communications director and fiscal council member."
 collection: other-work
 categories: other-work
 tags: communities
