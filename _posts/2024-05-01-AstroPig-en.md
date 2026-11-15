@@ -1,6 +1,7 @@
 ---
 layout: game
 title: 'Astro Pig'
+description: "Astro Pig, a lo-fi adventure, puzzle, and platformer about a space cadet pig and his smart ship. released in 2024 for PC by Garoa Studios."
 collection: jogos
 categories: past-projects
 published: true

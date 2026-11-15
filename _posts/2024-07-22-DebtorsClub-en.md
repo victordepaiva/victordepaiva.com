@@ -1,6 +1,7 @@
 ---
 layout: game
-title: "Debtor's Club"
+title: "Debtors' Club"
+description: "Debtors’ Club, a narrative resource management game about a debt collector in a corrupt city hall. role: narrative designer, writer, and localizer."
 collection: jogos
 categories: past-projects
 published: true
@@ -24,5 +25,5 @@ permalink: '/en/games/debtorsclub/'
 tagline: 'A narrative resource management game where you are a debt collector in a corrupt city hall.'
 genre: 'narrative resource management'
 overview: >-
-  In *Debtor's Club*, you are a debt collector in a corrupt city hall.
+  In *Debtors' Club*, you are a debt collector in a corrupt city hall.
 ---

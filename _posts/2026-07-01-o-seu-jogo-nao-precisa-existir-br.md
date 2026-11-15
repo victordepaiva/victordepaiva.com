@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'O seu jogo não precisa existir'
+description: "O seu jogo não precisa existir, coluna publicada originalmente no Controles Voadores em 1º de julho de 2026."
 collection: textos
 categories: nonfiction
 tags: columns

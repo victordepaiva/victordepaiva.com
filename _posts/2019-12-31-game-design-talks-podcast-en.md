@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'Game Design Talks podcast (WIP)'
+description: "page on the Game Design Talks podcast (2018–2019), in the other work section."
 collection: other-work
 categories: other-work
 tags: media

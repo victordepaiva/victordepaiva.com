@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'Três diálogos'
+description: "Três diálogos, ficção em forma de diálogo escrita em português e publicada em 2018 na seção de ficção do site."
 collection: textos
 categories: dialogo
 published: true

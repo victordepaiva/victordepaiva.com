@@ -1,6 +1,7 @@
 ---
 layout: game
 title: 'Astro Pig'
+description: "Astro Pig, aventura lo-fi de puzzle e plataforma sobre um porquinho astronauta e sua nave. lançado em 2024 para PC pela Garoa Studios."
 tagline: 'Um jogo lo-fi de aventura, puzzle e plataforma sobre um porquinho cadete espacial e sua nave inteligente.'
 collection: jogos
 categories: past-projects

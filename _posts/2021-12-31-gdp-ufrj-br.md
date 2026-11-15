@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'GDP UFRJ (WIP)'
+description: "trabalho no GDP UFRJ (2017–2021), grupo universitário de desenvolvimento de jogos: diretor coordenador, gerente de projetos e outras funções."
 collection: other-work
 categories: other-work
 tags: communities

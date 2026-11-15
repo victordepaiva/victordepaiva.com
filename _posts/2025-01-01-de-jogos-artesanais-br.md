@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: 'De Jogos Artesanais'
+description: "De Jogos Artesanais, coluna publicada originalmente no Controles Voadores em 3 de fevereiro de 2025."
 collection: textos
 categories: nonfiction
 tags: columns
