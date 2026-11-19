@@ -22,6 +22,22 @@ my_roles:
   - game design
   - level design
 word_count: '~3.000 (inglês + brasileiro)'
+screenshots:
+  - webm: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.webm
+    mp4: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.mp4
+    poster: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1-poster.webp
+  - webm: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2.webm
+    mp4: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2.mp4
+    poster: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2-poster.webp
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-1.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-2.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-3.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-4.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-5.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-6.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-7.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-8.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-9.jpg
 store_links:
   - label: Steam
     url: https://store.steampowered.com/app/1484600/Stand_By_Me/
