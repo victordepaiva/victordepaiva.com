@@ -35,8 +35,6 @@ screenshots:
   - /assets/images/posts/debtors-club-images/debtors-club-screenshot-13.jpg
   - /assets/images/posts/debtors-club-images/debtors-club-screenshot-14.jpg
 store_links:
-  - label: Steam
-    url: https://store.steampowered.com/app/2411560/Debtors_Club/
   - label: Epic Games Store
     url: https://store.epicgames.com/en-US/p/debtors-club-af8a2a
 store_embeds:
