@@ -22,6 +22,22 @@ my_roles:
   - game design
   - level design
 word_count: '~3.000 (inglês + brasileiro)'
+screenshots:
+  - webm: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.webm
+    mp4: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.mp4
+    poster: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1-poster.webp
+  - webm: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2.webm
+    mp4: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2.mp4
+    poster: /assets/images/posts/stand-by-me-images/stand-by-me-footage-2-poster.webp
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-1.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-2.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-3.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-4.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-5.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-6.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-7.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-8.jpg
+  - /assets/images/posts/stand-by-me-images/stand-by-me-screenshot-9.jpg
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>'
