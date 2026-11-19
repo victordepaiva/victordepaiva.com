@@ -13,6 +13,27 @@ games_capsule_image: /assets/images/games/debtors-club-library-capsule.png
 date: '2024-05-01 12:00:00 -0300'
 genre: 'gerenciamento narrativo de recursos'
 platform: pc
+screenshots:
+  - webm: /assets/images/posts/debtors-club-images/debtors-club-footage-1.webm
+    mp4: /assets/images/posts/debtors-club-images/debtors-club-footage-1.mp4
+    poster: /assets/images/posts/debtors-club-images/debtors-club-footage-1-poster.webp
+  - webm: /assets/images/posts/debtors-club-images/debtors-club-footage-2.webm
+    mp4: /assets/images/posts/debtors-club-images/debtors-club-footage-2.mp4
+    poster: /assets/images/posts/debtors-club-images/debtors-club-footage-2-poster.webp
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-1.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-2.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-3.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-4.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-5.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-6.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-7.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-8.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-9.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-10.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-11.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-12.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-13.jpg
+  - /assets/images/posts/debtors-club-images/debtors-club-screenshot-14.jpg
 store_links:
   - label: Steam
     url: https://store.steampowered.com/app/2411560/Debtors_Club/
