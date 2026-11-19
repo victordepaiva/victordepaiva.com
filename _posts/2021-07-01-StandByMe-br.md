@@ -22,16 +22,11 @@ my_roles:
   - game design
   - level design
 word_count: '~3.000 (inglês + brasileiro)'
-store_links:
-  - label: Steam
-    url: https://store.steampowered.com/app/1484600/Stand_By_Me/
-  - label: itch.io
-    url: https://garoa.itch.io/standbyme
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>'
   - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6YLRQpf1QVVpkmgjwhEMLL?utm_source=generator&amp;theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
-  - '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>'
+  - '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 lang: 'br'
 translation_key: 'standbyme'
 i18n_path: '/games/standbyme/'
@@ -44,9 +39,4 @@ overview: >-
 technical_work: >-
   Trabalhei no projeto como designer de narrativa, roteirista em brasileiro e
   inglês, produtor executivo, game designer e level designer.
-additional_links:
-  - label: Trilha sonora no YouTube
-    url: https://www.youtube.com/playlist?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb
-  - label: Trilha sonora no Spotify
-    url: https://open.spotify.com/intl-pt/album/6YLRQpf1QVVpkmgjwhEMLL
 ---

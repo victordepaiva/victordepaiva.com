@@ -12,8 +12,6 @@ games_capsule_image: /assets/images/games/debtors-club-library-capsule.png
 date: '2024-05-01 12:00:00 -0300'
 platform: pc
 store_links:
-  - label: Steam
-    url: https://store.steampowered.com/app/2411560/Debtors_Club/
   - label: Epic Games Store
     url: https://store.epicgames.com/en-US/p/debtors-club-af8a2a
 store_embeds:

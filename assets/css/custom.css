@@ -799,6 +799,19 @@ a:hover {
 }
 
 /*
+  Width and height attributes give the player a 16:9 ratio, and the
+  column then scales that ratio down. Below 200px tall YouTube refuses
+  to play and shows a configuration error, so keep the playlist player
+  at least that tall.
+*/
+.game-store-embeds iframe[src*="youtube.com/embed"],
+.game-store-embeds iframe[src*="youtube-nocookie.com/embed"] {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 270px;
+}
+
+/*
   Itch hides the title below a 320px iframe and shows a cover-only card.
   At 360px the column is ~319px, so give the widget 322px and let it
   sit 1px into the page padding instead of clipping.
