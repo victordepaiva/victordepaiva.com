@@ -26,8 +26,6 @@ main:
     url: /about/
   - title: "now"
     url: /now/
-  # - title: "📂 Arquivo"
-  #   url: /arquivo/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

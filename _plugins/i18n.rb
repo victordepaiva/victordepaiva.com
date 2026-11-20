@@ -169,6 +169,10 @@ module VictorSiteI18n
       seen[key] = true
       lines << [from, to, status, condition].compact.join("  ")
     end
+    # Retired pages. /categories/ was an unlinked English home duplicate.
+    # /arquivo/ was the unlinked year archive. 301! matches the rules above.
+    lines << "/categories/  /en/  301!"
+    lines << "/arquivo/  /br/  301!"
     "#{lines.join("\n")}\n"
   end
 

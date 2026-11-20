@@ -7,12 +7,35 @@
 
 {% assign title_separator = site.title_separator | default: '-' | replace: '|', '&#124;' %}
 
-{%- if page.title -%}
-  {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%}
+{%- comment -%}
+  page.seo_title, when non-blank, replaces page.title for the document title
+  and for og:title / twitter:title. The visible H1 still uses page.title.
+  A missing or blank seo_title keeps the previous rules: the document title
+  is page.title plus the site title, and the social titles are page.title alone.
+  Liquid treats an empty string as present, so size is the emptiness check.
+{%- endcomment -%}
+{%- assign seo_title_base = page.title -%}
+{%- assign seo_title_custom = false -%}
+{%- if page.seo_title -%}
+  {%- assign seo_title_candidate = page.seo_title | strip -%}
+  {%- if seo_title_candidate.size > 0 -%}
+    {%- assign seo_title_base = seo_title_candidate -%}
+    {%- assign seo_title_custom = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if seo_title_base -%}
+  {%- assign seo_title = seo_title_base | append: " " | append: title_separator | append: " " | append: site.title -%}
 {%- endif -%}
 
 {%- if seo_title -%}
   {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%}
+{%- endif -%}
+
+{%- if seo_title_custom -%}
+  {%- assign social_title = seo_title -%}
+{%- else -%}
+  {%- assign social_title = page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- endif -%}
 
 {% if page.canonical_url %}
@@ -89,7 +112,7 @@
 {% endif %}
 <meta property="og:locale" content="{{ i18n.og_locale | default: 'en_US' }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:title" content="{{ social_title }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
 {% if seo_description %}
@@ -104,7 +127,7 @@
 
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  <meta name="twitter:title" content="{{ social_title }}">
   <meta name="twitter:description" content="{{ seo_description }}">
   <meta name="twitter:url" content="{{ canonical_url }}">
 
