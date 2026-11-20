@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: 'Game Design Talks podcast (WIP)'
-description: "página sobre o podcast Game Design Talks (2018–2019), na seção de outros trabalhos."
+description: "página sobre o Game Design Talks, podcast feito entre 2018 e 2019, com contexto sobre o projeto e o trabalho nele."
 collection: other-work
 categories: other-work
 tags: media
