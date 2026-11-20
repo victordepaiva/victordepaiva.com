@@ -24,8 +24,6 @@ A Jekyll-based personal website built with the Minimal Mistakes theme. This repo
 - `_pages/other-work.html` - Other work section
 - `_pages/links.html` - External profiles and contact section
 - `_pages/now.html` - Current status page
-- `_pages/archive.html` - Post archive
-- `_pages/categories.html` - Category listing
 
 ### Assets
 - `assets/css/` - Compiled CSS and custom stylesheets
