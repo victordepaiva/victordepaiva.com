@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: 'ACJOGOS-RJ (WIP)'
-description: "trabalho na ACJOGOS-RJ (2022–2024) como diretor de comunicação e conselheiro fiscal da associação."
+description: "trabalho na ACJOGOS-RJ (Associação de Criadores de Jogos Digitais do Estado do Rio de Janeiro), de 2022 a 2024."
 collection: other-work
 categories: other-work
 tags: communities

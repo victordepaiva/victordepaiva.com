@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: 'Ernesto'
-description: "Ernesto, conto escrito em português e publicado em 2023 na seção de ficção do site."
+description: "– Mrewhm. – Já vai, já vai… Segura que tá difícil de – hrmf – abrir… Com um nível de concentração que teria feito…"
 collection: textos
 categories: conto
 published: true
