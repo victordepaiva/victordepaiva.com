@@ -229,6 +229,11 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
+  # Keep the Netlify plugin and config out of the published site.
+  # The IndexNow key file at the repo root is a static file and is published.
+  - netlify.toml
+  - plugins
+  - .indexnow-cache
 keep_files:
   - .git
   - .svn
