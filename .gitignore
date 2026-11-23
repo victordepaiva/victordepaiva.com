@@ -26,3 +26,9 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# Local Netlify CLI state
+.netlify/
+
+# IndexNow page manifest restored from the Netlify build cache
+.indexnow-cache/

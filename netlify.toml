@@ -1,0 +1,11 @@
+# IndexNow: after a production deploy, notify https://api.indexnow.org
+# about HTML pages that were added, changed, or removed.
+#
+# This file deliberately has no [build] table. When the same setting exists
+# in both places, netlify.toml overrides the Netlify UI:
+# https://docs.netlify.com/build/configure-builds/file-based-configuration/
+# Omitting command, publish, and base leaves the UI build settings in effect.
+# A plugin path that starts with / is relative to the repository root.
+
+[[plugins]]
+package = "/plugins/netlify-plugin-indexnow"
