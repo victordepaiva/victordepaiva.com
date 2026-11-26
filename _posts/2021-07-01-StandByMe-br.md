@@ -1,5 +1,6 @@
 ---
 layout: game
+schema_ready: true
 title: 'Stand by Me'
 description: "Stand by Me, puzzle colorido e groovy, em parte baseado em física, sobre cuidar dos amigos. lançado em 2021 para PC pela Garoa Studios."
 tagline: 'Um jogo de puzzle colorido e groovy parcialmente baseado em física sobre cuidar dos seus amigos.'
@@ -10,6 +11,7 @@ published_year: '2021'
 work_start_year: '2020'
 work_end_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png
+banner_image: /assets/images/posts/stand-by-me-images/stand-by-me-banner.png
 date: '2021-07-01 12:00:00 -0300'
 release_date: '1º de julho de 2021'
 status: lançado
@@ -42,6 +44,7 @@ screenshots:
 store_embeds:
   - '<iframe src="https://store.steampowered.com/widget/1484600/" frameborder="0" width="646" height="190"></iframe>'
   - '<iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>'
+  - '<a href="https://www.nuuvem.com/-/item/stand-by-me?utm_source=victordepaiva.com"><img src="/assets/images/posts/stand-by-me-images/available-on-nuuvem.png" alt="Nuuvem"></a>'
   - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6YLRQpf1QVVpkmgjwhEMLL?utm_source=generator&amp;theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
   - '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 awards:
@@ -96,7 +99,16 @@ about_project: |-
   Em termos de produção, também entregamos um bom projeto, mas ele não cumpriu o propósito original, que era ser algo rapidinho, e acabou desgastando um pouco o time no processo.
 
   Enquanto dá pra ficar até amanhã jogando pedras neste meu "filho do meio", gosto muito das aventuras de Pico e seus amigos, essas bolinhas carismáticas em um mundo magnético trippy, e acho que fizemos um bom trabalho costurando aforismos e parábolas que conversam diretamente com as fases que você está jogando. Espero que a jornada de Pico traga pelo menos alguma reflexão pra quem joga.
-technical_work: >-
-  Trabalhei no projeto como designer de narrativa, roteirista em brasileiro e
-  inglês, produtor executivo, game designer e level designer.
+tech_and_tools:
+  - unity
+  - clickup
+  - discord
+  - telegram
+  - sns
+  - photoshop
+  - premiere
+  - google docs
+  - google sheets
+technical_work: |-
+  Trabalhei no projeto principalmente como produtor executivo, narrative designer, roteirista e localizador em português brasileiro e inglês, contribuindo também bastante com game design, level design e UI/UX. Fui o principal responsável pelo marketing, pela assessoria de imprensa e pela distribuição, e fui pessoalmente aos eventos presenciais para apresentar o jogo junto com os outros membros da Garoa. Também conduzi playtests internos, revisões e garantia de qualidade (QA).
 ---
