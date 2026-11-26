@@ -1,5 +1,6 @@
 ---
 layout: posts
+schema_ready: true
 title: 'O seu jogo não precisa existir'
 description: "“O seu jogo não precisa existir”, a column in Portuguese originally published in Controles Voadores on 1 July 2026."
 collection: textos

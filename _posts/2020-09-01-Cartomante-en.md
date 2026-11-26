@@ -1,5 +1,6 @@
 ---
 layout: game
+schema_ready: true
 title: 'Cartomante – Fortune Teller'
 description: "Cartomante – Fortune Teller, a comedy and magical realism visual novel where you read tarot for eccentric clients. released in 2020 for PC."
 tagline: 'A comedy and magical realism visual novel in which you read tarot for eccentric clients.'

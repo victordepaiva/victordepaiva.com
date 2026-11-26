@@ -1,0 +1,299 @@
+{%- comment -%}
+  Work JSON-LD for pages that opt in with schema_ready: true.
+  Person and Garoa Studios are referenced by the @ids already emitted in
+  head/person-jsonld.html and seo.html. This file does not redefine those nodes.
+
+  English fallback shells keep the source canonical URL (canonical_url) and the
+  source content language, so a Portuguese work is not described as English.
+  Steam store links are the app page for the widget id embedded on the page
+  (/widget/<id>/ in store_embeds becomes /app/<id>/). Soundtrack embeds are not offers.
+{%- endcomment -%}
+{%- if page.schema_ready -%}
+{%- assign person_id = "https://victordepaiva.com/#person" -%}
+{%- assign garoa_id = "https://garoastudios.com/#organization" -%}
+{%- assign work_url = canonical_url -%}
+{%- assign lang_code = page.content_lang | default: page.lang -%}
+{%- if lang_code == "br" or lang_code == "brazilian" -%}
+  {%- assign work_in_language = "pt-BR" -%}
+{%- elsif lang_code == "en" -%}
+  {%- assign work_in_language = "en-US" -%}
+{%- else -%}
+  {%- assign work_in_language = lang_code -%}
+{%- endif -%}
+{%- if page.translation_key == "games" or page.translation_key == "fiction" or page.translation_key == "nonfiction" -%}
+  {%- assign work_kind = "ItemList" -%}
+{%- elsif page.layout == "game" -%}
+  {%- assign work_kind = "VideoGame" -%}
+{%- elsif page.categories contains "conto" or page.categories contains "dialogo" -%}
+  {%- assign work_kind = "ShortStory" -%}
+  {%- unless lang_code == "en" and page.i18n_fallback != true -%}
+    {%- assign work_in_language = "pt-BR" -%}
+  {%- endunless -%}
+{%- elsif page.categories contains "nonfiction" -%}
+  {%- if page.tags contains "columns" -%}
+    {%- assign work_kind = "BlogPosting" -%}
+  {%- else -%}
+    {%- assign work_kind = "Article" -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign work_kind = "" -%}
+{%- endif -%}
+
+{%- if work_kind == "ItemList" -%}
+  {%- assign list_position = 0 -%}
+  {%- capture work_list_items -%}
+    {%- if page.translation_key == "games" -%}
+      {%- assign list_primary = site.categories["current-projects"] | i18n_best: active_lang | sort: "date" -%}
+      {%- assign list_secondary = site.categories["past-projects"] | i18n_best: active_lang | sort: "date" | reverse -%}
+    {%- elsif page.translation_key == "fiction" -%}
+      {%- assign list_primary = site.categories["conto"] | i18n_best: active_lang | sort: "date" | reverse -%}
+      {%- assign list_secondary = site.categories["dialogo"] | i18n_best: active_lang | sort: "date" | reverse -%}
+    {%- else -%}
+      {%- assign list_nonfiction = site.categories["nonfiction"] | i18n_best: active_lang | sort: "date" | reverse -%}
+    {%- endif -%}
+    {%- if page.translation_key == "nonfiction" -%}
+      {%- for post in list_nonfiction -%}
+        {%- if post.tags contains "columns" and post.schema_ready and post.url and post.published != false -%}
+          {%- assign list_position = list_position | plus: 1 -%}
+          {%- if list_position > 1 -%},{%- endif -%}
+          {%- assign list_name = post.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+    {
+      "@type": "ListItem",
+      "position": {{ list_position }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "name": {{ list_name | jsonify }}
+    }
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for post in list_nonfiction -%}
+        {%- if post.tags contains "position-papers" and post.schema_ready and post.url and post.published != false -%}
+          {%- assign list_position = list_position | plus: 1 -%}
+          {%- if list_position > 1 -%},{%- endif -%}
+          {%- assign list_name = post.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+    {
+      "@type": "ListItem",
+      "position": {{ list_position }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "name": {{ list_name | jsonify }}
+    }
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- for post in list_primary -%}
+        {%- if post.schema_ready and post.url and post.published != false -%}
+          {%- assign list_position = list_position | plus: 1 -%}
+          {%- if list_position > 1 -%},{%- endif -%}
+          {%- assign list_name = post.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+    {
+      "@type": "ListItem",
+      "position": {{ list_position }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "name": {{ list_name | jsonify }}
+    }
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for post in list_secondary -%}
+        {%- if post.schema_ready and post.url and post.published != false -%}
+          {%- assign list_position = list_position | plus: 1 -%}
+          {%- if list_position > 1 -%},{%- endif -%}
+          {%- assign list_name = post.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+    {
+      "@type": "ListItem",
+      "position": {{ list_position }},
+      "url": {{ post.url | absolute_url | jsonify }},
+      "name": {{ list_name | jsonify }}
+    }
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign list_ready = work_list_items | strip -%}
+  {%- if list_ready != "" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": {{ work_url | append: "#itemlist" | jsonify }},
+  "name": {{ page.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" | jsonify }},
+  "url": {{ work_url | jsonify }},
+  "numberOfItems": {{ list_position }},
+  "itemListElement": [{{ list_ready }}]
+}
+</script>
+  {%- endif -%}
+
+{%- elsif work_kind == "VideoGame" -%}
+  {%- assign work_name = page.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+  {%- assign work_description = page.tagline | default: page.description | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+  {%- assign work_image = page.banner_image | default: page.games_capsule_image -%}
+  {%- assign garoa_source = page.description | append: " " | append: page.tagline | append: " " | append: page.overview | append: " " | append: page.about_project | append: " " | append: page.technical_work -%}
+  {%- if page.store_embeds -%}
+    {%- assign embed_text = page.store_embeds | join: " " -%}
+    {%- assign garoa_source = garoa_source | append: " " | append: embed_text -%}
+  {%- endif -%}
+  {%- assign garoa_made = false -%}
+  {%- if garoa_source contains "by Garoa" or garoa_source contains "pela Garoa" or garoa_source contains "with Garoa" or garoa_source contains "com a Garoa" or garoa_source contains "da Garoa" or garoa_source contains "Garoa Studios" -%}
+    {%- assign garoa_made = true -%}
+  {%- endif -%}
+  {%- assign store_url_list = "||" -%}
+  {%- if page.store_links -%}
+    {%- for store in page.store_links -%}
+      {%- if store.url -%}
+        {%- assign store_wrapped = "||" | append: store.url | append: "||" -%}
+        {%- unless store_url_list contains store_wrapped -%}
+          {%- assign store_url_list = store_url_list | append: store.url | append: "||" -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- if page.store_embeds -%}
+    {%- for embed in page.store_embeds -%}
+      {%- assign href_parts = embed | split: 'href="' -%}
+      {%- for part in href_parts -%}
+        {%- if forloop.index0 > 0 -%}
+          {%- assign href = part | split: '"' | first -%}
+          {%- assign keep_href = false -%}
+          {%- if href contains "itch.io/" -%}
+            {%- unless href contains "/embed" -%}
+              {%- assign keep_href = true -%}
+            {%- endunless -%}
+          {%- endif -%}
+          {%- if href contains "nuuvem.com/" or href contains "store.steampowered.com/" -%}
+            {%- assign href = href | replace: "/widget/", "/app/" -%}
+            {%- assign keep_href = true -%}
+          {%- endif -%}
+          {%- if keep_href -%}
+            {%- assign href_wrapped = "||" | append: href | append: "||" -%}
+            {%- unless store_url_list contains href_wrapped -%}
+              {%- assign store_url_list = store_url_list | append: href | append: "||" -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign src_parts = embed | split: 'src="' -%}
+      {%- for part in src_parts -%}
+        {%- if forloop.index0 > 0 -%}
+          {%- assign src = part | split: '"' | first -%}
+          {%- if src contains "store.steampowered.com/widget/" or src contains "store.steampowered.com/app/" -%}
+            {%- assign src = src | replace: "/widget/", "/app/" -%}
+            {%- assign src_wrapped = "||" | append: src | append: "||" -%}
+            {%- unless store_url_list contains src_wrapped -%}
+              {%- assign store_url_list = store_url_list | append: src | append: "||" -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- assign offer_urls = store_url_list | split: "||" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "@id": {{ work_url | append: "#videogame" | jsonify }},
+  "name": {{ work_name | jsonify }},
+  "url": {{ work_url | jsonify }}
+  {%- if work_description != "" -%},
+  "description": {{ work_description | jsonify }}
+  {%- endif -%}
+  {%- if work_image -%},
+  "image": {{ work_image | absolute_url | jsonify }}
+  {%- endif -%}
+  {%- if page.genre -%},
+  "genre": {{ page.genre | jsonify }}
+  {%- endif -%}
+  {%- if page.platform -%},
+  "gamePlatform": {{ page.platform | jsonify }}
+  {%- endif -%}
+  {%- if page.published_year -%},
+  "datePublished": {{ page.published_year | jsonify }}
+  {%- endif -%}
+  {%- if store_url_list != "||" -%},
+  "offers": [
+    {%- assign offer_index = 0 -%}
+    {%- for offer_url in offer_urls -%}
+      {%- assign offer_url = offer_url | strip -%}
+      {%- if offer_url != "" -%}
+        {%- assign offer_index = offer_index | plus: 1 -%}
+        {%- if offer_index > 1 -%},{%- endif -%}
+    {
+      "@type": "Offer",
+      "url": {{ offer_url | jsonify }}
+    }
+      {%- endif -%}
+    {%- endfor -%}
+  ]
+  {%- endif -%},
+  "creator": [
+  {%- if page.my_roles and page.my_roles.size > 0 -%}
+    {%- for role in page.my_roles -%}
+      {%- unless forloop.first -%},{%- endunless -%}
+    {
+      "@type": "Role",
+      "roleName": {{ role | jsonify }},
+      "creator": { "@id": {{ person_id | jsonify }} }
+    }
+    {%- endfor -%}
+    {%- if garoa_made -%},
+    { "@id": {{ garoa_id | jsonify }} }
+    {%- endif -%}
+  {%- else -%}
+    { "@id": {{ person_id | jsonify }} }
+    {%- if garoa_made -%},
+    { "@id": {{ garoa_id | jsonify }} }
+    {%- endif -%}
+  {%- endif -%}
+  ]
+}
+</script>
+
+{%- elsif work_kind == "ShortStory" or work_kind == "BlogPosting" or work_kind == "Article" -%}
+  {%- assign work_name = page.title | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" | replace: "&quot;", '"' | replace: "&#39;", "'" | replace: "&lt;", "<" | replace: "&gt;", ">" -%}
+  {%- if page.translation_key == "de-jogos-artesanais" -%}
+    {%- comment -%}
+      The column says it was first published on 3 February 2025.
+      page.date is 13 February 2025 and is not shown on the page.
+    {%- endcomment -%}
+    {%- assign work_date = "2025-02-03" -%}
+  {%- elsif page.date -%}
+    {%- assign work_date = page.date | date: "%Y-%m-%d" -%}
+  {%- else -%}
+    {%- assign work_date = page.published_year -%}
+  {%- endif -%}
+  {%- assign publisher_name = "" -%}
+  {%- assign publisher_url = "" -%}
+  {%- if page.translation_key == "aos-joguinistas-artesanais" or page.translation_key == "de-jogos-artesanais" or page.translation_key == "o-seu-jogo-nao-precisa-existir" -%}
+    {%- assign publisher_name = "Controles Voadores" -%}
+    {%- assign publisher_url = "https://www.controlesvoadores.com.br/" -%}
+  {%- elsif page.translation_key == "nota-marco-legal" -%}
+    {%- assign publisher_name = "ACJOGOS-RJ" -%}
+  {%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {{ work_kind | jsonify }},
+  "@id": {{ work_url | append: "#work" | jsonify }},
+  {%- if work_kind == "ShortStory" -%}
+  "name": {{ work_name | jsonify }},
+  {%- else -%}
+  "headline": {{ work_name | jsonify }},
+  {%- endif -%}
+  "url": {{ work_url | jsonify }},
+  "author": { "@id": {{ person_id | jsonify }} },
+  "inLanguage": {{ work_in_language | jsonify }}
+  {%- if work_date -%},
+  "datePublished": {{ work_date | jsonify }}
+  {%- endif -%}
+  {%- if publisher_name != "" -%},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ publisher_name | jsonify }}
+    {%- if publisher_url != "" -%},
+    "url": {{ publisher_url | jsonify }}
+    {%- endif -%}
+  }
+  {%- endif -%}
+}
+</script>
+{%- endif -%}
+{%- endif -%}
