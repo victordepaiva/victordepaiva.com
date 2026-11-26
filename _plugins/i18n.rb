@@ -173,6 +173,15 @@ module VictorSiteI18n
     # /arquivo/ was the unlinked year archive. 301! matches the rules above.
     lines << "/categories/  /en/  301!"
     lines << "/arquivo/  /br/  301!"
+    # Contact pages were removed on 2026-09-13. Their content is the contact
+    # section of the links page. /br/contact/ and /en/contact/ already name a
+    # locale, so they stay in that locale. Unprefixed /contact/ uses the same
+    # Language=pt rule as other legacy roots. No /-/contact/ rule: resolver
+    # URLs are only the ones redirect_rules emits, and this does not add any.
+    lines << "/br/contact/  /br/links/  301!"
+    lines << "/en/contact/  /en/links/  301!"
+    lines << "/contact/  /br/links/  301!  Language=pt"
+    lines << "/contact/  /en/links/  301!"
     "#{lines.join("\n")}\n"
   end
 
