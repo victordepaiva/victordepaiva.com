@@ -217,6 +217,13 @@
 </script>
 {% endunless %}
 
+{% comment %}
+  Work nodes (VideoGame, ShortStory, Article/BlogPosting, ItemList) only when
+  the page sets schema_ready. They reference the Person and Garoa @ids above
+  and do not emit another copy of those nodes.
+{% endcomment %}
+{% include head/work-jsonld.html %}
+
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {% endif %}

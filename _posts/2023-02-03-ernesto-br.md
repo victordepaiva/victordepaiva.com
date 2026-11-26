@@ -1,5 +1,6 @@
 ---
 layout: posts
+schema_ready: true
 title: 'Ernesto'
 description: "– Mrewhm. – Já vai, já vai… Segura que tá difícil de – hrmf – abrir… Com um nível de concentração que teria feito…"
 collection: textos

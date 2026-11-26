@@ -1,5 +1,6 @@
 ---
 layout: posts
+schema_ready: true
 title: 'Aos Joguinistas Artesanais'
 description: "Aos Joguinistas Artesanais, segunda coluna de uma série, publicada originalmente no Controles Voadores em 22 de julho de 2025."
 collection: textos

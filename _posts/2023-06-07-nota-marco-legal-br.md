@@ -1,5 +1,6 @@
 ---
 layout: posts
+schema_ready: true
 title: 'Nota de Posicionamento ACJOGOS-RJ – PL 2.796/2021 (Marco Legal dos Games)'
 seo_title: 'Marco Legal dos Games: nota da ACJOGOS-RJ'
 description: "posicionamento da ACJOGOS-RJ sobre o PL 2.796/2021"

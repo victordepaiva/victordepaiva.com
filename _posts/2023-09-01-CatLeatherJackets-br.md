@@ -1,5 +1,6 @@
 ---
 layout: game
+schema_ready: true
 title: 'Cat Leather Jackets'
 description: "Cat Leather Jackets, visual novel musical sobre uma banda de punk rock adolescente, de Diana Amorim com a Garoa Studios. lançada em 2023 para PC."
 tagline: 'Uma visual novel musical sobre uma banda de punk rock adolescente.'
