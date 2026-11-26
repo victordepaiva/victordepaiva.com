@@ -11,6 +11,7 @@ work_end_year: '2021'
 games_capsule_image: /assets/images/games/stand-by-me-library-capsule.png
 date: '2021-07-01 12:00:00 -0300'
 platform: pc
+trailer_url: 'https://www.youtube.com/watch?v=KeyrpuHDfcw'
 screenshots:
   - webm: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.webm
     mp4: /assets/images/posts/stand-by-me-images/stand-by-me-footage-1.mp4
@@ -32,6 +33,13 @@ store_embeds:
   - '<iframe src="https://itch.io/embed/951038" width="552" height="167" frameborder="0"><a href="https://garoa.itch.io/standbyme">Stand By Me by Garoa</a></iframe>'
   - '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6YLRQpf1QVVpkmgjwhEMLL?utm_source=generator&amp;theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
   - '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLVB_OZivbJHkz_JM4TvY9GSRCxNTFQYwb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+awards:
+  - 'Finalist for Brazilian PC or Console Game at the [LeBlanc Awards](https://premioleblanc.eco.ufrj.br/) 2022'
+  - 'Official selection for Panorama Brasil at [BIG Festival](https://latam.gamescom.global/en/big-festival-en/) 2022'
+  - 'Official selection for the 6th [Ecrã Festival](https://www.festivalecra.com.br/en)'
+  - 'Winner of InGame Video at the Arts Festival at [SBGames](https://www.sbgames.org/) 2021'
+  - 'Finalist for Soundtrack at the Arts Festival at [SBGames](https://www.sbgames.org/) 2021'
+  - 'Official selection for the Games Festival at [SBGames](https://www.sbgames.org/) 2021'
 lang: 'en'
 translation_key: 'standbyme'
 i18n_path: '/games/standbyme/'
