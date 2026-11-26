@@ -279,7 +279,17 @@
   "headline": {{ work_name | jsonify }},
   {%- endif -%}
   "url": {{ work_url | jsonify }},
+  {%- if page.translation_key == "nota-marco-legal" -%}
+  "author": {
+    "@type": "Organization",
+    "@id": "https://victordepaiva.com/#acjogos-rj",
+    "name": {{ "Associação de Criadores de Jogos Digitais do Estado do Rio de Janeiro" | jsonify }},
+    "alternateName": "ACJOGOS-RJ"
+  },
+  "contributor": { "@id": {{ person_id | jsonify }} },
+  {%- else -%}
   "author": { "@id": {{ person_id | jsonify }} },
+  {%- endif -%}
   "inLanguage": {{ work_in_language | jsonify }}
   {%- if work_date -%},
   "datePublished": {{ work_date | jsonify }}
